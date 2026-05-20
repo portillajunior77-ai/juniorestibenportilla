@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Junior Estiben Portilla — JEP Designer</title>
 
-  <!-- ── OPEN GRAPH / VISTA PREVIA AL COMPARTIR ── -->
   <meta property="og:title" content="Junior Estiben Portilla — JEP Designer" />
   <meta property="og:description" content="Diseñador Gráfico, Web e Interiorista Colombiano. Transformando ideas en experiencias visuales modernas, elegantes y funcionales." />
   <meta property="og:image" content="preview.jpg" />
@@ -15,7 +14,6 @@
   <meta property="og:url" content="" />
   <meta property="og:locale" content="es_CO" />
 
-  <!-- ── TWITTER / X CARD ── -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Junior Estiben Portilla — JEP Designer" />
   <meta name="twitter:description" content="Diseñador Gráfico, Web e Interiorista Colombiano. Creatividad · Innovación · Elegancia." />
@@ -186,7 +184,6 @@
       background: linear-gradient(90deg, var(--gold), var(--cyan));
     }
 
-    /* THE BOOK */
     .book-wrapper {
       width: min(800px, 90vw); height: 500px;
       perspective: 2500px; position:relative;
@@ -242,7 +239,6 @@
       color: rgba(201,168,76,0.6);
     }
 
-    /* Book panels */
     .book-left {
       width: 42%;
       background: linear-gradient(170deg, #10101f 0%, #0a0a14 100%);
@@ -341,7 +337,6 @@
     }
     .ctrl-btn:hover { background:var(--gold-dim); border-color:var(--gold); transform:translateY(-2px); }
 
-    /* Hero text */
     .hero-title {
       font-family:'Syne',sans-serif;
       font-size:clamp(44px,8vw,108px);
@@ -669,6 +664,58 @@
     }
     .c-cta:hover { transform:translateY(-3px); box-shadow:0 16px 44px rgba(240,30,143,0.45); }
 
+    /* ── WHATSAPP FLOATING BUTTON ── */
+    .wa-float {
+      position: fixed;
+      bottom: 36px;
+      right: 36px;
+      z-index: 9995;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      box-shadow: 0 6px 28px rgba(37,211,102,0.5), 0 2px 8px rgba(0,0,0,0.4);
+      transition: all 0.3s ease;
+      animation: waPulse 3s ease infinite;
+    }
+    .wa-float:hover {
+      transform: scale(1.12) translateY(-3px);
+      box-shadow: 0 12px 40px rgba(37,211,102,0.65), 0 4px 12px rgba(0,0,0,0.4);
+    }
+    .wa-float svg {
+      width: 30px;
+      height: 30px;
+      fill: #ffffff;
+    }
+    .wa-tooltip {
+      position: absolute;
+      right: 70px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(5,5,7,0.92);
+      border: 1px solid rgba(37,211,102,0.35);
+      color: #ffffff;
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 8px 14px;
+      border-radius: 6px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+    .wa-float:hover .wa-tooltip { opacity: 1; }
+    @keyframes waPulse {
+      0%,100% { box-shadow: 0 6px 28px rgba(37,211,102,0.5), 0 2px 8px rgba(0,0,0,0.4); }
+      50% { box-shadow: 0 6px 28px rgba(37,211,102,0.5), 0 0 0 12px rgba(37,211,102,0.1), 0 2px 8px rgba(0,0,0,0.4); }
+    }
+
     /* ── FOOTER ── */
     footer {
       padding:36px 64px; border-top:1px solid var(--border);
@@ -698,6 +745,7 @@
       .about-grid,.contact-grid,.vision-grid { grid-template-columns:1fr; gap:44px; }
       .services-grid { grid-template-columns:1fr 1fr; }
       footer { flex-direction:column; gap:14px; text-align:center; }
+      .wa-float { bottom:24px; right:24px; width:54px; height:54px; }
     }
     @media (max-width:600px) {
       .nav-links { display:none; }
@@ -722,6 +770,14 @@
     <div class="loader-sub">Designer · Colombia 2026</div>
     <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
   </div>
+
+  <!-- WHATSAPP FLOATING BUTTON -->
+  <a href="https://wa.me/573223729232?text=Hola%20quiero%20información" target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="Contactar por WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+    <div class="wa-tooltip">Escríbeme</div>
+  </a>
 
   <!-- NAV -->
   <nav id="nav">
@@ -750,7 +806,7 @@
             <p class="book-desc">Transformando ideas en experiencias visuales modernas, elegantes y funcionales desde el Putumayo al mundo.</p>
             <div class="book-btns">
               <a href="#services" class="b-btn-gold">Ver Servicios</a>
-              <a href="#contact" class="b-btn-outline">Contactar</a>
+              <a href="https://wa.me/573223729232?text=Hola%20quiero%20información" target="_blank" rel="noopener noreferrer" class="b-btn-outline">Contactar</a>
             </div>
           </div>
           <div class="book-right">
@@ -807,7 +863,7 @@
     </p>
     <div class="hero-cta">
       <a href="#services" class="cta-gold">Ver Portafolio</a>
-      <a href="#contact" class="cta-outline">Contactar Ahora</a>
+      <a href="https://wa.me/573223729232?text=Hola%20quiero%20información" target="_blank" rel="noopener noreferrer" class="cta-outline">Contactar Ahora</a>
     </div>
 
     <div class="scroll-hint">
@@ -1025,11 +1081,12 @@
             </div>
           </div>
           <div class="socials">
-            <a href="#" class="soc-btn">📱 WhatsApp</a>
-            <a href="#" class="soc-btn">📷 Instagram</a>
-            <a href="#" class="soc-btn">🎨 Behance</a>
-            <a href="#" class="soc-btn">📘 Facebook</a>
-            <a href="#" class="soc-btn">✉️ Email</a>
+            <a href="https://wa.me/573223729232?text=Hola%20quiero%20información" target="_blank" rel="noopener noreferrer" class="soc-btn">📱 WhatsApp</a>
+            <a href="https://www.instagram.com/estibenportilla" target="_blank" rel="noopener noreferrer" class="soc-btn">📷 Instagram</a>
+            <a href="https://youtube.com/@jepvizion" target="_blank" rel="noopener noreferrer" class="soc-btn">▶ YouTube</a>
+            <a href="https://vm.tiktok.com/ZS98VnbD2kmaG-WQ069/" target="_blank" rel="noopener noreferrer" class="soc-btn">🎵 TikTok</a>
+            <a href="https://www.facebook.com/share/1E5MTZsxtm/" target="_blank" rel="noopener noreferrer" class="soc-btn">📘 Facebook</a>
+            <a href="https://www.facebook.com/share/1EB4PKjfDp/" target="_blank" rel="noopener noreferrer" class="soc-btn">📘 Facebook 2</a>
           </div>
         </div>
 
@@ -1041,7 +1098,7 @@
           <p>
             Cada colaboración es una oportunidad de crear algo extraordinario. Mi enfoque combina creatividad auténtica con innovación visual y diseño con propósito real.
           </p>
-          <a href="#" class="c-cta">Iniciar Proyecto ✦</a>
+          <a href="https://wa.me/573223729232?text=Hola%20quiero%20información" target="_blank" rel="noopener noreferrer" class="c-cta">Iniciar Proyecto ✦</a>
         </div>
       </div>
     </div>
