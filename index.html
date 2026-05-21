@@ -642,17 +642,107 @@
     .info-item { padding:18px 0; border-bottom:1px solid var(--glass-border); }
     .info-lbl { font-family:'Space Mono',monospace; font-size:9px; letter-spacing:0.45em; color:var(--gold); text-transform:uppercase; margin-bottom:4px; }
     .info-val { font-family:'Syne',sans-serif; font-size:15px; font-weight:600; color:var(--white); }
-    .socials { display:flex; gap:12px; margin-top:44px; flex-wrap:wrap; }
-    .soc-btn {
-      padding:12px 22px; background:var(--glass);
-      border:1px solid var(--glass-border); border-radius:8px;
-      font-family:'Space Mono',monospace; font-size:9px;
-      letter-spacing:0.18em; color:var(--white-dim);
-      text-transform:uppercase; text-decoration:none;
-      transition:all 0.3s; cursor:pointer; display:flex; align-items:center; gap:7px;
+
+    /* ── SOCIAL ICONS 3D ── */
+    .socials-3d {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 44px;
+      align-items: flex-end;
     }
-    .soc-btn:nth-child(odd):hover  { border-color:var(--magenta); color:var(--magenta); background:var(--magenta-dim); transform:translateY(-2px); }
-    .soc-btn:nth-child(even):hover { border-color:var(--cyan);    color:var(--cyan);    background:var(--cyan-dim);    transform:translateY(-2px); }
+    .soc-3d {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .soc-stage {
+      position: relative;
+      width: 72px;
+      height: 110px;
+    }
+    .soc-smoke {
+      position: absolute;
+      top: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 72px;
+      height: 90px;
+      pointer-events: none;
+    }
+    .soc-icon {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 68px;
+      height: 68px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .soc-3d:hover .soc-icon {
+      transform: translateX(-50%) translateY(-6px) rotateX(-8deg);
+    }
+    .soc-icon svg {
+      width: 34px;
+      height: 34px;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.35));
+    }
+    .soc-icon::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 46px;
+      height: 7px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.4);
+      filter: blur(3px);
+      transition: all 0.3s;
+    }
+    .soc-3d:hover .soc-icon::after {
+      width: 34px;
+      opacity: 0.5;
+      transform: translateX(-50%) translateY(2px);
+    }
+    .soc-3d-lbl {
+      font-family: 'Space Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--white-dim);
+      transition: color 0.3s;
+    }
+    .soc-3d:hover .soc-3d-lbl { color: #fff; }
+
+    .ig-3d .soc-icon {
+      background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      box-shadow: 0 8px 28px rgba(220,39,67,0.55), 0 2px 8px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.25);
+    }
+    .tk-3d .soc-icon {
+      background: linear-gradient(135deg, #010101, #1c1c1c, #2d2d2d);
+      box-shadow: 0 8px 28px rgba(105,201,208,0.5), 0 2px 8px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.12);
+    }
+    .yt-3d .soc-icon {
+      background: linear-gradient(135deg, #c4302b, #ff0000, #ff4444);
+      box-shadow: 0 8px 28px rgba(255,0,0,0.55), 0 2px 8px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.2);
+    }
+    .fb-3d .soc-icon {
+      background: linear-gradient(135deg, #0d47a1, #1565c0, #1976d2);
+      box-shadow: 0 8px 28px rgba(25,118,210,0.6), 0 2px 8px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.2);
+    }
+    .wa-3d .soc-icon {
+      background: linear-gradient(135deg, #075e54, #128c7e, #25d366);
+      box-shadow: 0 8px 28px rgba(37,211,102,0.55), 0 2px 8px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.2);
+    }
+
     .contact-right p { font-size:15px; line-height:1.95; color:var(--white-dim); margin-bottom:36px; }
     .c-cta {
       display:inline-block; padding:18px 56px;
@@ -754,8 +844,11 @@
       .front { flex-direction:column; }
       .book-left,.book-right { width:100%; }
       .book-left { border-right:none; border-bottom:1px solid var(--border); }
-      .book-wrapper { height:auto; }
       .page { position:relative; }
+      .socials-3d { gap:16px; }
+      .soc-stage { width:60px; height:96px; }
+      .soc-icon { width:58px; height:58px; border-radius:14px; }
+      .soc-icon svg { width:28px; height:28px; }
     }
   </style>
 </head>
@@ -1080,14 +1173,88 @@
               <div class="info-val">San Miguel La Dorada, Putumayo</div>
             </div>
           </div>
-          <div class="socials">
-            <a href="https://wa.me/573223729232?text=Hola%20quiero%20información" target="_blank" rel="noopener noreferrer" class="soc-btn">📱 WhatsApp</a>
-            <a href="https://www.instagram.com/estibenportilla" target="_blank" rel="noopener noreferrer" class="soc-btn">📷 Instagram</a>
-            <a href="https://youtube.com/@jepvizion" target="_blank" rel="noopener noreferrer" class="soc-btn">▶ YouTube</a>
-            <a href="https://vm.tiktok.com/ZS98VnbD2kmaG-WQ069/" target="_blank" rel="noopener noreferrer" class="soc-btn">🎵 TikTok</a>
-            <a href="https://www.facebook.com/share/1E5MTZsxtm/" target="_blank" rel="noopener noreferrer" class="soc-btn">📘 Facebook</a>
-            <a href="https://www.facebook.com/share/1EB4PKjfDp/" target="_blank" rel="noopener noreferrer" class="soc-btn">📘 Facebook 2</a>
+
+          <!-- ══ SOCIAL ICONS 3D CON HUMO ══ -->
+          <div class="socials-3d" id="socials3d">
+
+            <a href="https://www.instagram.com/estibenportilla" target="_blank" rel="noopener noreferrer" class="soc-3d ig-3d" data-smoke="220,39,67">
+              <div class="soc-stage">
+                <canvas class="soc-smoke" width="72" height="90"></canvas>
+                <div class="soc-icon">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="white" stroke-width="2"/>
+                    <circle cx="12" cy="12" r="4" stroke="white" stroke-width="2"/>
+                    <circle cx="17.5" cy="6.5" r="1.2" fill="white"/>
+                  </svg>
+                </div>
+              </div>
+              <span class="soc-3d-lbl">Instagram</span>
+            </a>
+
+            <a href="https://vm.tiktok.com/ZS98VnbD2kmaG-WQ069/" target="_blank" rel="noopener noreferrer" class="soc-3d tk-3d" data-smoke="105,201,208">
+              <div class="soc-stage">
+                <canvas class="soc-smoke" width="72" height="90"></canvas>
+                <div class="soc-icon">
+                  <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.27 8.27 0 004.84 1.55V6.79a4.85 4.85 0 01-1.07-.1z"/>
+                  </svg>
+                </div>
+              </div>
+              <span class="soc-3d-lbl">TikTok</span>
+            </a>
+
+            <a href="https://youtube.com/@jepvizion" target="_blank" rel="noopener noreferrer" class="soc-3d yt-3d" data-smoke="255,60,60">
+              <div class="soc-stage">
+                <canvas class="soc-smoke" width="72" height="90"></canvas>
+                <div class="soc-icon">
+                  <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M23.5 6.2a3.02 3.02 0 00-2.12-2.13C19.53 3.62 12 3.62 12 3.62s-7.53 0-9.38.45A3.02 3.02 0 00.5 6.2C.06 8.05.06 12 .06 12s0 3.95.44 5.8a3.02 3.02 0 002.12 2.13C4.47 20.38 12 20.38 12 20.38s7.53 0 9.38-.45a3.02 3.02 0 002.12-2.13c.44-1.85.44-5.8.44-5.8s0-3.95-.44-5.8z"/>
+                    <polygon points="9.75,15.5 15.75,12 9.75,8.5" fill="#ff0000"/>
+                  </svg>
+                </div>
+              </div>
+              <span class="soc-3d-lbl">YouTube</span>
+            </a>
+
+            <a href="https://www.facebook.com/share/1E5MTZsxtm/" target="_blank" rel="noopener noreferrer" class="soc-3d fb-3d" data-smoke="25,118,210">
+              <div class="soc-stage">
+                <canvas class="soc-smoke" width="72" height="90"></canvas>
+                <div class="soc-icon">
+                  <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  </svg>
+                </div>
+              </div>
+              <span class="soc-3d-lbl">Facebook</span>
+            </a>
+
+            <a href="https://www.facebook.com/share/1EB4PKjfDp/" target="_blank" rel="noopener noreferrer" class="soc-3d fb-3d" data-smoke="25,118,210">
+              <div class="soc-stage">
+                <canvas class="soc-smoke" width="72" height="90"></canvas>
+                <div class="soc-icon">
+                  <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  </svg>
+                </div>
+              </div>
+              <span class="soc-3d-lbl">Facebook 2</span>
+            </a>
+
+            <a href="https://wa.me/573223729232?text=Hola%20quiero%20información" target="_blank" rel="noopener noreferrer" class="soc-3d wa-3d" data-smoke="37,211,102">
+              <div class="soc-stage">
+                <canvas class="soc-smoke" width="72" height="90"></canvas>
+                <div class="soc-icon">
+                  <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                  </svg>
+                </div>
+              </div>
+              <span class="soc-3d-lbl">WhatsApp</span>
+            </a>
+
           </div>
+          <!-- FIN SOCIAL ICONS 3D -->
+
         </div>
 
         <div class="contact-right reveal" style="transition-delay:0.2s; padding-top:80px;">
@@ -1124,11 +1291,7 @@
     const canvas = document.getElementById('bg-canvas');
     const ctx = canvas.getContext('2d');
     let W, H;
-
-    function resize() {
-      W = canvas.width = window.innerWidth;
-      H = canvas.height = window.innerHeight;
-    }
+    function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
     resize();
     window.addEventListener('resize', resize);
 
@@ -1148,7 +1311,6 @@
 
     function drawCanvas() {
       ctx.clearRect(0, 0, W, H);
-
       for (let i = 0; i < PARTS.length; i++) {
         for (let j = i + 1; j < PARTS.length; j++) {
           const dx = PARTS[i].x - PARTS[j].x;
@@ -1164,19 +1326,17 @@
           }
         }
       }
-
       PARTS.forEach(p => {
         p.x += p.vx; p.y += p.vy;
         if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
         if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
         ctx.beginPath();
-        if (p.type === 'gold')    ctx.fillStyle = `rgba(201,168,76,${p.a})`;
+        if (p.type === 'gold') ctx.fillStyle = `rgba(201,168,76,${p.a})`;
         else if (p.type === 'magenta') ctx.fillStyle = `rgba(240,30,143,${p.a * 0.7})`;
-        else                      ctx.fillStyle = `rgba(0,255,224,${p.a * 0.55})`;
+        else ctx.fillStyle = `rgba(0,255,224,${p.a * 0.55})`;
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         ctx.fill();
       });
-
       requestAnimationFrame(drawCanvas);
     }
     drawCanvas();
@@ -1201,6 +1361,71 @@
     window.addEventListener('scroll', () => {
       if (ht) ht.style.transform = `translateY(${scrollY * 0.25}px)`;
     });
+
+    // ══════════════════════════════════════════
+    // ── SMOKE PARTICLES — ÍCONOS SOCIALES 3D ──
+    // ══════════════════════════════════════════
+    (function() {
+      class SmokeSystem {
+        constructor(canvas, colorStr) {
+          this.canvas = canvas;
+          this.ctx = canvas.getContext('2d');
+          this.color = colorStr;
+          this.particles = [];
+        }
+        spawn() {
+          this.particles.push({
+            x: 36 + (Math.random() - 0.5) * 8,
+            y: 82,
+            vx: (Math.random() - 0.5) * 0.5,
+            vy: -(0.5 + Math.random() * 0.9),
+            size: 3 + Math.random() * 5,
+            life: 0,
+            maxLife: 70 + Math.random() * 50,
+            wobble: Math.random() * Math.PI * 2,
+            wobbleSpeed: 0.022 + Math.random() * 0.02
+          });
+        }
+        tick() {
+          if (Math.random() < 0.38) this.spawn();
+          this.particles = this.particles.filter(p => p.life < p.maxLife);
+          for (const p of this.particles) {
+            p.life++;
+            p.wobble += p.wobbleSpeed;
+            p.x += p.vx + Math.sin(p.wobble) * 0.32;
+            p.y += p.vy;
+            p.size += 0.12;
+          }
+        }
+        draw() {
+          const ctx = this.ctx;
+          ctx.clearRect(0, 0, 72, 90);
+          for (const p of this.particles) {
+            const t = p.life / p.maxLife;
+            const alpha = (1 - t) * 0.44 * (t < 0.15 ? t / 0.15 : 1);
+            const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.size);
+            g.addColorStop(0, `rgba(${this.color},${alpha})`);
+            g.addColorStop(0.5, `rgba(${this.color},${alpha * 0.45})`);
+            g.addColorStop(1, `rgba(${this.color},0)`);
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+            ctx.fillStyle = g;
+            ctx.fill();
+          }
+        }
+      }
+
+      const systems = [...document.querySelectorAll('#socials3d .soc-3d')].map(el =>
+        new SmokeSystem(el.querySelector('.soc-smoke'), el.dataset.smoke)
+      );
+
+      function loop() {
+        for (const s of systems) { s.tick(); s.draw(); }
+        requestAnimationFrame(loop);
+      }
+      requestAnimationFrame(loop);
+    })();
+
   </script>
 </body>
 </html>
