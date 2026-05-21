@@ -9,7 +9,7 @@
 <meta property="og:type" content="website"/>
 <meta property="og:locale" content="es_CO"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#020204;--surface:#08080f;
@@ -85,49 +85,286 @@ section{position:relative;z-index:1}
 .rv-scale{opacity:0;transform:scale(.88);transition:opacity .9s cubic-bezier(.2,1,.2,1),transform .9s cubic-bezier(.2,1,.2,1)}
 .rv-scale.on{opacity:1;transform:scale(1)}
 
-/* HERO */
+/* ══════════════════════════════════
+   HERO
+══════════════════════════════════ */
 #hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:140px 72px 110px;position:relative}
-.h-eye{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.5em;text-transform:uppercase;color:var(--cyan);margin-bottom:52px;display:flex;align-items:center;gap:16px;opacity:0;animation:fu 1s 2.3s ease forwards}
+.h-eye{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.5em;text-transform:uppercase;color:var(--cyan);margin-bottom:42px;display:flex;align-items:center;gap:16px;opacity:0;animation:fu 1s 2.3s ease forwards}
 .h-eye::before,.h-eye::after{content:'';width:28px;height:1px;background:linear-gradient(90deg,var(--gold),var(--cyan))}
 
-/* BOOK */
-.bk-wrap{width:min(820px,90vw);height:500px;perspective:2800px;position:relative;margin:0 auto 50px;opacity:0;animation:fu 1s 1.9s ease forwards}
-.pg{width:100%;height:100%;position:absolute;transform-style:preserve-3d;transition:transform 1.4s cubic-bezier(.645,.045,.355,1);transform-origin:left center}
-.pg.flipped{transform:rotateY(-180deg)}
-.front,.back{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:22px;overflow:hidden}
-.front{display:flex;background:linear-gradient(135deg,#0e0e1e 0%,#0b0b18 100%);border:1px solid var(--border);box-shadow:0 50px 120px rgba(0,0,0,.9),0 0 60px rgba(201,168,76,.07),inset 0 1px 0 rgba(255,255,255,.05)}
-.back{background:linear-gradient(135deg,#0b0b1a 0%,#080810 100%);border:1px solid var(--border);transform:rotateY(180deg);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:18px;box-shadow:0 50px 120px rgba(0,0,0,.9)}
-.back-logo{font-family:'Syne',sans-serif;font-size:52px;font-weight:800;background:linear-gradient(90deg,var(--gold),var(--orange),var(--magenta));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:.08em}
-.b-div{width:80px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),var(--magenta),transparent)}
-.b-tag{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.35em;color:var(--white-dim);text-transform:uppercase}
-.b-tl{font-family:'Libre Baskerville',serif;font-style:italic;font-size:15px;color:rgba(201,168,76,.6)}
-.bk-l{width:42%;background:linear-gradient(170deg,#10101f,#0a0a14);border-right:1px solid var(--border);padding:36px 28px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px}
-.bk-av{width:100px;height:100px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--orange),var(--magenta));display:flex;justify-content:center;align-items:center;font-size:40px;font-family:'Syne',sans-serif;font-weight:800;color:#050507;box-shadow:0 0 35px rgba(240,30,143,.4),0 0 80px rgba(201,168,76,.2);border:2px solid rgba(201,168,76,.3)}
-.bk-nm{font-family:'Syne',sans-serif;font-size:17px;font-weight:800;color:var(--white);line-height:1.2}
-.bk-rl{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.25em;color:var(--gold);text-transform:uppercase}
-.bk-dc{font-size:12px;color:var(--white-dim);line-height:1.7}
-.bk-bs{display:flex;flex-direction:column;gap:8px;width:100%;margin-top:6px}
-.bb-g{padding:10px 16px;background:linear-gradient(135deg,var(--gold),var(--orange),var(--magenta));color:#050507;border:none;border-radius:6px;font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;cursor:none;transition:all .3s;text-decoration:none;display:block;text-align:center}
-.bb-g:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(240,30,143,.4)}
-.bb-o{padding:10px 16px;background:transparent;color:var(--cyan);border:1px solid var(--cyan);border-radius:6px;font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;cursor:none;transition:all .3s;text-decoration:none;display:block;text-align:center}
-.bb-o:hover{background:var(--cyan-dim);transform:translateY(-2px)}
-.bk-r{width:58%;padding:36px 32px;background:linear-gradient(170deg,#0d0d1c,#090912);overflow-y:auto}
-.bk-r::-webkit-scrollbar{width:2px}.bk-r::-webkit-scrollbar-thumb{background:var(--border);border-radius:1px}
-.bk-r h2{font-family:'Syne',sans-serif;font-size:16px;font-weight:800;color:var(--white);letter-spacing:.06em;margin-bottom:26px;display:flex;align-items:center;gap:12px}
-.bk-r h2::after{content:'';flex:1;height:1px;background:var(--border)}
-.bk-tl{position:relative;padding-left:22px}
-.bk-tl::before{content:'';position:absolute;left:5px;top:0;width:1px;height:100%;background:linear-gradient(to bottom,var(--gold),var(--magenta),transparent)}
-.bk-it{margin-bottom:24px;position:relative}
-.bk-it::before{content:'';position:absolute;left:-20px;top:6px;width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--magenta));box-shadow:0 0 8px rgba(240,30,143,.5)}
-.by{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.2em;color:var(--cyan);margin-bottom:3px}
-.bt{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--white);margin-bottom:5px}
-.bd{font-size:11px;color:var(--white-dim);line-height:1.6}
-.bk-ctl{display:flex;justify-content:center;gap:16px;margin-top:28px;opacity:0;animation:fu 1s 2.1s ease forwards}
-.cb{padding:13px 34px;border:1px solid var(--border);background:var(--glass);color:var(--gold);border-radius:8px;cursor:none;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;transition:all .3s;backdrop-filter:blur(10px)}
-.cb:hover{background:var(--gold-dim);border-color:var(--gold);transform:translateY(-2px)}
+/* ══════════════════════════════════
+   LUXURY BOOK — multi-page
+══════════════════════════════════ */
+.book-wrap{
+  width:min(820px,90vw);
+  height:500px;
+  position:relative;
+  perspective:5000px;
+  margin:0 auto 18px;
+  opacity:0;
+  animation:fu 1s 1.9s ease forwards;
+}
+
+/* RINGS */
+.bk-rings{
+  position:absolute;
+  left:-14px;top:0;
+  width:28px;height:100%;
+  display:flex;flex-direction:column;justify-content:space-evenly;
+  z-index:50;pointer-events:none;
+}
+.bk-ring{
+  width:24px;height:24px;border-radius:50%;
+  background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.8),rgba(150,150,150,.4));
+  border:2px solid var(--gold);
+  box-shadow:0 0 10px rgba(201,168,76,.4),inset 0 0 6px rgba(255,255,255,.3);
+}
+
+/* BOOK INNER */
+.book-inner{
+  width:100%;height:100%;
+  position:relative;
+  transform-style:preserve-3d;
+}
+
+/* PAGES */
+.bk-page{
+  width:100%;height:100%;
+  position:absolute;
+  transform-origin:left center;
+  transform-style:preserve-3d;
+  transition:transform 1.4s cubic-bezier(.65,.02,.19,1);
+  cursor:none;
+  filter:drop-shadow(0 20px 40px rgba(0,0,0,.7));
+}
+.bk-page.flipped{transform:rotateY(-180deg)}
+
+.bk-page::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to right,rgba(0,0,0,.3),transparent 20%,transparent 80%,rgba(0,0,0,.15));
+  opacity:0;transition:.9s;pointer-events:none;border-radius:0 20px 20px 0;
+}
+.bk-page.flipped::after{opacity:1}
+
+/* FACES */
+.bk-front,.bk-back{
+  width:100%;height:100%;
+  position:absolute;
+  backface-visibility:hidden;
+  overflow:hidden;
+  border-radius:0 20px 20px 0;
+}
+.bk-back{transform:rotateY(180deg)}
+
+/* ── COVER PAGE ── */
+.bk-front.cover{
+  background:linear-gradient(145deg,#050505,#1a0f04,#0c0c0c);
+  border-left:14px solid #0a0a0a;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  position:relative;
+  box-shadow:inset 0 0 80px rgba(255,215,0,.05),inset 0 0 10px rgba(255,255,255,.06),0 20px 50px rgba(0,0,0,.6);
+}
+.bk-front.cover::before{
+  content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(45deg,rgba(255,255,255,.012),rgba(255,255,255,.012) 2px,transparent 2px,transparent 6px);
+  mix-blend-mode:soft-light;
+}
+.bk-front.cover::after{
+  content:'';position:absolute;top:-120%;left:-40%;width:40%;height:300%;
+  background:linear-gradient(to right,transparent,rgba(255,255,255,.1),transparent);
+  transform:rotate(25deg);
+  animation:bkshine 9s linear infinite;
+}
+@keyframes bkshine{
+  0%{transform:translateX(-400%) rotate(25deg)}
+  100%{transform:translateX(700%) rotate(25deg)}
+}
+.bk-corner{position:absolute;width:52px;height:52px;border:1.5px solid rgba(201,168,76,.4)}
+.bk-corner.tl{top:28px;left:38px;border-right:none;border-bottom:none}
+.bk-corner.tr{top:28px;right:28px;border-left:none;border-bottom:none}
+.bk-corner.bl{bottom:28px;left:38px;border-right:none;border-top:none}
+.bk-corner.br{bottom:28px;right:28px;border-left:none;border-top:none}
+
+.cover-logo{font-family:'Cinzel',serif;font-size:clamp(42px,7vw,82px);letter-spacing:.14em;color:var(--gold);text-shadow:0 0 30px rgba(201,168,76,.35),0 0 80px rgba(201,168,76,.1);line-height:1}
+.cover-sub{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.55em;color:rgba(201,168,76,.65);text-transform:uppercase;margin-top:16px}
+.cover-div{width:90px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:20px auto}
+.cover-role{font-family:'Playfair Display',serif;font-style:italic;font-size:14px;color:rgba(240,238,232,.45);letter-spacing:.08em}
+
+/* ── PROFILE SPREAD ── */
+.spread{
+  width:100%;height:100%;
+  display:flex;
+}
+.spread-l{
+  width:42%;background:linear-gradient(170deg,#10101f,#0a0a14);
+  border-right:1px solid var(--border);
+  padding:32px 24px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
+}
+.spread-r{
+  width:58%;padding:32px 28px;
+  background:linear-gradient(170deg,#0d0d1c,#090912);
+  overflow-y:auto;
+}
+.spread-r::-webkit-scrollbar{width:2px}
+.spread-r::-webkit-scrollbar-thumb{background:var(--border);border-radius:1px}
+
+.sp-av{
+  width:88px;height:88px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold),var(--orange),var(--magenta));
+  display:flex;justify-content:center;align-items:center;
+  font-family:'Syne',sans-serif;font-size:34px;font-weight:800;color:#050507;
+  box-shadow:0 0 30px rgba(240,30,143,.4),0 0 70px rgba(201,168,76,.15);
+  border:2px solid rgba(201,168,76,.3);
+}
+.sp-name{font-family:'Syne',sans-serif;font-size:15px;font-weight:800;color:var(--white);line-height:1.2;text-align:center}
+.sp-role{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:.22em;color:var(--gold);text-transform:uppercase;text-align:center}
+.sp-desc{font-size:11px;color:var(--white-dim);line-height:1.7;text-align:center}
+.sp-btns{display:flex;flex-direction:column;gap:8px;width:100%;margin-top:6px}
+.sp-btn-g{padding:9px 14px;background:linear-gradient(135deg,var(--gold),var(--orange),var(--magenta));color:#050507;border:none;border-radius:6px;font-family:'Space Mono',monospace;font-size:8px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;cursor:none;transition:all .3s;text-decoration:none;display:block;text-align:center}
+.sp-btn-g:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(240,30,143,.35)}
+.sp-btn-o{padding:9px 14px;background:transparent;color:var(--cyan);border:1px solid var(--cyan);border-radius:6px;font-family:'Space Mono',monospace;font-size:8px;letter-spacing:.18em;text-transform:uppercase;cursor:none;transition:all .3s;text-decoration:none;display:block;text-align:center}
+.sp-btn-o:hover{background:var(--cyan-dim);transform:translateY(-2px)}
+
+.sp-h2{font-family:'Syne',sans-serif;font-size:13px;font-weight:800;color:var(--white);letter-spacing:.05em;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.sp-h2::after{content:'';flex:1;height:1px;background:var(--border)}
+.sp-tl{position:relative;padding-left:18px}
+.sp-tl::before{content:'';position:absolute;left:4px;top:0;width:1px;height:100%;background:linear-gradient(to bottom,var(--gold),var(--magenta),transparent)}
+.sp-it{margin-bottom:18px;position:relative}
+.sp-it::before{content:'';position:absolute;left:-16px;top:5px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--magenta));box-shadow:0 0 6px rgba(240,30,143,.4)}
+.sp-by{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:.18em;color:var(--cyan);margin-bottom:2px}
+.sp-bt{font-family:'Syne',sans-serif;font-size:12px;font-weight:700;color:var(--white);margin-bottom:3px}
+.sp-bd{font-size:10px;color:var(--white-dim);line-height:1.6}
+
+/* ── IMAGE PAGES ── */
+.img-full{
+  width:100%;height:100%;
+  position:relative;overflow:hidden;
+  display:block;
+}
+.img-full img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+  transition:transform 1.2s ease;
+}
+.img-full:hover img{transform:scale(1.04)}
+.img-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,.72) 0%,rgba(0,0,0,.18) 45%,rgba(0,0,0,.05) 70%,transparent 100%);
+  pointer-events:none;
+}
+.img-cap{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:24px 28px 22px;z-index:2;
+}
+.img-cap-num{
+  font-family:'Space Mono',monospace;
+  font-size:9px;letter-spacing:.55em;
+  color:rgba(201,168,76,.7);text-transform:uppercase;
+  margin-bottom:5px;display:block;
+}
+.img-cap-title{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(14px,2.2vw,20px);
+  font-weight:800;color:#fff;
+  text-shadow:0 2px 12px rgba(0,0,0,.9);
+  margin-bottom:4px;line-height:1.1;
+}
+.img-cap-sub{
+  font-family:'Space Mono',monospace;
+  font-size:clamp(8px,1.1vw,10px);
+  letter-spacing:.3em;color:rgba(201,168,76,.85);
+  text-transform:uppercase;text-shadow:0 2px 8px rgba(0,0,0,.8);
+}
+/* placeholder cuando no hay imagen */
+.img-placeholder{
+  width:100%;height:100%;
+  background:linear-gradient(145deg,#0d0d1e,#080810);
+  display:flex;flex-direction:column;
+  justify-content:center;align-items:center;gap:14px;
+  position:relative;
+}
+.img-placeholder::before{
+  content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(45deg,rgba(201,168,76,.025),rgba(201,168,76,.025) 1px,transparent 1px,transparent 40px);
+}
+.ph-icon{font-size:52px;opacity:.35;position:relative;z-index:1}
+.ph-name{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.4em;color:rgba(201,168,76,.45);text-transform:uppercase;position:relative;z-index:1}
+.ph-size{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.2em;color:rgba(240,238,232,.2);text-transform:uppercase;position:relative;z-index:1}
+
+/* ── TEXT SPREAD ── */
+.text-spread{
+  width:100%;height:100%;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  padding:36px 48px;
+  background:linear-gradient(145deg,#0a0a1a,#08080e);
+  text-align:center;position:relative;
+}
+.text-spread::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 30%,rgba(240,30,143,.06),transparent 65%);
+  pointer-events:none;
+}
+.ts-icon{font-size:44px;margin-bottom:18px;display:block}
+.ts-title{font-family:'Cinzel',serif;font-size:clamp(22px,3.5vw,32px);color:var(--gold);letter-spacing:.1em;margin-bottom:14px}
+.ts-body{font-family:'Playfair Display',serif;font-style:italic;font-size:14px;color:var(--white-dim);line-height:1.85;max-width:580px}
+.ts-div{width:60px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:18px auto}
+.ts-tag{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.3em;color:var(--magenta);text-transform:uppercase}
+
+/* ── BACK INNER ── */
+.bk-back-inner{
+  width:100%;height:100%;
+  background:linear-gradient(135deg,#0b0b1a,#080810);
+  display:flex;flex-direction:column;justify-content:center;align-items:center;gap:14px;
+  border-left:1px solid var(--border);
+}
+.bi-logo{font-family:'Cinzel',serif;font-size:46px;color:var(--gold);letter-spacing:.1em;text-shadow:0 0 30px rgba(201,168,76,.25)}
+.bi-div{width:70px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),var(--magenta),transparent)}
+.bi-tag{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.4em;color:var(--white-dim);text-transform:uppercase}
+.bi-it{font-family:'Playfair Display',serif;font-style:italic;font-size:13px;color:rgba(201,168,76,.5)}
+
+/* ── FINAL SPREAD ── */
+.final-spread{
+  width:100%;height:100%;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  padding:42px;
+  background:linear-gradient(145deg,#0a0a1a,#06060e);
+  text-align:center;position:relative;
+}
+.final-spread::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 50%,rgba(0,255,224,.05),transparent 65%);
+  pointer-events:none;
+}
+.fs-title{font-family:'Cinzel',serif;font-size:clamp(26px,4vw,40px);color:var(--cyan);letter-spacing:.1em;margin-bottom:16px}
+.fs-body{font-family:'Playfair Display',serif;font-style:italic;font-size:14px;color:var(--white-dim);line-height:1.85;max-width:520px;margin-bottom:22px}
+.fs-cta{padding:13px 38px;background:linear-gradient(135deg,var(--gold),var(--orange),var(--magenta));color:#050507;border:none;border-radius:4px;font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;cursor:none;transition:all .3s;text-decoration:none;display:inline-block}
+.fs-cta:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(240,30,143,.4)}
+
+/* NAVIGATION CONTROLS */
+.bk-nav{
+  display:flex;justify-content:center;align-items:center;gap:24px;margin-top:18px;
+  opacity:0;animation:fu 1s 2.1s ease forwards;
+}
+.bk-btn{
+  padding:11px 30px;
+  border:1px solid var(--border);
+  background:var(--glass);
+  color:var(--gold);
+  border-radius:6px;
+  cursor:none;
+  font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;
+  transition:all .3s;backdrop-filter:blur(10px);
+}
+.bk-btn:hover{background:var(--gold-dim);border-color:var(--gold);transform:translateY(-2px)}
+.bk-btn:disabled{opacity:.25;pointer-events:none}
+.bk-pg-label{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.35em;color:var(--white-dim);text-transform:uppercase;min-width:120px;text-align:center}
 
 /* HERO TITLE */
-.h-title{font-family:'Syne',sans-serif;font-size:clamp(46px,8.5vw,114px);font-weight:800;line-height:.94;color:var(--white);margin-bottom:16px;opacity:0;animation:fu 1s 2.5s ease forwards;will-change:transform;position:relative}
+.h-title{font-family:'Syne',sans-serif;font-size:clamp(46px,8.5vw,114px);font-weight:800;line-height:.94;color:var(--white);margin-bottom:16px;margin-top:52px;opacity:0;animation:fu 1s 2.5s ease forwards;will-change:transform;position:relative}
 .h-title .grd{background:linear-gradient(90deg,var(--gold),var(--orange),var(--magenta),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block}
 .h-sub{font-family:'Libre Baskerville',serif;font-style:italic;font-size:clamp(15px,2.2vw,21px);color:var(--white-dim);margin-bottom:14px;opacity:0;animation:fu 1s 2.7s ease forwards}
 .h-brand{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.35em;color:var(--cyan);text-transform:uppercase;margin-bottom:46px;opacity:0;animation:fu 1s 2.9s ease forwards}
@@ -151,21 +388,15 @@ section{position:relative;z-index:1}
 .st .ac{color:var(--gold)}
 .sdv{width:50px;height:2px;background:linear-gradient(90deg,var(--gold),var(--orange),var(--magenta));margin-bottom:30px}
 
-/* ──────────────────────────────
-   ABOUT — REDISEÑO COMPLETO
-────────────────────────────── */
+/* ABOUT */
 #about{padding:150px 0}
 .ab-grid{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:start}
-
-/* ABOUT CARD */
 .ab-card{background:var(--glass);border:1px solid var(--glass-b);border-radius:24px;padding:52px 46px;position:relative;overflow:hidden;backdrop-filter:blur(24px)}
 .ab-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),var(--magenta),transparent)}
 .ab-card::after{content:'';position:absolute;bottom:-80px;right:-80px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(240,30,143,.05),transparent);pointer-events:none}
-
 .badge-row{display:flex;justify-content:flex-end;margin-bottom:22px}
 .badge{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--gold),var(--orange),var(--magenta));color:#050507;font-family:'Syne',sans-serif;font-size:13px;font-weight:800;line-height:1;padding:8px 20px;border-radius:100px;letter-spacing:.05em;white-space:nowrap;box-shadow:0 4px 24px rgba(240,30,143,.3)}
 .badge::before{content:'';width:7px;height:7px;border-radius:50%;background:rgba(5,5,7,.4);flex-shrink:0}
-
 .live{display:flex;align-items:center;gap:10px;margin-bottom:28px}
 .live-dot{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan);animation:lp 2s ease infinite;flex-shrink:0}
 @keyframes lp{0%,100%{box-shadow:0 0 8px var(--cyan)}50%{box-shadow:0 0 20px var(--cyan),0 0 40px rgba(0,255,224,.25)}}
@@ -177,25 +408,17 @@ section{position:relative;z-index:1}
 .pl:nth-child(3):hover{background:var(--cyan-dim);border-color:rgba(0,255,224,.38);transform:translateY(-4px)}
 .pl-ic{font-size:22px;margin-bottom:6px}
 .pl-lb{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.1em}
-
-/* ABOUT TEXT */
 .ab-text p{font-size:15px;line-height:1.95;color:var(--white-dim);margin-bottom:20px}
 .ab-text strong{color:var(--gold)}
-
-/* ─── STATS REVEALS — REEMPLAZA LOS CHIPS FEO ─── */
 .stats-reveal{margin-top:52px;display:flex;flex-direction:column;gap:0}
-
 .stat-row{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid rgba(201,168,76,.1);opacity:0;transform:translateY(32px) skewY(1deg);transition:opacity .7s cubic-bezier(.2,1,.2,1),transform .7s cubic-bezier(.2,1,.2,1)}
 .stat-row.on{opacity:1;transform:translateY(0) skewY(0deg)}
 .stat-row:first-child{border-top:1px solid rgba(201,168,76,.1)}
-
 .stat-item{padding:28px 0;position:relative;overflow:hidden}
 .stat-item:first-child{border-right:1px solid rgba(201,168,76,.1);padding-right:32px}
 .stat-item:last-child{padding-left:32px}
-
 .stat-item::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:linear-gradient(90deg,var(--gold),var(--magenta));transition:width .8s cubic-bezier(.2,1,.2,1);transition-delay:inherit}
 .stat-row.on .stat-item::after{width:100%}
-
 .stat-num{font-family:'Syne',sans-serif;font-size:48px;font-weight:800;line-height:1;background:linear-gradient(135deg,var(--gold),var(--orange));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px;display:flex;align-items:baseline;gap:2px}
 .stat-num .suffix{font-size:28px;opacity:.7}
 .stat-label{font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.25em;color:var(--white-dim);text-transform:uppercase;line-height:1.5}
@@ -261,8 +484,6 @@ section{position:relative;z-index:1}
 .ci-it{padding:18px 0;border-bottom:1px solid var(--glass-b)}
 .ci-lb{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.45em;color:var(--gold);text-transform:uppercase;margin-bottom:4px}
 .ci-vl{font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:var(--white)}
-
-/* SOCIAL 3D */
 .soc3d{display:flex;flex-wrap:wrap;gap:24px;margin-top:44px;align-items:flex-end}
 .s3{display:flex;flex-direction:column;align-items:center;gap:10px;text-decoration:none;cursor:none}
 .s3-st{position:relative;width:72px;height:110px}
@@ -279,7 +500,6 @@ section{position:relative;z-index:1}
 .yt .s3-ic{background:linear-gradient(135deg,#c4302b,#ff0000,#ff4444);box-shadow:0 8px 28px rgba(255,0,0,.55),0 2px 8px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.2)}
 .fb .s3-ic{background:linear-gradient(135deg,#0d47a1,#1565c0,#1976d2);box-shadow:0 8px 28px rgba(25,118,210,.6),0 2px 8px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.2)}
 .wa .s3-ic{background:linear-gradient(135deg,#075e54,#128c7e,#25d366);box-shadow:0 8px 28px rgba(37,211,102,.55),0 2px 8px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.2)}
-
 .ct-r p{font-size:15px;line-height:1.95;color:var(--white-dim);margin-bottom:36px}
 .c-cta{display:inline-block;padding:18px 58px;background:linear-gradient(135deg,var(--gold),var(--orange),var(--magenta));color:#050507;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;border-radius:4px;text-decoration:none;transition:all .3s;cursor:none;position:relative;overflow:hidden}
 .c-cta::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);transform:skewX(-20deg);transition:left .5s}
@@ -310,11 +530,11 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .gl::before{animation:g1 9s ease-in-out infinite}
 .gl::after{animation:g2 9s ease-in-out .5s infinite}
 
-/* TILT */
-.tilt{transform-style:preserve-3d;transition:transform .1s ease}
-
 /* MAGNETIC */
 .mag{transition:transform .35s cubic-bezier(.2,1,.2,1)}
+
+/* TILT */
+.tilt{transform-style:preserve-3d;transition:transform .1s ease}
 
 /* RESPONSIVE */
 @media(max-width:960px){
@@ -330,19 +550,30 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
   .stat-row{grid-template-columns:1fr}
   .stat-item:first-child{border-right:none;border-bottom:1px solid rgba(201,168,76,.1);padding-right:0;padding-bottom:20px}
   .stat-item:last-child{padding-left:0;padding-top:20px}
+  .book-wrap{height:420px}
+  .img-cap-title{font-size:15px}
 }
 @media(max-width:600px){
   .nav-links{display:none}
   .srv-grid{grid-template-columns:1fr}
-  .bk-wrap{height:auto}
-  .front{flex-direction:column}
-  .bk-l,.bk-r{width:100%}
-  .bk-l{border-right:none;border-bottom:1px solid var(--border)}
-  .pg{position:relative}
+  .book-wrap{height:360px}
+  .bk-rings{display:none}
+  .spread{flex-direction:column}
+  .spread-l,.spread-r{width:100%}
+  .spread-l{border-right:none;border-bottom:1px solid var(--border);height:auto;padding:24px}
+  .spread-r{height:auto;padding:24px}
   .soc3d{gap:16px}
   .s3-st{width:60px;height:96px}
   .s3-ic{width:58px;height:58px;border-radius:14px}
   .s3-ic svg{width:28px;height:28px}
+  .img-cap{padding:14px 18px 16px}
+  .img-cap-title{font-size:13px}
+  .img-cap-sub{font-size:8px;letter-spacing:.18em}
+  .img-cap-num{font-size:8px;letter-spacing:.35em}
+  .text-spread{padding:24px 22px}
+  .ts-body{font-size:12px}
+  .bk-btn{padding:10px 18px;font-size:8px}
+  .bk-pg-label{font-size:8px;min-width:80px}
 }
 </style>
 </head>
@@ -415,45 +646,233 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 <section id="hero">
   <div class="h-eye">Portafolio Profesional 2026</div>
 
-  <div class="bk-wrap">
-    <div class="pg" id="page">
-      <div class="front">
-        <div class="bk-l">
-          <div class="bk-av">JEP</div>
-          <div class="bk-nm">Junior Estiben Portilla</div>
-          <div class="bk-rl">Diseñador Gráfico · Web · Interiores</div>
-          <p class="bk-dc">Transformando ideas en experiencias visuales modernas, elegantes y funcionales desde el Putumayo al mundo.</p>
-          <div class="bk-bs">
-            <a href="#services" class="bb-g">Ver Servicios</a>
-            <a href="https://wa.me/573223729232?text=Hola%20quiero%20información" target="_blank" rel="noopener noreferrer" class="bb-o">Contactar</a>
-          </div>
-        </div>
-        <div class="bk-r">
-          <h2>Especialidades</h2>
-          <div class="bk-tl">
-            <div class="bk-it"><div class="by">Diseño Web</div><div class="bt">UI/UX & Desarrollo Web</div><div class="bd">Páginas modernas, rápidas y responsivas con estética premium.</div></div>
-            <div class="bk-it"><div class="by">Identidad Visual</div><div class="bt">Branding & Diseño Gráfico</div><div class="bd">Logos, identidad corporativa y piezas digitales de alto impacto.</div></div>
-            <div class="bk-it"><div class="by">Espacios</div><div class="bt">Diseño de Interiores</div><div class="bd">Espacios modernos, minimalistas y con identidad propia.</div></div>
-            <div class="bk-it"><div class="by">Contenido</div><div class="bt">Contenido Visual Premium</div><div class="bd">Edición, publicidad digital y redes sociales de alto nivel.</div></div>
-          </div>
-        </div>
-      </div>
-      <div class="back">
-        <div class="b-div"></div>
-        <div class="back-logo">JEP</div>
-        <div class="b-tag">Designer · Colombia</div>
-        <div class="b-tl">Creatividad · Innovación · Elegancia</div>
-        <div class="b-div"></div>
-      </div>
+  <!-- ══════════════ LUXURY MULTI-PAGE BOOK ══════════════ -->
+  <div class="book-wrap">
+
+    <!-- RINGS -->
+    <div class="bk-rings">
+      <div class="bk-ring"></div>
+      <div class="bk-ring"></div>
+      <div class="bk-ring"></div>
+      <div class="bk-ring"></div>
+      <div class="bk-ring"></div>
+      <div class="bk-ring"></div>
+      <div class="bk-ring"></div>
     </div>
+
+    <div class="book-inner" id="bookInner">
+
+      <!-- ═══ PAGE 1 — PORTADA ═══ -->
+      <div class="bk-page" id="bkp1" style="z-index:9">
+        <div class="bk-front cover">
+          <div class="bk-corner tl"></div>
+          <div class="bk-corner tr"></div>
+          <div class="bk-corner bl"></div>
+          <div class="bk-corner br"></div>
+          <div class="cover-logo">JEP</div>
+          <div class="cover-div"></div>
+          <div class="cover-sub">Designer · Colombia 2026</div>
+          <div class="cover-div"></div>
+          <div class="cover-role">Portafolio Profesional</div>
+        </div>
+        <div class="bk-back">
+          <div class="bk-back-inner">
+            <div class="bi-logo">JEP</div>
+            <div class="bi-div"></div>
+            <div class="bi-tag">Designer · Colombia</div>
+            <div class="bi-it">Creatividad · Innovación · Elegancia</div>
+            <div class="bi-div"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ PAGE 2 — PERFIL ═══ -->
+      <div class="bk-page" id="bkp2" style="z-index:8">
+        <div class="bk-front">
+          <div class="spread">
+            <div class="spread-l">
+              <div class="sp-av">JEP</div>
+              <div class="sp-name">Junior Estiben<br>Portilla</div>
+              <div class="sp-role">Diseñador Gráfico · Web · Interiores</div>
+              <p class="sp-desc">Transformando ideas en experiencias visuales modernas desde el Putumayo al mundo.</p>
+              <div class="sp-btns">
+                <a href="#services" class="sp-btn-g">Ver Servicios</a>
+                <a href="https://wa.me/573223729232?text=Hola%20quiero%20información" target="_blank" rel="noopener noreferrer" class="sp-btn-o">Contactar</a>
+              </div>
+            </div>
+            <div class="spread-r">
+              <div class="sp-h2">Especialidades</div>
+              <div class="sp-tl">
+                <div class="sp-it"><div class="sp-by">Diseño Web</div><div class="sp-bt">UI/UX & Desarrollo Web</div><div class="sp-bd">Páginas modernas, rápidas y responsivas con estética premium.</div></div>
+                <div class="sp-it"><div class="sp-by">Identidad Visual</div><div class="sp-bt">Branding & Diseño Gráfico</div><div class="sp-bd">Logos, identidad corporativa y piezas digitales de alto impacto.</div></div>
+                <div class="sp-it"><div class="sp-by">Espacios</div><div class="sp-bt">Diseño de Interiores</div><div class="sp-bd">Espacios modernos, minimalistas y con identidad propia.</div></div>
+                <div class="sp-it"><div class="sp-by">Contenido</div><div class="sp-bt">Contenido Visual Premium</div><div class="sp-bd">Edición, publicidad digital y redes sociales de alto nivel.</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bk-back">
+          <div class="text-spread">
+            <span class="ts-icon">✦</span>
+            <div class="ts-title">Creatividad Auténtica</div>
+            <div class="ts-div"></div>
+            <p class="ts-body">Cada proyecto nace desde una visión artística genuina. La creatividad no es un accidente — es el resultado de pasión, proceso y propósito.</p>
+            <div class="ts-div"></div>
+            <div class="ts-tag">JEP Designer · 2026</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ PAGE 3 — IMAGEN 01 + 02 ═══ -->
+      <div class="bk-page" id="bkp3" style="z-index:7">
+        <div class="bk-front">
+          <div class="img-full">
+            <img src="jep-portfolio-01.jpg"
+                 alt="Proyecto Diseño Gráfico y Branding - JEP Designer"
+                 loading="lazy"
+                 onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><div class=\'ph-icon\'>🖼️</div><div class=\'ph-name\'>jep-portfolio-01.jpg</div><div class=\'ph-size\'>1200 × 750 px</div></div><div class=\'img-cap\'><span class=\'img-cap-num\'>Portfolio · 01</span><div class=\'img-cap-title\'>Diseño Gráfico &amp; Branding</div><div class=\'img-cap-sub\'>JEP Designer · Identidad Visual</div></div>'">
+            <div class="img-overlay"></div>
+            <div class="img-cap">
+              <span class="img-cap-num">Portfolio · 01</span>
+              <div class="img-cap-title">Diseño Gráfico & Branding</div>
+              <div class="img-cap-sub">JEP Designer · Identidad Visual</div>
+            </div>
+          </div>
+        </div>
+        <div class="bk-back">
+          <div class="img-full">
+            <img src="jep-portfolio-02.jpg"
+                 alt="Proyecto Diseño Web UI UX - JEP Designer"
+                 loading="lazy"
+                 onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><div class=\'ph-icon\'>🌐</div><div class=\'ph-name\'>jep-portfolio-02.jpg</div><div class=\'ph-size\'>1200 × 750 px</div></div><div class=\'img-cap\'><span class=\'img-cap-num\'>Portfolio · 02</span><div class=\'img-cap-title\'>Diseño Web Premium · UI/UX</div><div class=\'img-cap-sub\'>JEP Designer · Experiencia Digital</div></div>'">
+            <div class="img-overlay"></div>
+            <div class="img-cap">
+              <span class="img-cap-num">Portfolio · 02</span>
+              <div class="img-cap-title">Diseño Web Premium · UI/UX</div>
+              <div class="img-cap-sub">JEP Designer · Experiencia Digital</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ PAGE 4 — IMAGEN 03 + 04 ═══ -->
+      <div class="bk-page" id="bkp4" style="z-index:6">
+        <div class="bk-front">
+          <div class="img-full">
+            <img src="jep-portfolio-03.jpg"
+                 alt="Proyecto Diseño de Interiores - JEP Designer"
+                 loading="lazy"
+                 onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><div class=\'ph-icon\'>🏠</div><div class=\'ph-name\'>jep-portfolio-03.jpg</div><div class=\'ph-size\'>1200 × 750 px</div></div><div class=\'img-cap\'><span class=\'img-cap-num\'>Portfolio · 03</span><div class=\'img-cap-title\'>Diseño de Interiores</div><div class=\'img-cap-sub\'>JEP Designer · Espacios Modernos</div></div>'">
+            <div class="img-overlay"></div>
+            <div class="img-cap">
+              <span class="img-cap-num">Portfolio · 03</span>
+              <div class="img-cap-title">Diseño de Interiores</div>
+              <div class="img-cap-sub">JEP Designer · Espacios Modernos</div>
+            </div>
+          </div>
+        </div>
+        <div class="bk-back">
+          <div class="img-full">
+            <img src="jep-portfolio-04.jpg"
+                 alt="Contenido Visual y Redes Sociales - JEP Designer"
+                 loading="lazy"
+                 onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><div class=\'ph-icon\'>🎨</div><div class=\'ph-name\'>jep-portfolio-04.jpg</div><div class=\'ph-size\'>1200 × 750 px</div></div><div class=\'img-cap\'><span class=\'img-cap-num\'>Portfolio · 04</span><div class=\'img-cap-title\'>Contenido Visual &amp; Redes</div><div class=\'img-cap-sub\'>JEP Designer · Marketing Digital</div></div>'">
+            <div class="img-overlay"></div>
+            <div class="img-cap">
+              <span class="img-cap-num">Portfolio · 04</span>
+              <div class="img-cap-title">Contenido Visual & Redes</div>
+              <div class="img-cap-sub">JEP Designer · Marketing Digital</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ PAGE 5 — IMAGEN 05 + filosofía ═══ -->
+      <div class="bk-page" id="bkp5" style="z-index:5">
+        <div class="bk-front">
+          <div class="img-full">
+            <img src="jep-portfolio-05.jpg"
+                 alt="Proyecto Destacado 2026 - JEP Designer"
+                 loading="lazy"
+                 onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><div class=\'ph-icon\'>◈</div><div class=\'ph-name\'>jep-portfolio-05.jpg</div><div class=\'ph-size\'>1200 × 750 px</div></div><div class=\'img-cap\'><span class=\'img-cap-num\'>Portfolio · 05</span><div class=\'img-cap-title\'>Proyecto Destacado 2026</div><div class=\'img-cap-sub\'>JEP Designer · Colombia</div></div>'">
+            <div class="img-overlay"></div>
+            <div class="img-cap">
+              <span class="img-cap-num">Portfolio · 05</span>
+              <div class="img-cap-title">Proyecto Destacado 2026</div>
+              <div class="img-cap-sub">JEP Designer · Colombia</div>
+            </div>
+          </div>
+        </div>
+        <div class="bk-back">
+          <div class="text-spread" style="background:linear-gradient(145deg,#060612,#040408)">
+            <span class="ts-icon">🎨</span>
+            <div class="ts-title" style="color:var(--magenta)">Filosofía Creativa</div>
+            <div class="ts-div" style="background:linear-gradient(90deg,transparent,var(--magenta),transparent)"></div>
+            <p class="ts-body">"El diseño no solo se observa, se siente. Cada detalle comunica una historia. Cada color despierta una emoción. Cada forma tiene un significado."</p>
+            <div class="ts-div" style="background:linear-gradient(90deg,transparent,var(--magenta),transparent)"></div>
+            <div class="ts-tag" style="color:var(--magenta)">— Junior Estiben Portilla</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ PAGE 6 — VISIÓN 2026 ═══ -->
+      <div class="bk-page" id="bkp6" style="z-index:4">
+        <div class="bk-front">
+          <div class="text-spread" style="background:linear-gradient(145deg,#080814,#050508)">
+            <span class="ts-icon">◉</span>
+            <div class="ts-title" style="color:var(--cyan)">Visión 2026</div>
+            <div class="ts-div" style="background:linear-gradient(90deg,transparent,var(--cyan),transparent)"></div>
+            <p class="ts-body">En 2026 una página web debe transmitir más que información: debe generar experiencia, emoción y conexión real. El futuro del diseño es inmersivo, interactivo y profundamente humano.</p>
+            <div class="ts-div" style="background:linear-gradient(90deg,transparent,var(--cyan),transparent)"></div>
+            <div class="ts-tag" style="color:var(--cyan)">Futurista · Minimalista · Inmersivo</div>
+          </div>
+        </div>
+        <div class="bk-back">
+          <div class="text-spread" style="background:linear-gradient(145deg,#06060f,#0a0a18)">
+            <span class="ts-icon" style="font-size:28px;margin-bottom:6px">🏠</span>
+            <div class="ts-title" style="font-size:20px;margin-bottom:8px">Diseño de Interiores</div>
+            <div class="ts-div"></div>
+            <p class="ts-body" style="font-size:12px">Espacios que cuentan historias. Diseño interior moderno y minimalista que combina funcionalidad con elegancia y personalidad propia.</p>
+            <div class="ts-div"></div>
+            <span class="ts-icon" style="font-size:28px;margin-bottom:6px">◈</span>
+            <div class="ts-title" style="font-size:20px;margin-bottom:8px">Branding Profesional</div>
+            <p class="ts-body" style="font-size:12px">Construcción de marcas sólidas con identidad visual estratégica y presencia digital moderna y memorable.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ PAGE 7 — CIERRE ═══ -->
+      <div class="bk-page" id="bkp7" style="z-index:3">
+        <div class="bk-front">
+          <div class="final-spread">
+            <div class="fs-title">Trabajemos Juntos</div>
+            <p class="fs-body">¿Tienes una idea, proyecto o marca que deseas llevar al siguiente nivel? Será un placer crear algo único, moderno y extraordinario.</p>
+            <a href="https://wa.me/573223729232?text=Hola%20quiero%20información" target="_blank" rel="noopener noreferrer" class="fs-cta">Iniciar Proyecto ✦</a>
+          </div>
+        </div>
+        <div class="bk-back">
+          <div class="bk-back-inner">
+            <div class="bi-logo">JEP</div>
+            <div class="bi-div"></div>
+            <div class="bi-tag">Gracias por esta experiencia</div>
+            <div class="bi-it">Colombia · 2026 · jepdesigner.com</div>
+            <div class="bi-div"></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /book-inner -->
+  </div><!-- /book-wrap -->
+
+  <!-- BOOK CONTROLS -->
+  <div class="bk-nav">
+    <button class="bk-btn" id="bkPrev" onclick="bkPrev()">‹ Anterior</button>
+    <div class="bk-pg-label" id="bkLabel">Portada · 1 / 7</div>
+    <button class="bk-btn" id="bkNext" onclick="bkNext()">Siguiente ›</button>
   </div>
 
-  <div class="bk-ctl">
-    <button class="cb" onclick="document.getElementById('page').classList.add('flipped')">◧ Abrir</button>
-    <button class="cb" onclick="document.getElementById('page').classList.remove('flipped')">◨ Cerrar</button>
-  </div>
-
-  <div class="h-title" style="margin-top:54px">
+  <!-- HERO TITLE -->
+  <div class="h-title">
     <span class="gl" data-text="Junior Estiben">Junior Estiben</span>
     <span class="grd gl" data-text="Portilla">Portilla</span>
   </div>
@@ -471,16 +890,10 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 <section id="about">
   <div class="wrap">
     <div class="ab-grid">
-
       <div class="rv-l">
         <div class="ab-card tilt">
-          <div class="badge-row">
-            <div class="badge">23 años</div>
-          </div>
-          <div class="live">
-            <div class="live-dot"></div>
-            <div class="live-t">San Miguel La Dorada · Putumayo · Colombia</div>
-          </div>
+          <div class="badge-row"><div class="badge">23 años</div></div>
+          <div class="live"><div class="live-dot"></div><div class="live-t">San Miguel La Dorada · Putumayo · Colombia</div></div>
           <div class="sl">Identidad</div>
           <div class="st" style="font-size:34px">Quién<br>Soy <span class="ac">Yo</span></div>
           <div class="sdv"></div>
@@ -491,7 +904,6 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
           </div>
         </div>
       </div>
-
       <div class="ab-text rv-r" style="transition-delay:.15s">
         <div class="sl">Mi historia</div>
         <div class="st">Sobre <span class="ac">Junior</span></div>
@@ -499,36 +911,17 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
         <p>Desde temprana edad mostró interés por el arte visual, la estética digital y la creación de conceptos innovadores. Con los años desarrolló una identidad profesional enfocada en la elegancia, el minimalismo moderno y la creación de experiencias visuales de alto impacto.</p>
         <p>Actualmente es el fundador y creador de <strong>JEP Designer</strong>, una marca creativa enfocada en diseño profesional, branding, páginas web modernas, identidad visual y proyectos de interiores contemporáneos.</p>
         <p>Su filosofía de trabajo se basa en tres pilares fundamentales: <strong>creatividad auténtica</strong>, <strong>innovación visual</strong> y <strong>diseño con propósito</strong>. Junior busca que cada proyecto transmita personalidad, profesionalismo y una conexión emocional genuina.</p>
-
-        <!-- STATS REVEAL — reemplaza chips feos -->
         <div class="stats-reveal" id="stats-reveal">
           <div class="stat-row" style="transition-delay:.05s">
-            <div class="stat-item">
-              <div class="stat-num"><span class="num" data-target="23">0</span></div>
-              <div class="stat-label">Años de edad</div>
-              <div class="stat-desc">Joven con visión global</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-num"><span class="num" data-target="3">0</span></div>
-              <div class="stat-label">Disciplinas creativas</div>
-              <div class="stat-desc">Gráfico · Web · Interiores</div>
-            </div>
+            <div class="stat-item"><div class="stat-num"><span class="num" data-target="23">0</span></div><div class="stat-label">Años de edad</div><div class="stat-desc">Joven con visión global</div></div>
+            <div class="stat-item"><div class="stat-num"><span class="num" data-target="3">0</span></div><div class="stat-label">Disciplinas creativas</div><div class="stat-desc">Gráfico · Web · Interiores</div></div>
           </div>
           <div class="stat-row" style="transition-delay:.18s">
-            <div class="stat-item">
-              <div class="stat-num"><span class="num" data-target="6">0</span></div>
-              <div class="stat-label">Servicios disponibles</div>
-              <div class="stat-desc">Soluciones integrales</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-num"><span class="num" data-target="100">0</span><span class="suffix">%</span></div>
-              <div class="stat-label">Compromiso total</div>
-              <div class="stat-desc">En cada proyecto</div>
-            </div>
+            <div class="stat-item"><div class="stat-num"><span class="num" data-target="6">0</span></div><div class="stat-label">Servicios disponibles</div><div class="stat-desc">Soluciones integrales</div></div>
+            <div class="stat-item"><div class="stat-num"><span class="num" data-target="100">0</span><span class="suffix">%</span></div><div class="stat-label">Compromiso total</div><div class="stat-desc">En cada proyecto</div></div>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -631,7 +1024,6 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
           <div class="ci-it"><div class="ci-lb">País</div><div class="ci-vl">Colombia</div></div>
           <div class="ci-it"><div class="ci-lb">Ubicación</div><div class="ci-vl">San Miguel La Dorada, Putumayo</div></div>
         </div>
-
         <div class="soc3d" id="soc3d">
           <a href="https://www.instagram.com/estibenportilla" target="_blank" rel="noopener noreferrer" class="s3 ig" data-sm="220,39,67"><div class="s3-st"><canvas class="s3-sm" width="72" height="90"></canvas><div class="s3-ic"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="white" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="white" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="white"/></svg></div></div><span class="s3-lb">Instagram</span></a>
           <a href="https://vm.tiktok.com/ZS98VnbD2kmaG-WQ069/" target="_blank" rel="noopener noreferrer" class="s3 tk" data-sm="105,201,208"><div class="s3-st"><canvas class="s3-sm" width="72" height="90"></canvas><div class="s3-ic"><svg viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.27 8.27 0 004.84 1.55V6.79a4.85 4.85 0 01-1.07-.1z"/></svg></div></div><span class="s3-lb">TikTok</span></a>
@@ -641,7 +1033,6 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
           <a href="https://wa.me/573223729232?text=Hola%20quiero%20información" target="_blank" rel="noopener noreferrer" class="s3 wa" data-sm="37,211,102"><div class="s3-st"><canvas class="s3-sm" width="72" height="90"></canvas><div class="s3-ic"><svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div></div><span class="s3-lb">WhatsApp</span></a>
         </div>
       </div>
-
       <div class="ct-r rv-r" style="transition-delay:.2s;padding-top:80px">
         <div class="sl">¿Tienes un proyecto?</div>
         <p>¿Tienes una idea, proyecto o marca que deseas llevar al siguiente nivel? Será un placer ayudarte a crear algo único, moderno y profesional.</p>
@@ -659,10 +1050,10 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 </footer>
 
 <script>
-// LOADER
+/* ══ LOADER ══ */
 window.addEventListener('load',()=>setTimeout(()=>document.getElementById('loader').classList.add('off'),2600));
 
-// CURSOR
+/* ══ CURSOR ══ */
 const cur=document.getElementById('cur'),ring=document.getElementById('cur-ring');
 let mx=0,my=0;
 document.addEventListener('mousemove',e=>{
@@ -675,14 +1066,14 @@ document.querySelectorAll('a,button').forEach(el=>{
   el.addEventListener('mouseleave',()=>ring.classList.remove('big'));
 });
 
-// SCROLL PROGRESS
+/* ══ SCROLL PROGRESS ══ */
 const prog=document.getElementById('prog');
 window.addEventListener('scroll',()=>{
   const max=document.documentElement.scrollHeight-window.innerHeight;
   prog.style.transform='scaleX('+(scrollY/max)+')';
 },{passive:true});
 
-// CANVAS PARTICLES
+/* ══ CANVAS PARTICLES ══ */
 const cv=document.getElementById('bg-canvas'),ctx=cv.getContext('2d');
 let W,H;
 function rsz(){W=cv.width=window.innerWidth;H=cv.height=window.innerHeight}
@@ -706,75 +1097,110 @@ function draw(){
 }
 draw();
 
-// NAV
+/* ══ NAV ══ */
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60),{passive:true});
 
-// REVEAL
+/* ══ REVEAL ══ */
 const obs=new IntersectionObserver(en=>{en.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')})},{threshold:.08});
 document.querySelectorAll('.rv,.rv-l,.rv-r,.rv-scale').forEach(el=>obs.observe(el));
 
-// ─── STATS REVEAL + COUNTER ───
+/* ══ STATS ══ */
 function animateCounter(el,target,duration=1200){
   const start=performance.now();
-  const suffix=el.nextElementSibling&&el.nextElementSibling.classList.contains('suffix')?'':'';
-  function step(now){
-    const p=Math.min((now-start)/duration,1);
-    const ease=1-Math.pow(1-p,4);
-    el.textContent=Math.round(ease*target);
-    if(p<1)requestAnimationFrame(step);
-    else el.textContent=target;
-  }
+  function step(now){const p=Math.min((now-start)/duration,1);const ease=1-Math.pow(1-p,4);el.textContent=Math.round(ease*target);if(p<1)requestAnimationFrame(step);else el.textContent=target}
   requestAnimationFrame(step);
 }
-
 const statsObs=new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
     if(!entry.isIntersecting)return;
     const rows=entry.target.querySelectorAll('.stat-row');
-    rows.forEach((row,i)=>{
-      setTimeout(()=>{
-        row.classList.add('on');
-        row.querySelectorAll('.num').forEach(num=>{
-          const target=parseInt(num.dataset.target);
-          animateCounter(num,target,1400);
-        });
-      },i*180);
-    });
+    rows.forEach((row,i)=>{setTimeout(()=>{row.classList.add('on');row.querySelectorAll('.num').forEach(num=>animateCounter(num,parseInt(num.dataset.target),1400))},i*180)});
     statsObs.unobserve(entry.target);
   });
 },{threshold:.25});
-
 const sr=document.getElementById('stats-reveal');
 if(sr)statsObs.observe(sr);
 
-// PARALLAX HERO TITLE
+/* ══ PARALLAX HERO TITLE ══ */
 const ht=document.querySelector('.h-title');
 window.addEventListener('scroll',()=>{if(ht)ht.style.transform=`translateY(${scrollY*.25}px)`},{passive:true});
 
-// 3D TILT
+/* ══ 3D TILT ══ */
 document.querySelectorAll('.tilt').forEach(card=>{
-  card.addEventListener('mousemove',e=>{
-    const r=card.getBoundingClientRect();
-    const dx=(e.clientX-r.left-r.width/2)/r.width;
-    const dy=(e.clientY-r.top-r.height/2)/r.height;
-    card.style.transform=`perspective(900px) rotateY(${dx*11}deg) rotateX(${-dy*11}deg) scale(1.025)`;
-  });
+  card.addEventListener('mousemove',e=>{const r=card.getBoundingClientRect();const dx=(e.clientX-r.left-r.width/2)/r.width;const dy=(e.clientY-r.top-r.height/2)/r.height;card.style.transform=`perspective(900px) rotateY(${dx*11}deg) rotateX(${-dy*11}deg) scale(1.025)`});
   card.addEventListener('mouseleave',()=>card.style.transform='');
 });
 
-// MAGNETIC
+/* ══ MAGNETIC ══ */
 document.querySelectorAll('.mag').forEach(el=>{
-  el.addEventListener('mousemove',e=>{
-    const r=el.getBoundingClientRect();
-    const dx=(e.clientX-r.left-r.width/2)*.3;
-    const dy=(e.clientY-r.top-r.height/2)*.3;
-    el.style.transform=`translate(${dx}px,${dy}px)`;
-  });
+  el.addEventListener('mousemove',e=>{const r=el.getBoundingClientRect();el.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.3}px,${(e.clientY-r.top-r.height/2)*.3}px)`});
   el.addEventListener('mouseleave',()=>el.style.transform='');
 });
 
-// SMOKE PARTICLES
+/* ══════════════════════════════════
+   LUXURY BOOK — 7 PÁGINAS
+══════════════════════════════════ */
+const bkPages=document.querySelectorAll('.bk-page');
+const TOTAL=bkPages.length;
+const labels=['Portada','Perfil','Portfolio 1-2','Portfolio 3-4','Portfolio 5','Visión','Cierre'];
+let bkCurrent=0;
+
+const bkPrevBtn=document.getElementById('bkPrev');
+const bkNextBtn=document.getElementById('bkNext');
+const bkLbl=document.getElementById('bkLabel');
+
+function bkUpdateUI(){
+  bkLbl.textContent=`${labels[bkCurrent]} · ${bkCurrent+1} / ${TOTAL}`;
+  bkPrevBtn.disabled=(bkCurrent===0);
+  bkNextBtn.disabled=(bkCurrent===TOTAL);
+}
+
+function bkNext(){
+  if(bkCurrent<TOTAL){
+    bkPages[bkCurrent].style.zIndex=100-bkCurrent;
+    bkPages[bkCurrent].classList.add('flipped');
+    bkCurrent++;
+    bkUpdateUI();
+  }
+}
+
+function bkPrev(){
+  if(bkCurrent>0){
+    bkCurrent--;
+    bkPages[bkCurrent].classList.remove('flipped');
+    bkUpdateUI();
+  }
+}
+
+/* CLICK en la cara visible para avanzar / retroceder */
+bkPages.forEach((page,i)=>{
+  page.querySelector('.bk-front').addEventListener('click',()=>{
+    if(i===bkCurrent)bkNext();
+  });
+  page.querySelector('.bk-back').addEventListener('click',()=>{
+    if(i===bkCurrent-1)bkPrev();
+  });
+});
+
+/* TECLADO */
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowRight'||e.key==='ArrowDown')bkNext();
+  if(e.key==='ArrowLeft'||e.key==='ArrowUp')bkPrev();
+});
+
+/* SWIPE táctil para móvil */
+let tStartX=0;
+const bookEl=document.querySelector('.book-wrap');
+bookEl.addEventListener('touchstart',e=>{tStartX=e.touches[0].clientX},{passive:true});
+bookEl.addEventListener('touchend',e=>{
+  const diff=tStartX-e.changedTouches[0].clientX;
+  if(Math.abs(diff)>40){diff>0?bkNext():bkPrev();}
+},{passive:true});
+
+bkUpdateUI();
+
+/* ══ SMOKE PARTICLES ══ */
 (function(){
   class Smoke{
     constructor(cv,col){this.cv=cv;this.cx=cv.getContext('2d');this.col=col;this.ps=[]}
