@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -88,9 +87,7 @@ section{position:relative;z-index:1}
 .rv-scale{opacity:0;transform:scale(.88);transition:opacity .9s cubic-bezier(.2,1,.2,1),transform .9s cubic-bezier(.2,1,.2,1)}
 .rv-scale.on{opacity:1;transform:scale(1)}
 
-/* ══════════════════════════════════
-   HERO
-══════════════════════════════════ */
+/* HERO */
 #hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:140px 72px 110px;position:relative}
 .h-eye{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.5em;text-transform:uppercase;color:var(--cyan);margin-bottom:42px;display:flex;align-items:center;gap:16px;opacity:0;animation:fu 1s 2.3s ease forwards}
 .h-eye::before,.h-eye::after{content:'';width:28px;height:1px;background:linear-gradient(90deg,var(--gold),var(--cyan))}
@@ -293,309 +290,95 @@ section{position:relative;z-index:1}
 .q-tx{font-family:'Libre Baskerville',serif;font-style:italic;font-size:clamp(20px,3.2vw,42px);color:var(--white);line-height:1.42;max-width:820px;margin:0 auto 28px}
 .q-au{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.35em;background:linear-gradient(90deg,var(--gold),var(--orange));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-transform:uppercase}
 
-/* ══════════════════════════════════
-   COMENTARIOS SECTION
-══════════════════════════════════ */
+/* COMENTARIOS */
 #comentarios{padding:150px 0;position:relative}
 #comentarios::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(201,168,76,.04),transparent 60%);pointer-events:none}
 
-/* BANNER DIRIGIDOR — visible antes del login */
-.cm-banner{
-  background:linear-gradient(135deg,rgba(201,168,76,.08),rgba(240,30,143,.06));
-  border:1px solid var(--border);
-  border-radius:20px;
-  padding:36px 44px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:28px;
-  margin-bottom:52px;
-  position:relative;
-  overflow:hidden;
-  flex-wrap:wrap;
-}
-.cm-banner::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:2px;
-  background:linear-gradient(90deg,transparent,var(--gold),var(--orange),var(--magenta),transparent);
-}
+.cm-banner{background:linear-gradient(135deg,rgba(201,168,76,.08),rgba(240,30,143,.06));border:1px solid var(--border);border-radius:20px;padding:36px 44px;display:flex;align-items:center;justify-content:space-between;gap:28px;margin-bottom:52px;position:relative;overflow:hidden;flex-wrap:wrap}
+.cm-banner::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),var(--orange),var(--magenta),transparent)}
 .cm-banner-left{display:flex;align-items:center;gap:20px}
-.cm-banner-icon{
-  width:58px;height:58px;border-radius:14px;
-  background:linear-gradient(135deg,var(--gold),var(--orange),var(--magenta));
-  display:flex;align-items:center;justify-content:center;
-  font-size:26px;flex-shrink:0;
-  box-shadow:0 8px 28px rgba(240,30,143,.3);
-}
-.cm-banner-text h3{
-  font-family:'Syne',sans-serif;font-size:20px;font-weight:800;
-  color:var(--white);margin-bottom:4px;
-}
-.cm-banner-text p{
-  font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;
-  color:var(--white-dim);text-transform:uppercase;
-}
-.cm-banner-btn{
-  padding:14px 36px;
-  background:linear-gradient(135deg,var(--gold),var(--orange),var(--magenta));
-  color:#050507;border:none;border-radius:8px;
-  font-family:'Space Mono',monospace;font-size:10px;font-weight:700;
-  letter-spacing:.18em;text-transform:uppercase;
-  cursor:none;transition:all .3s;
-  display:flex;align-items:center;gap:10px;
-  white-space:nowrap;
-  text-decoration:none;
-}
+.cm-banner-icon{width:58px;height:58px;border-radius:14px;background:linear-gradient(135deg,var(--gold),var(--orange),var(--magenta));display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;box-shadow:0 8px 28px rgba(240,30,143,.3)}
+.cm-banner-text h3{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:var(--white);margin-bottom:4px}
+.cm-banner-text p{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;color:var(--white-dim);text-transform:uppercase}
+.cm-banner-btn{padding:14px 36px;background:linear-gradient(135deg,var(--gold),var(--orange),var(--magenta));color:#050507;border:none;border-radius:8px;font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;cursor:none;transition:all .3s;display:flex;align-items:center;gap:10px;white-space:nowrap;text-decoration:none}
 .cm-banner-btn:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(240,30,143,.45)}
 .cm-banner-btn .arrow{font-size:16px;transition:transform .3s}
 .cm-banner-btn:hover .arrow{transform:translateX(4px)}
 
-/* GRID COMENTARIOS */
 .cm-main-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
 
-/* LOGIN PANEL */
-.cm-login-panel{
-  background:var(--glass);
-  border:1px solid var(--glass-b);
-  border-radius:24px;
-  overflow:hidden;
-  position:relative;
-}
-.cm-login-panel::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:2px;
-  background:linear-gradient(90deg,transparent,var(--orange),var(--gold),transparent);
-}
-.cm-login-header{
-  padding:32px 36px 24px;
-  background:linear-gradient(180deg,rgba(255,115,0,.06),transparent);
-  text-align:center;
-  border-bottom:1px solid var(--glass-b);
-}
-.cm-login-crown{
-  width:72px;height:72px;border-radius:50%;
-  background:linear-gradient(135deg,#ff5e00,#ffb347);
-  display:flex;justify-content:center;align-items:center;
-  margin:0 auto 16px;
-  font-size:30px;color:#fff;
-  box-shadow:0 8px 28px rgba(255,94,0,.4);
-}
-.cm-login-header h3{
-  font-family:'Syne',sans-serif;font-size:20px;font-weight:800;
-  color:var(--white);margin-bottom:6px;
-}
-.cm-login-header p{
-  font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.25em;
-  color:var(--white-dim);text-transform:uppercase;
-}
+.cm-login-panel{background:var(--glass);border:1px solid var(--glass-b);border-radius:24px;overflow:hidden;position:relative}
+.cm-login-panel::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--orange),var(--gold),transparent)}
+.cm-login-header{padding:32px 36px 24px;background:linear-gradient(180deg,rgba(255,115,0,.06),transparent);text-align:center;border-bottom:1px solid var(--glass-b)}
+.cm-login-crown{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#ff5e00,#ffb347);display:flex;justify-content:center;align-items:center;margin:0 auto 16px;font-size:30px;color:#fff;box-shadow:0 8px 28px rgba(255,94,0,.4)}
+.cm-login-header h3{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:var(--white);margin-bottom:6px}
+.cm-login-header p{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.25em;color:var(--white-dim);text-transform:uppercase}
 .cm-login-body{padding:28px 36px 36px}
 .cm-input-box{position:relative;margin-bottom:18px}
-.cm-input-box input{
-  width:100%;padding:14px 14px 14px 46px;
-  background:rgba(255,255,255,.05);
-  border:1px solid var(--glass-b);
-  border-radius:12px;
-  outline:none;
-  font-family:'Poppins',sans-serif;
-  font-size:14px;
-  color:var(--white);
-  transition:border-color .3s,background .3s;
-}
+.cm-input-box input{width:100%;padding:14px 14px 14px 46px;background:rgba(255,255,255,.05);border:1px solid var(--glass-b);border-radius:12px;outline:none;font-family:'Poppins',sans-serif;font-size:14px;color:var(--white);transition:border-color .3s,background .3s}
 .cm-input-box input::placeholder{color:rgba(240,238,232,.3)}
 .cm-input-box input:focus{border-color:rgba(255,115,0,.5);background:rgba(255,115,0,.06)}
-.cm-input-box i{
-  position:absolute;left:16px;top:50%;transform:translateY(-50%);
-  color:#ff8c3a;font-size:14px;
-}
-.cm-login-btn{
-  width:100%;padding:15px;
-  border:none;border-radius:12px;
-  background:linear-gradient(135deg,#ff5e00,#ff9900);
-  color:white;font-family:'Poppins',sans-serif;
-  font-size:15px;font-weight:600;
-  cursor:none;transition:all .3s;
-  display:flex;align-items:center;justify-content:center;gap:10px;
-}
+.cm-input-box i{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:#ff8c3a;font-size:14px}
+.cm-login-btn{width:100%;padding:15px;border:none;border-radius:12px;background:linear-gradient(135deg,#ff5e00,#ff9900);color:white;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;cursor:none;transition:all .3s;display:flex;align-items:center;justify-content:center;gap:10px}
 .cm-login-btn:hover{transform:translateY(-3px);box-shadow:0 12px 36px rgba(255,94,0,.4)}
-.cm-login-links{
-  display:flex;justify-content:space-between;margin-top:16px;
-}
-.cm-login-links a{
-  font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.12em;
-  color:var(--white-dim);text-decoration:none;text-transform:uppercase;transition:color .3s;
-}
+.cm-login-links{display:flex;justify-content:space-between;margin-top:16px}
+.cm-login-links a{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.12em;color:var(--white-dim);text-decoration:none;text-transform:uppercase;transition:color .3s}
 .cm-login-links a:hover{color:var(--gold)}
-.cm-login-note{
-  margin-top:22px;padding:14px 18px;
-  border-radius:12px;
-  background:rgba(255,115,0,.07);
-  border:1px solid rgba(255,115,0,.2);
-  text-align:center;
-}
-.cm-login-note p{
-  font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.12em;
-  color:rgba(240,238,232,.55);text-transform:uppercase;line-height:1.7;
-}
+.cm-login-note{margin-top:22px;padding:14px 18px;border-radius:12px;background:rgba(255,115,0,.07);border:1px solid rgba(255,115,0,.2);text-align:center}
+.cm-login-note p{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.12em;color:rgba(240,238,232,.55);text-transform:uppercase;line-height:1.7}
 .cm-login-note span{color:#ffd86f;font-weight:600}
 
-/* COMMENTS DISPLAY PANEL */
-.cm-display-panel{
-  background:var(--glass);
-  border:1px solid var(--glass-b);
-  border-radius:24px;
-  overflow:hidden;
-  position:relative;
-}
-.cm-display-panel::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:2px;
-  background:linear-gradient(90deg,transparent,var(--cyan),var(--magenta),transparent);
-}
-.cm-display-header{
-  padding:28px 32px 22px;
-  border-bottom:1px solid var(--glass-b);
-  display:flex;align-items:center;justify-content:space-between;
-}
-.cm-display-header h3{
-  font-family:'Syne',sans-serif;font-size:16px;font-weight:800;color:var(--white);
-  display:flex;align-items:center;gap:10px;
-}
-.cm-display-header h3 span{
-  font-family:'Space Mono',monospace;font-size:10px;font-weight:400;
-  letter-spacing:.25em;color:var(--cyan);text-transform:uppercase;
-}
-.cm-display-header .cm-count{
-  background:linear-gradient(135deg,var(--gold),var(--magenta));
-  color:#050507;font-family:'Syne',sans-serif;font-size:12px;font-weight:800;
-  padding:4px 12px;border-radius:100px;
-}
+.cm-display-panel{background:var(--glass);border:1px solid var(--glass-b);border-radius:24px;overflow:hidden;position:relative}
+.cm-display-panel::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--cyan),var(--magenta),transparent)}
+.cm-display-header{padding:28px 32px 22px;border-bottom:1px solid var(--glass-b);display:flex;align-items:center;justify-content:space-between}
+.cm-display-header h3{font-family:'Syne',sans-serif;font-size:16px;font-weight:800;color:var(--white);display:flex;align-items:center;gap:10px}
+.cm-display-header h3 span{font-family:'Space Mono',monospace;font-size:10px;font-weight:400;letter-spacing:.25em;color:var(--cyan);text-transform:uppercase}
+.cm-display-header .cm-count{background:linear-gradient(135deg,var(--gold),var(--magenta));color:#050507;font-family:'Syne',sans-serif;font-size:12px;font-weight:800;padding:4px 12px;border-radius:100px}
 .cm-list{padding:24px 28px;max-height:380px;overflow-y:auto;display:flex;flex-direction:column;gap:16px}
 .cm-list::-webkit-scrollbar{width:2px}
 .cm-list::-webkit-scrollbar-thumb{background:var(--border);border-radius:1px}
-.cm-empty{
-  padding:52px 28px;text-align:center;
-}
+.cm-empty{padding:52px 28px;text-align:center}
 .cm-empty-icon{font-size:44px;opacity:.25;display:block;margin-bottom:14px}
-.cm-empty-txt{
-  font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.25em;
-  color:rgba(240,238,232,.25);text-transform:uppercase;line-height:1.8;
-}
-/* COMMENT CARD */
-.cm-card{
-  background:rgba(255,255,255,.03);
-  border:1px solid rgba(201,168,76,.12);
-  border-radius:14px;
-  padding:18px 20px;
-  transition:border-color .3s,transform .3s;
-  animation:cmIn .5s cubic-bezier(.2,1,.2,1) forwards;
-}
+.cm-empty-txt{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.25em;color:rgba(240,238,232,.25);text-transform:uppercase;line-height:1.8}
+
+.cm-card{background:rgba(255,255,255,.03);border:1px solid rgba(201,168,76,.12);border-radius:14px;padding:18px 20px;transition:border-color .3s,transform .3s;animation:cmIn .5s cubic-bezier(.2,1,.2,1) forwards}
 @keyframes cmIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 .cm-card:hover{border-color:rgba(201,168,76,.28);transform:translateY(-2px)}
 .cm-card-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
 .cm-card-author{display:flex;align-items:center;gap:10px}
-.cm-card-av{
-  width:34px;height:34px;border-radius:50%;
-  background:linear-gradient(135deg,var(--gold),var(--magenta));
-  display:flex;align-items:center;justify-content:center;
-  font-family:'Syne',sans-serif;font-size:13px;font-weight:800;color:#050507;
-  flex-shrink:0;
-}
-.cm-card-name{
-  font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--white);
-}
-.cm-card-date{
-  font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.15em;
-  color:rgba(240,238,232,.3);text-transform:uppercase;
-}
+.cm-card-av{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--magenta));display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:13px;font-weight:800;color:#050507;flex-shrink:0}
+.cm-card-name{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--white)}
+.cm-card-date{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.15em;color:rgba(240,238,232,.3);text-transform:uppercase}
 .cm-card-stars{color:var(--gold);font-size:11px;letter-spacing:2px}
-.cm-card-body{
-  font-size:13px;line-height:1.75;color:var(--white-dim);
-  font-family:'Libre Baskerville',serif;
-}
+.cm-card-body{font-size:13px;line-height:1.75;color:var(--white-dim);font-family:'Libre Baskerville',serif}
 
-/* WRITE COMMENT FORM (aparece tras login) */
-.cm-write-panel{
-  background:var(--glass);
-  border:1px solid var(--glass-b);
-  border-radius:24px;
-  overflow:hidden;
-  position:relative;
-  display:none;
-  grid-column:1;
-}
+.cm-write-panel{background:var(--glass);border:1px solid var(--glass-b);border-radius:24px;overflow:hidden;position:relative;display:none;grid-column:1}
 .cm-write-panel.visible{display:block}
-.cm-write-panel::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:2px;
-  background:linear-gradient(90deg,transparent,var(--gold),var(--orange),var(--magenta),transparent);
-}
-.cm-write-header{
-  padding:28px 32px 22px;
-  border-bottom:1px solid var(--glass-b);
-  display:flex;align-items:center;gap:14px;
-}
-.cm-write-badge{
-  font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.2em;
-  color:var(--cyan);text-transform:uppercase;
-  background:var(--cyan-dim);border:1px solid rgba(0,255,224,.2);
-  padding:5px 12px;border-radius:100px;
-}
-.cm-write-header h3{
-  font-family:'Syne',sans-serif;font-size:16px;font-weight:800;color:var(--white);
-}
-.cm-user-logged{
-  display:flex;align-items:center;gap:10px;margin-left:auto;
-}
-.cm-user-av{
-  width:32px;height:32px;border-radius:50%;
-  background:linear-gradient(135deg,var(--cyan),var(--gold));
-  display:flex;align-items:center;justify-content:center;
-  font-family:'Syne',sans-serif;font-size:13px;font-weight:800;color:#050507;
-}
+.cm-write-panel::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),var(--orange),var(--magenta),transparent)}
+.cm-write-header{padding:28px 32px 22px;border-bottom:1px solid var(--glass-b);display:flex;align-items:center;gap:14px}
+.cm-write-badge{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.2em;color:var(--cyan);text-transform:uppercase;background:var(--cyan-dim);border:1px solid rgba(0,255,224,.2);padding:5px 12px;border-radius:100px}
+.cm-write-header h3{font-family:'Syne',sans-serif;font-size:16px;font-weight:800;color:var(--white)}
+.cm-user-logged{display:flex;align-items:center;gap:10px;margin-left:auto}
+.cm-user-av{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--gold));display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:13px;font-weight:800;color:#050507}
 .cm-user-name{font-family:'Space Mono',monospace;font-size:10px;color:var(--cyan);letter-spacing:.15em}
 .cm-write-body{padding:28px 32px 32px}
 .cm-stars-pick{display:flex;gap:6px;margin-bottom:18px;align-items:center}
-.cm-stars-pick label{
-  font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;
-  color:var(--white-dim);text-transform:uppercase;margin-right:8px;
-}
-.star-btn{
-  background:none;border:none;font-size:22px;cursor:none;
-  color:rgba(201,168,76,.25);transition:color .2s,transform .2s;
-  line-height:1;
-}
+.cm-stars-pick label{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;color:var(--white-dim);text-transform:uppercase;margin-right:8px}
+.star-btn{background:none;border:none;font-size:22px;cursor:none;color:rgba(201,168,76,.25);transition:color .2s,transform .2s;line-height:1}
 .star-btn.active,.star-btn:hover{color:var(--gold);transform:scale(1.2)}
-.cm-textarea{
-  width:100%;
-  padding:16px 18px;
-  background:rgba(255,255,255,.04);
-  border:1px solid var(--glass-b);
-  border-radius:12px;
-  outline:none;
-  font-family:'Libre Baskerville',serif;
-  font-size:14px;
-  color:var(--white);
-  resize:vertical;
-  min-height:110px;
-  transition:border-color .3s,background .3s;
-  margin-bottom:16px;
-}
+.cm-textarea{width:100%;padding:16px 18px;background:rgba(255,255,255,.04);border:1px solid var(--glass-b);border-radius:12px;outline:none;font-family:'Libre Baskerville',serif;font-size:14px;color:var(--white);resize:vertical;min-height:110px;transition:border-color .3s,background .3s;margin-bottom:16px}
 .cm-textarea::placeholder{color:rgba(240,238,232,.25)}
 .cm-textarea:focus{border-color:rgba(201,168,76,.4);background:rgba(201,168,76,.04)}
-.cm-submit{
-  padding:14px 38px;
-  background:linear-gradient(135deg,var(--gold),var(--orange),var(--magenta));
-  color:#050507;border:none;border-radius:8px;
-  font-family:'Space Mono',monospace;font-size:10px;font-weight:700;
-  letter-spacing:.18em;text-transform:uppercase;
-  cursor:none;transition:all .3s;
-  display:flex;align-items:center;gap:10px;
-}
+.cm-submit{padding:14px 38px;background:linear-gradient(135deg,var(--gold),var(--orange),var(--magenta));color:#050507;border:none;border-radius:8px;font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;cursor:none;transition:all .3s;display:flex;align-items:center;gap:10px}
 .cm-submit:hover{transform:translateY(-3px);box-shadow:0 12px 36px rgba(240,30,143,.4)}
-.cm-logout-btn{
-  margin-left:auto;
-  background:transparent;border:1px solid rgba(240,238,232,.12);
-  border-radius:8px;padding:7px 16px;
-  font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.15em;
-  color:var(--white-dim);text-transform:uppercase;cursor:none;transition:all .3s;
-}
+.cm-logout-btn{margin-left:auto;background:transparent;border:1px solid rgba(240,238,232,.12);border-radius:8px;padding:7px 16px;font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.15em;color:var(--white-dim);text-transform:uppercase;cursor:none;transition:all .3s}
 .cm-logout-btn:hover{border-color:var(--magenta);color:var(--magenta)}
+
+/* Estado de carga de comentarios */
+.cm-loading{padding:52px 28px;text-align:center}
+.cm-loading-icon{font-size:32px;opacity:.4;display:block;margin-bottom:12px;animation:cmSpin 1.5s linear infinite}
+@keyframes cmSpin{to{transform:rotate(360deg)}}
+.cm-loading-txt{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.25em;color:rgba(240,238,232,.25);text-transform:uppercase}
 
 /* CONTACT */
 #contact{padding:150px 0}
@@ -752,7 +535,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
   </div>
 </div>
 
-<!-- ══ HERO ══ -->
+<!-- HERO -->
 <section id="hero">
   <div class="h-eye">Portafolio Profesional 2026</div>
   <div class="book-wrap">
@@ -762,7 +545,6 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
       <div class="bk-ring"></div>
     </div>
     <div class="book-inner" id="bookInner">
-      <!-- PAGE 1 — PORTADA -->
       <div class="bk-page" id="bkp1" style="z-index:9">
         <div class="bk-front cover">
           <div class="bk-corner tl"></div><div class="bk-corner tr"></div>
@@ -775,7 +557,6 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
         </div>
         <div class="bk-back"><div class="bk-back-inner"><div class="bi-logo">JEP</div><div class="bi-div"></div><div class="bi-tag">Designer · Colombia</div><div class="bi-it">Creatividad · Innovación · Elegancia</div><div class="bi-div"></div></div></div>
       </div>
-      <!-- PAGE 2 — PERFIL -->
       <div class="bk-page" id="bkp2" style="z-index:8">
         <div class="bk-front">
           <div class="spread">
@@ -802,27 +583,22 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
         </div>
         <div class="bk-back"><div class="text-spread"><span class="ts-icon">✦</span><div class="ts-title">Creatividad Auténtica</div><div class="ts-div"></div><p class="ts-body">Cada proyecto nace desde una visión artística genuina. La creatividad no es un accidente — es el resultado de pasión, proceso y propósito.</p><div class="ts-div"></div><div class="ts-tag">JEP Designer · 2026</div></div></div>
       </div>
-      <!-- PAGE 3 -->
       <div class="bk-page" id="bkp3" style="z-index:7">
         <div class="bk-front"><div class="img-full"><img src="jep-portfolio-01.jpg" alt="Portfolio 01" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><div class=\'ph-icon\'>🖼️</div><div class=\'ph-name\'>jep-portfolio-01.jpg</div><div class=\'ph-size\'>1200 × 750 px</div></div><div class=\'img-cap\'><span class=\'img-cap-num\'>Portfolio · 01</span><div class=\'img-cap-title\'>Diseño Gráfico &amp; Branding</div><div class=\'img-cap-sub\'>JEP Designer · Identidad Visual</div></div>'"><div class="img-overlay"></div><div class="img-cap"><span class="img-cap-num">Portfolio · 01</span><div class="img-cap-title">Diseño Gráfico & Branding</div><div class="img-cap-sub">JEP Designer · Identidad Visual</div></div></div></div>
         <div class="bk-back"><div class="img-full"><img src="jep-portfolio-02.jpg" alt="Portfolio 02" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><div class=\'ph-icon\'>🌐</div><div class=\'ph-name\'>jep-portfolio-02.jpg</div><div class=\'ph-size\'>1200 × 750 px</div></div><div class=\'img-cap\'><span class=\'img-cap-num\'>Portfolio · 02</span><div class=\'img-cap-title\'>Diseño Web Premium · UI/UX</div><div class=\'img-cap-sub\'>JEP Designer · Experiencia Digital</div></div>'"><div class="img-overlay"></div><div class="img-cap"><span class="img-cap-num">Portfolio · 02</span><div class="img-cap-title">Diseño Web Premium · UI/UX</div><div class="img-cap-sub">JEP Designer · Experiencia Digital</div></div></div></div>
       </div>
-      <!-- PAGE 4 -->
       <div class="bk-page" id="bkp4" style="z-index:6">
         <div class="bk-front"><div class="img-full"><img src="jep-portfolio-03.jpg" alt="Portfolio 03" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><div class=\'ph-icon\'>🏠</div><div class=\'ph-name\'>jep-portfolio-03.jpg</div><div class=\'ph-size\'>1200 × 750 px</div></div><div class=\'img-cap\'><span class=\'img-cap-num\'>Portfolio · 03</span><div class=\'img-cap-title\'>Diseño de Interiores</div><div class=\'img-cap-sub\'>JEP Designer · Espacios Modernos</div></div>'"><div class="img-overlay"></div><div class="img-cap"><span class="img-cap-num">Portfolio · 03</span><div class="img-cap-title">Diseño de Interiores</div><div class="img-cap-sub">JEP Designer · Espacios Modernos</div></div></div></div>
         <div class="bk-back"><div class="img-full"><img src="jep-portfolio-04.jpg" alt="Portfolio 04" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><div class=\'ph-icon\'>🎨</div><div class=\'ph-name\'>jep-portfolio-04.jpg</div><div class=\'ph-size\'>1200 × 750 px</div></div><div class=\'img-cap\'><span class=\'img-cap-num\'>Portfolio · 04</span><div class=\'img-cap-title\'>Contenido Visual &amp; Redes</div><div class=\'img-cap-sub\'>JEP Designer · Marketing Digital</div></div>'"><div class="img-overlay"></div><div class="img-cap"><span class="img-cap-num">Portfolio · 04</span><div class="img-cap-title">Contenido Visual & Redes</div><div class="img-cap-sub">JEP Designer · Marketing Digital</div></div></div></div>
       </div>
-      <!-- PAGE 5 -->
       <div class="bk-page" id="bkp5" style="z-index:5">
         <div class="bk-front"><div class="img-full"><img src="jep-portfolio-05.jpg" alt="Portfolio 05" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><div class=\'ph-icon\'>◈</div><div class=\'ph-name\'>jep-portfolio-05.jpg</div><div class=\'ph-size\'>1200 × 750 px</div></div><div class=\'img-cap\'><span class=\'img-cap-num\'>Portfolio · 05</span><div class=\'img-cap-title\'>Proyecto Destacado 2026</div><div class=\'img-cap-sub\'>JEP Designer · Colombia</div></div>'"><div class="img-overlay"></div><div class="img-cap"><span class="img-cap-num">Portfolio · 05</span><div class="img-cap-title">Proyecto Destacado 2026</div><div class="img-cap-sub">JEP Designer · Colombia</div></div></div></div>
         <div class="bk-back"><div class="text-spread" style="background:linear-gradient(145deg,#060612,#040408)"><span class="ts-icon">🎨</span><div class="ts-title" style="color:var(--magenta)">Filosofía Creativa</div><div class="ts-div" style="background:linear-gradient(90deg,transparent,var(--magenta),transparent)"></div><p class="ts-body">"El diseño no solo se observa, se siente. Cada detalle comunica una historia. Cada color despierta una emoción. Cada forma tiene un significado."</p><div class="ts-div" style="background:linear-gradient(90deg,transparent,var(--magenta),transparent)"></div><div class="ts-tag" style="color:var(--magenta)">— Junior Estiben Portilla</div></div></div>
       </div>
-      <!-- PAGE 6 -->
       <div class="bk-page" id="bkp6" style="z-index:4">
-        <div class="bk-front"><div class="text-spread" style="background:linear-gradient(145deg,#080814,#050508)"><span class="ts-icon">◉</span><div class="ts-title" style="color:var(--cyan)">Visión 2026</div><div class="ts-div" style="background:linear-gradient(90deg,transparent,var(--cyan),transparent)"></div><p class="ts-body">En 2026 una página web debe transmitir más que información: debe generar experiencia, emoción y conexión real. El futuro del diseño es inmersivo, interactivo y profundamente humano.</p><div class="ts-div" style="background:linear-gradient(90deg,transparent,var(--cyan),transparent)"></div><div class="ts-tag" style="color:var(--cyan)">Futurista · Minimalista · Inmersivo</div></div></div>
+        <div class="bk-front"><div class="text-spread" style="background:linear-gradient(145deg,#080814,#050508)"><span class="ts-icon">◉</span><div class="ts-title" style="color:var(--cyan)">Visión 2026</div><div class="ts-div" style="background:linear-gradient(90deg,transparent,var(--cyan),transparent)"></div><p class="ts-body">En 2026 una página web debe transmitir más que información: debe generar experiencia, emoción y conexión real con las personas.</p><div class="ts-div" style="background:linear-gradient(90deg,transparent,var(--cyan),transparent)"></div><div class="ts-tag" style="color:var(--cyan)">Futurista · Minimalista · Inmersivo</div></div></div>
         <div class="bk-back"><div class="text-spread" style="background:linear-gradient(145deg,#06060f,#0a0a18)"><span class="ts-icon" style="font-size:28px;margin-bottom:6px">🏠</span><div class="ts-title" style="font-size:20px;margin-bottom:8px">Diseño de Interiores</div><div class="ts-div"></div><p class="ts-body" style="font-size:12px">Espacios que cuentan historias. Diseño interior moderno y minimalista que combina funcionalidad con elegancia y personalidad propia.</p><div class="ts-div"></div><span class="ts-icon" style="font-size:28px;margin-bottom:6px">◈</span><div class="ts-title" style="font-size:20px;margin-bottom:8px">Branding Profesional</div><p class="ts-body" style="font-size:12px">Construcción de marcas sólidas con identidad visual estratégica y presencia digital moderna y memorable.</p></div></div>
       </div>
-      <!-- PAGE 7 — CIERRE -->
       <div class="bk-page" id="bkp7" style="z-index:3">
         <div class="bk-front"><div class="final-spread"><div class="fs-title">Trabajemos Juntos</div><p class="fs-body">¿Tienes una idea, proyecto o marca que deseas llevar al siguiente nivel? Será un placer crear algo único, moderno y extraordinario.</p><a href="https://wa.me/573223729232?text=Hola%20quiero%20información" target="_blank" rel="noopener noreferrer" class="fs-cta">Iniciar Proyecto ✦</a></div></div>
         <div class="bk-back"><div class="bk-back-inner"><div class="bi-logo">JEP</div><div class="bi-div"></div><div class="bi-tag">Gracias por esta experiencia</div><div class="bi-it">Colombia · 2026 · jepdesigner.com</div><div class="bi-div"></div></div></div>
@@ -848,7 +624,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
   <div class="sh"><span>Scroll</span><div class="sh-l"></div></div>
 </section>
 
-<!-- ══ ABOUT ══ -->
+<!-- ABOUT -->
 <section id="about">
   <div class="wrap">
     <div class="ab-grid">
@@ -888,7 +664,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
   </div>
 </section>
 
-<!-- ══ BRAND ══ -->
+<!-- BRAND -->
 <section id="brand">
   <div class="brand-bg"></div>
   <div class="wrap">
@@ -906,7 +682,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
   </div>
 </section>
 
-<!-- ══ SERVICES ══ -->
+<!-- SERVICES -->
 <section id="services">
   <div class="wrap">
     <div class="rv">
@@ -924,7 +700,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
   </div>
 </section>
 
-<!-- ══ VISION ══ -->
+<!-- VISION -->
 <section id="vision">
   <div class="vg"></div>
   <div class="wrap">
@@ -958,7 +734,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
   </div>
 </section>
 
-<!-- ══ QUOTE ══ -->
+<!-- QUOTE -->
 <section id="quote">
   <div class="wrap">
     <div class="rv" style="text-align:center">
@@ -969,13 +745,10 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
   </div>
 </section>
 
-<!-- ══════════════════════════════════
-     COMENTARIOS
-══════════════════════════════════ -->
+<!-- COMENTARIOS -->
 <section id="comentarios">
   <div class="wrap">
 
-    <!-- BANNER DIRIGIDOR -->
     <div class="cm-banner rv">
       <div class="cm-banner-left">
         <div class="cm-banner-icon">💬</div>
@@ -995,10 +768,9 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
       <div class="sdv"></div>
     </div>
 
-    <!-- GRID PRINCIPAL -->
     <div class="cm-main-grid">
 
-      <!-- PANEL LOGIN (col 1) -->
+      <!-- PANEL LOGIN -->
       <div class="cm-login-panel rv-l" id="loginPanel">
         <div class="cm-login-header">
           <div class="cm-login-crown"><i class="fa-solid fa-crown"></i></div>
@@ -1027,7 +799,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
         </div>
       </div>
 
-      <!-- PANEL ESCRIBIR COMENTARIO (col 1, reemplaza login tras autenticar) -->
+      <!-- PANEL ESCRIBIR -->
       <div class="cm-write-panel rv-l" id="writePanel">
         <div class="cm-write-header">
           <div class="cm-write-badge">✓ Verificado</div>
@@ -1054,15 +826,15 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
         </div>
       </div>
 
-      <!-- PANEL COMENTARIOS (col 2) -->
+      <!-- PANEL COMENTARIOS -->
       <div class="cm-display-panel rv-r" style="transition-delay:.15s">
         <div class="cm-display-header">
           <h3>Reseñas <span>de clientes</span></h3>
           <div class="cm-count" id="cmCount">0</div>
         </div>
         <div id="cmList" class="cm-empty">
-          <span class="cm-empty-icon">✦</span>
-          <div class="cm-empty-txt">Aún no hay reseñas.<br>¡Sé el primero en compartir tu experiencia!</div>
+          <span class="cm-empty-icon">⟳</span>
+          <div class="cm-empty-txt">Cargando reseñas...</div>
         </div>
       </div>
 
@@ -1070,7 +842,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
   </div>
 </section>
 
-<!-- ══ CONTACT ══ -->
+<!-- CONTACT -->
 <section id="contact">
   <div class="wrap">
     <div class="ct-grid">
@@ -1194,24 +966,53 @@ bkUpdateUI();
 })();
 
 /* ══════════════════════════════════
-   SISTEMA DE COMENTARIOS
+   SISTEMA DE COMENTARIOS PERSISTENTES
+   Usa window.storage (API persistente de Claude artifacts)
+   con fallback a localStorage para uso fuera de Claude
 ══════════════════════════════════ */
 const CM_PASS = 'JEP328';
+const CM_STORAGE_KEY = 'jep_designer_reviews';
 let cmLogged = false;
 let cmUsername = '';
 let cmStars = 5;
 let cmComments = [];
 
-// Cargar comentarios guardados en sessionStorage
-(function(){
-  try{
-    const saved = sessionStorage.getItem('jep_comments');
-    if(saved) cmComments = JSON.parse(saved);
-    renderComments();
-  }catch(e){}
-})();
+/* ── Guardar comentarios ── */
+async function cmSave(){
+  const data = JSON.stringify(cmComments);
+  // Intentar window.storage primero (Claude artifacts)
+  if(window.storage){
+    try{ await window.storage.set(CM_STORAGE_KEY, data, true); return; }catch(e){}
+  }
+  // Fallback: localStorage (para uso fuera de Claude)
+  try{ localStorage.setItem(CM_STORAGE_KEY, data); }catch(e){}
+}
 
-/* LOGIN */
+/* ── Cargar comentarios ── */
+async function cmLoad(){
+  // Intentar window.storage primero (Claude artifacts)
+  if(window.storage){
+    try{
+      const res = await window.storage.get(CM_STORAGE_KEY, true);
+      if(res && res.value){
+        cmComments = JSON.parse(res.value);
+        renderComments();
+        return;
+      }
+    }catch(e){}
+  }
+  // Fallback: localStorage
+  try{
+    const saved = localStorage.getItem(CM_STORAGE_KEY);
+    if(saved){ cmComments = JSON.parse(saved); }
+  }catch(e){}
+  renderComments();
+}
+
+/* ── Inicializar al cargar la página ── */
+cmLoad();
+
+/* ── LOGIN ── */
 function cmLogin(){
   const usuario = document.getElementById('cmUsuario').value.trim();
   const pass = document.getElementById('cmPassword').value;
@@ -1222,7 +1023,6 @@ function cmLogin(){
   if(pass === CM_PASS){
     cmLogged = true;
     cmUsername = usuario;
-    // Actualizar UI
     document.getElementById('loginPanel').style.display='none';
     const wp = document.getElementById('writePanel');
     wp.classList.add('visible');
@@ -1249,7 +1049,7 @@ function cmLogin(){
   }
 }
 
-/* LOGOUT */
+/* ── LOGOUT ── */
 function cmLogout(){
   cmLogged = false;
   cmUsername = '';
@@ -1261,7 +1061,7 @@ function cmLogout(){
   setStar(5);
 }
 
-/* ESTRELLAS */
+/* ── ESTRELLAS ── */
 function setStar(n){
   cmStars = n;
   document.querySelectorAll('.star-btn').forEach(btn=>{
@@ -1269,8 +1069,8 @@ function setStar(n){
   });
 }
 
-/* SUBMIT COMENTARIO */
-function cmSubmit(){
+/* ── PUBLICAR COMENTARIO ── */
+async function cmSubmit(){
   const texto = document.getElementById('cmText').value.trim();
   if(!texto){
     Swal.fire({icon:'warning',title:'Comentario vacío',text:'Por favor escribe tu reseña antes de publicar.',confirmButtonColor:'#c9a84c',background:'#0d0d1c',color:'#f0eee8'});
@@ -1290,7 +1090,8 @@ function cmSubmit(){
     date: dateStr
   };
   cmComments.unshift(newComment);
-  try{ sessionStorage.setItem('jep_comments', JSON.stringify(cmComments)); }catch(e){}
+  // Guardar de forma persistente
+  await cmSave();
   document.getElementById('cmText').value='';
   setStar(5);
   renderComments();
@@ -1304,7 +1105,7 @@ function cmSubmit(){
   });
 }
 
-/* RENDER COMENTARIOS */
+/* ── RENDER ── */
 function renderComments(){
   const listEl = document.getElementById('cmList');
   const countEl = document.getElementById('cmCount');
@@ -1319,10 +1120,10 @@ function renderComments(){
     <div class="cm-card" style="animation-delay:${i*0.06}s">
       <div class="cm-card-head">
         <div class="cm-card-author">
-          <div class="cm-card-av">${c.author.charAt(0).toUpperCase()}</div>
+          <div class="cm-card-av">${escHtml(c.author.charAt(0).toUpperCase())}</div>
           <div>
             <div class="cm-card-name">${escHtml(c.author)}</div>
-            <div class="cm-card-date">${c.date}</div>
+            <div class="cm-card-date">${escHtml(c.date)}</div>
           </div>
         </div>
         <div class="cm-card-stars">${'★'.repeat(c.stars)}${'☆'.repeat(5-c.stars)}</div>
@@ -1333,10 +1134,10 @@ function renderComments(){
 }
 
 function escHtml(str){
-  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
-/* ENTER en el login */
+/* ── Enter en login ── */
 document.getElementById('cmPassword').addEventListener('keydown',function(e){if(e.key==='Enter')cmLogin()});
 document.getElementById('cmUsuario').addEventListener('keydown',function(e){if(e.key==='Enter')document.getElementById('cmPassword').focus()});
 </script>
