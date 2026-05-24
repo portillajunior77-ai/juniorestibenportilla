@@ -3,16 +3,17 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
-<title>Junior Estiben Portilla — JEP Designer</title>
+<title>Junior Estiben Portilla — JEP Designer | Portafolio Élite</title>
 <meta property="og:title" content="Junior Estiben Portilla — JEP Designer"/>
-<meta property="og:description" content="Diseñador Gráfico, Web e Interiorista Colombiano. Transformando ideas en experiencias visuales modernas, elegantes y funcionales."/>
+<meta property="og:description" content="Diseñador Gráfico, Web e Interiorista Colombiano. Experiencias visuales de otro nivel."/>
 <meta property="og:type" content="website"/>
 <meta property="og:locale" content="es_CO"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:wght@300;400;500;600;700&family=Josefin+Sans:wght@100;200;300;400&family=IM+Fell+English:ital@1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:wght@300;400;500;600;700&family=Josefin+Sans:wght@100;200;300;400&family=IM+Fell+English:ital@1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <style>
+/* ========== TODOS LOS ESTILOS DEL PORTAFOLIO ORIGINAL (sin cambios) ========== */
 :root{
   --bg:#020204;--surface:#08080f;
   --gold:#c9a84c;--gold-light:#e8cc7a;--gold-dim:rgba(201,168,76,0.10);
@@ -363,7 +364,6 @@ section{position:relative;z-index:1}
 .cm-logout-btn{margin-left:auto;background:transparent;border:1px solid rgba(240,238,232,.12);border-radius:8px;padding:7px 16px;font-family:'Space Mono',monospace;font-size:clamp(7px,1.2vw,9px);letter-spacing:.15em;color:var(--white-dim);text-transform:uppercase;cursor:none;transition:all .3s}
 .cm-logout-btn:hover{border-color:var(--magenta);color:var(--magenta)}
 
-/* Estado de carga de comentarios */
 .cm-loading{padding:52px 28px;text-align:center}
 .cm-loading-icon{font-size:32px;opacity:.4;display:block;margin-bottom:12px;animation:cmSpin 1.5s linear infinite}
 @keyframes cmSpin{to{transform:rotate(360deg)}}
@@ -427,7 +427,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 /* TILT */
 .tilt{transform-style:preserve-3d;transition:transform .1s ease}
 
-/* ========== RESPONSIVE MEJORADA ========== */
+/* ========== RESPONSIVE ========== */
 @media(max-width:960px){
   nav,nav.scrolled{padding:18px 28px}
   .wrap{padding:0 28px}
@@ -462,10 +462,8 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
   .cm-list{padding:16px 18px}
 }
 @media(max-width:600px){
-  /* Menú: nunca se oculta, se adapta a columna */
   .nav-links{display:flex;flex-direction:column;gap:12px;position:absolute;top:70px;left:28px;right:28px;background:rgba(2,2,4,.96);backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:24px;padding:20px;z-index:99;text-align:center;opacity:0;visibility:hidden;transform:translateY(-10px);transition:all .3s ease}
   .nav-links.active{opacity:1;visibility:visible;transform:translateY(0)}
-  /* Botón hamburguesa (añadido dinámicamente) */
   .menu-toggle{display:flex;background:transparent;border:none;cursor:pointer;padding:8px;color:var(--gold);font-size:24px}
   nav{justify-content:space-between}
   .h-title{font-size:clamp(32px,7vw,46px);margin-top:20px}
@@ -485,7 +483,6 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
   .wa-f{width:48px;height:48px;bottom:20px;right:20px}
   .wa-f svg{width:26px;height:26px}
 }
-/* Ajuste extra para pantallas muy pequeñas (<= 400px) */
 @media(max-width:400px){
   .book-wrap{height:300px}
   .spread-l .sp-av{width:70px;height:70px;font-size:28px}
@@ -495,7 +492,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
   .h-cta{gap:12px}
 }
 
-/* ========== INTRO PREMIUM MEJORADA ========== */
+/* ========== INTRO PREMIUM (ULTRA MEJORADA) - ESTILOS ADICIONALES ========== */
 #introOverlay {
   position: fixed;
   top: 0;
@@ -503,374 +500,86 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
   width: 100%;
   height: 100%;
   z-index: 20000;
-  background: #010101;
+  background: #000000;
   pointer-events: auto;
   overflow: hidden;
   font-family: 'Cinzel', 'Playfair Display', serif;
   transition: opacity 1.2s cubic-bezier(0.2, 0.9, 0.4, 1.1);
 }
-#introOverlay.fade-out {
-  opacity: 0;
-  pointer-events: none;
-}
-#introOverlay canvas {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  pointer-events: none;
-}
-#introOverlay .noise, #introOverlay .vignette, #introOverlay .scanlines {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-}
-#introOverlay .noise {
-  opacity: 0.05;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-size: 200px;
-}
-#introOverlay .vignette {
-  background: radial-gradient(ellipse 70% 70% at center, transparent 20%, rgba(0,0,0,0.9) 100%);
-}
-#introOverlay .scanlines {
-  background: repeating-linear-gradient(to bottom, transparent, transparent 2px, rgba(0,0,0,0.06) 2px, rgba(0,0,0,0.06) 4px);
-}
-#introOverlay .hero {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: 10;
-  pointer-events: none;
-  user-select: none;
-  width: 90vw;
-  max-width: 1000px;
-}
-#introOverlay .label-top {
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 200;
-  font-size: clamp(0.6rem, 1.3vw, 0.8rem);
-  letter-spacing: 0.9em;
-  color: #e8d08a;
-  text-transform: uppercase;
-  opacity: 0;
-  animation: revealMask 1.2s cubic-bezier(0.77,0,0.175,1) 0.2s forwards;
-  margin-bottom: 28px;
-  position: relative;
-  overflow: hidden;
-  text-shadow: 0 0 12px rgba(232,208,138,0.4);
-}
-#introOverlay .label-top::before, #introOverlay .label-top::after {
-  content: '◈';
-  font-size: 0.5em;
-  vertical-align: middle;
-  margin: 0 1.2em;
-  opacity: 0.8;
-  font-weight: 100;
-}
-#introOverlay .label-top .wipe-cover {
-  content: '';
-  position: absolute; right: 0; top: 0;
-  width: 100%; height: 100%;
-  background: #010101;
-  animation: wipe 1.2s cubic-bezier(0.77,0,0.175,1) 0.2s forwards;
-  pointer-events: none;
-}
-#introOverlay .title-wrap {
-  position: relative;
-  line-height: 1;
-  margin-bottom: 8px;
-}
-#introOverlay h1 {
-  font-family: 'Cinzel', serif;
-  font-size: clamp(3.6rem, 10vw, 8.8rem);
-  font-weight: 900;
-  color: transparent;
-  background: linear-gradient(135deg, #d8b14b 0%, #f5e7b2 25%, #e3c278 50%, #f5e7b2 75%, #d8b14b 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  letter-spacing: 0.22em;
-  line-height: 1;
-  opacity: 0;
-  animation: revealTitle 1.4s cubic-bezier(0.16,1,0.3,1) 0.8s forwards, shimmerTitle 5s linear 2.4s infinite;
-  background-size: 300% 100%;
-  position: relative;
-  display: block;
-  filter: drop-shadow(0 0 40px rgba(216,177,75,0.45));
-}
-#introOverlay h1::before {
-  content: attr(data-text);
-  position: absolute;
-  left: 0; top: 0; width: 100%;
-  font-family: 'Cinzel', serif;
-  font-size: inherit;
-  font-weight: 900;
-  letter-spacing: 0.22em;
-  color: transparent;
-  background: linear-gradient(135deg, #ff88cc, #88ffcc, #e8d08a);
-  -webkit-background-clip: text;
-  background-clip: text;
-  opacity: 0;
-  animation: glitchPremium 12s infinite 4s;
-  transform: translate(-3px, 0);
-  clip-path: polygon(0 30%, 100% 30%, 100% 50%, 0 50%);
-}
-#introOverlay .title-underline {
-  position: absolute;
-  bottom: -12px; left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent 0%, #e8d08a 20%, #ff88cc 50%, #88ffcc 80%, transparent 100%);
-  animation: expandUnderline 1.6s cubic-bezier(0.16,1,0.3,1) 1.8s forwards;
-  filter: drop-shadow(0 0 8px rgba(232,208,138,0.8));
-}
-#introOverlay .divider-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-  margin: 36px auto 28px;
-  opacity: 0;
-  animation: fadeUp 1.2s ease 1.6s forwards;
-}
-#introOverlay .divider-line {
-  height: 1px;
-  width: 140px;
-  background: linear-gradient(90deg, transparent, rgba(232,208,138,0.7));
-}
-#introOverlay .divider-line.rev {
-  background: linear-gradient(270deg, transparent, rgba(232,208,138,0.7));
-}
-#introOverlay .divider-diamond {
-  width: 6px; height: 6px;
-  background: #e8d08a;
-  transform: rotate(45deg);
-  opacity: 0.9;
-  box-shadow: 0 0 10px rgba(232,208,138,0.7);
-}
-#introOverlay h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 500;
-  font-style: italic;
-  font-size: clamp(1.6rem, 4vw, 2.8rem);
-  color: #faf5e8;
-  letter-spacing: 0.28em;
-  line-height: 1.5;
-  opacity: 0;
-  animation: revealSubtitle 1.8s cubic-bezier(0.16,1,0.3,1) 1.4s forwards;
-  position: relative;
-  display: block;
-  filter: drop-shadow(0 0 25px rgba(250,245,232,0.2));
-  text-transform: uppercase;
-  font-weight: 400;
-}
-#introOverlay .epitaph {
-  font-family: 'Playfair Display', serif;
-  font-weight: 300;
-  font-style: italic;
-  font-size: clamp(0.8rem, 1.8vw, 1.2rem);
-  color: rgba(232,208,138,0.8);
-  letter-spacing: 0.25em;
-  line-height: 2;
-  opacity: 0;
-  animation: fadeUp 1.4s ease 2.2s forwards;
-  margin-top: 22px;
-  display: block;
-  text-shadow: 0 0 12px rgba(0,0,0,0.5);
-}
-#introOverlay .label-bottom {
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 200;
-  font-size: clamp(0.52rem, 1vw, 0.68rem);
-  letter-spacing: 0.65em;
-  color: rgba(232,208,138,0.55);
-  text-transform: uppercase;
-  opacity: 0;
-  animation: fadeUp 1.2s ease 2.8s forwards;
-  margin-top: 42px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.8em;
-}
-#introOverlay .label-bottom span + span::before {
-  content: '✦';
-  margin-right: 1.8em;
-  opacity: 0.6;
-  font-size: 0.7em;
-}
-#introOverlay .year-mark {
-  position: fixed;
-  right: 36px;
-  top: 50%;
-  transform: translateY(-50%) rotate(90deg);
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 100;
-  font-size: 0.68rem;
-  letter-spacing: 0.55em;
-  color: rgba(232,208,138,0.35);
-  z-index: 10;
-  pointer-events: none;
-  opacity: 0;
-  animation: fadeIn 2.2s ease 3s forwards;
-  white-space: nowrap;
-}
-#introOverlay .year-mark-left {
-  position: fixed;
-  left: 36px;
-  top: 50%;
-  transform: translateY(-50%) rotate(-90deg);
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 100;
-  font-size: 0.68rem;
-  letter-spacing: 0.55em;
-  color: rgba(232,208,138,0.35);
-  z-index: 10;
-  pointer-events: none;
-  opacity: 0;
-  animation: fadeIn 2.2s ease 3s forwards;
-  white-space: nowrap;
-}
-#introOverlay .corner {
-  position: fixed;
-  width: 68px; height: 68px;
-  z-index: 10; pointer-events: none;
-  opacity: 0;
-  animation: fadeIn 1.8s ease 2.4s forwards;
-}
-#introOverlay .corner svg { width: 100%; height: 100%; stroke: #e8d08a; stroke-opacity: 0.6; }
-#introOverlay .corner--tl { top: 28px; left: 28px; }
-#introOverlay .corner--tr { top: 28px; right: 28px; transform: scaleX(-1); }
-#introOverlay .corner--bl { bottom: 28px; left: 28px; transform: scaleY(-1); }
-#introOverlay .corner--br { bottom: 28px; right: 28px; transform: scale(-1,-1); }
-#introOverlay .progress-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: rgba(232,208,138,0.15);
-  z-index: 20;
-  backdrop-filter: blur(2px);
-}
-#introOverlay .progress-fill {
-  width: 0%;
-  height: 100%;
-  background: linear-gradient(90deg, #e8d08a, #ff88cc, #88ffcc, #e8d08a);
-  background-size: 300% 100%;
-  animation: shimmerProgress 2.5s linear infinite;
-  transition: width 0.12s cubic-bezier(0.4,0,0.2,1);
-  box-shadow: 0 0 12px rgba(232,208,138,0.6);
-}
-@keyframes shimmerProgress {
-  0% { background-position: 100% 0; }
-  100% { background-position: -100% 0; }
-}
-#introOverlay .status {
-  position: fixed;
-  bottom: 32px; left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-  display: flex; align-items: center; gap: 16px;
-  opacity: 0;
-  animation: fadeIn 1.8s ease 2.5s forwards;
-  pointer-events: none;
-}
-#introOverlay .status-dot {
-  width: 5px; height: 5px;
-  background: #e8d08a; border-radius: 50%;
-  animation: pulse 2s ease-in-out infinite;
-  box-shadow: 0 0 8px rgba(232,208,138,0.8);
-}
-#introOverlay .status-text {
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 100;
-  font-size: 0.58rem;
-  letter-spacing: 0.45em;
-  color: rgba(232, 208, 138, 0.55);
-  text-transform: uppercase;
-  transition: opacity 0.5s ease;
-}
-@keyframes revealMask {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-@keyframes revealTitle {
-  0%   { opacity: 0; transform: translateY(40px) skewY(3deg); filter: blur(14px); }
-  60%  { filter: blur(0px); }
-  100% { opacity: 1; transform: translateY(0) skewY(0); }
-}
-@keyframes shimmerTitle {
-  0%   { background-position: 100% 0; }
-  100% { background-position: -100% 0; }
-}
-@keyframes expandUnderline {
-  from { width: 0; }
-  to   { width: 82%; }
-}
-@keyframes revealSubtitle {
-  from { opacity: 0; transform: translateY(24px); letter-spacing: 1.2em; filter: blur(8px); }
-  to   { opacity: 1; transform: translateY(0); letter-spacing: 0.28em; filter: blur(0); }
-}
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(14px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeIn {
-  from { opacity: 0; } to { opacity: 1; }
-}
-@keyframes pulse {
-  0%, 100% { opacity: 0.3; transform: scale(1); }
-  50%       { opacity: 1; transform: scale(1.6); }
-}
-@keyframes glitchPremium {
-  0%, 92%, 100% { opacity: 0; }
-  93%  { opacity: 0.6; clip-path: polygon(0 20%, 100% 20%, 100% 40%, 0 40%); transform: translate(-5px, 0); }
-  94%  { opacity: 0.3; clip-path: polygon(0 60%, 100% 60%, 100% 75%, 0 75%); transform: translate(4px, 0); }
-  95%  { opacity: 0.5; clip-path: polygon(0 5%, 100% 5%, 100% 15%, 0 15%); transform: translate(-3px, 1px); }
-  96%  { opacity: 0; }
-}
-.float-particle {
-  position: fixed;
-  width: 1.5px; height: 1.5px;
-  background: #e8d08a;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 5;
-  opacity: 0;
-  box-shadow: 0 0 4px rgba(232,208,138,0.8);
-}
+#introOverlay.fade-out { opacity: 0; pointer-events: none; }
+#introOverlay canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
+#introOverlay .noise, #introOverlay .vignette, #introOverlay .scanlines { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+#introOverlay .noise { opacity: 0.08; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size: 200px; }
+#introOverlay .vignette { background: radial-gradient(ellipse 70% 70% at center, transparent 20%, rgba(0,0,0,0.9) 100%); }
+#introOverlay .scanlines { background: repeating-linear-gradient(to bottom, transparent, transparent 2px, rgba(0,255,224,0.03) 2px, rgba(0,255,224,0.03) 4px); }
+#introOverlay .hero { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; z-index: 10; pointer-events: none; user-select: none; width: 90vw; max-width: 1200px; }
+#introOverlay .label-top { font-family: 'Josefin Sans', sans-serif; font-weight: 300; font-size: clamp(0.7rem, 1.5vw, 0.9rem); letter-spacing: 1.1em; color: #ffeaac; text-transform: uppercase; opacity: 0; animation: fadeSlideUp 0.9s cubic-bezier(0.2,0.9,0.4,1.1) 0.1s forwards; margin-bottom: 32px; position: relative; text-shadow: 0 0 20px rgba(255,234,172,0.6); }
+#introOverlay .label-top span { display: inline-block; transform: translateY(30px); opacity: 0; animation: staggerText 0.5s cubic-bezier(0.2,0.9,0.4,1.1) 0.2s forwards; }
+#introOverlay .title-wrap { position: relative; line-height: 0.95; margin-bottom: 20px; filter: drop-shadow(0 0 40px rgba(0,255,224,0.3)); }
+#introOverlay h1 { font-family: 'Orbitron', 'Cinzel', sans-serif; font-size: clamp(3.8rem, 11vw, 9rem); font-weight: 900; color: transparent; background: linear-gradient(135deg, #ffb347 0%, #ff6a1a 20%, #f01e8f 50%, #00ffe0 80%, #c9a84c 100%); background-size: 300% 100%; -webkit-background-clip: text; background-clip: text; letter-spacing: 0.16em; line-height: 1.1; opacity: 0; animation: revealTitleGlow 0.9s cubic-bezier(0.16,1,0.3,1) 0.3s forwards, shimmerText 8s linear infinite 1s; position: relative; display: inline-block; text-shadow: 0 0 30px rgba(240,30,143,0.5); }
+#introOverlay h1::before { content: attr(data-text); position: absolute; left: -2px; top: 0; width: 100%; font-family: inherit; font-size: inherit; font-weight: 900; letter-spacing: inherit; color: transparent; background: linear-gradient(135deg, #ffb347, #f01e8f, #00ffe0); -webkit-background-clip: text; background-clip: text; opacity: 0; animation: glitchPremium 8s infinite 4s; transform: translate(-4px, 0); clip-path: polygon(0 40%, 100% 40%, 100% 55%, 0 55%); }
+#introOverlay h1::after { content: attr(data-text); position: absolute; left: 2px; top: 0; width: 100%; font-family: inherit; font-size: inherit; font-weight: 900; letter-spacing: inherit; color: transparent; background: linear-gradient(135deg, #00ffe0, #c9a84c, #ff6a1a); -webkit-background-clip: text; background-clip: text; opacity: 0; animation: glitchPremium2 8s infinite 4.2s; transform: translate(4px, 0); clip-path: polygon(0 65%, 100% 65%, 100% 80%, 0 80%); }
+#introOverlay .title-underline { position: absolute; bottom: -18px; left: 50%; transform: translateX(-50%); width: 0; height: 3px; background: linear-gradient(90deg, transparent, #ffb347, #f01e8f, #00ffe0, #c9a84c, transparent); animation: expandUnderlineNeon 0.9s cubic-bezier(0.16,1,0.3,1) 0.8s forwards; filter: blur(0.8px); box-shadow: 0 0 12px rgba(0,255,224,0.8); }
+#introOverlay .divider-wrap { display: flex; align-items: center; justify-content: center; gap: 24px; margin: 48px auto 32px; opacity: 0; animation: fadeUp 0.7s ease 0.7s forwards; }
+#introOverlay .divider-line { height: 1px; width: 160px; background: linear-gradient(90deg, transparent, rgba(0,255,224,0.8), rgba(240,30,143,0.8), transparent); }
+#introOverlay .divider-line.rev { background: linear-gradient(270deg, transparent, rgba(0,255,224,0.8), rgba(240,30,143,0.8), transparent); }
+#introOverlay .divider-diamond { width: 8px; height: 8px; background: #ffeaac; transform: rotate(45deg); opacity: 0.9; box-shadow: 0 0 12px rgba(255,234,172,0.8); animation: pulseDiamond 1.8s ease-in-out infinite; }
+@keyframes pulseDiamond { 0%,100% { opacity: 0.6; transform: rotate(45deg) scale(1); } 50% { opacity: 1; transform: rotate(45deg) scale(1.3); box-shadow: 0 0 25px #ffeaac; } }
+#introOverlay h2 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-style: italic; font-size: clamp(1.8rem, 4.5vw, 3.2rem); color: #faf5e8; letter-spacing: 0.4em; line-height: 1.4; opacity: 0; animation: scrambleReveal 1.2s cubic-bezier(0.2,0.9,0.4,1.1) 0.5s forwards; position: relative; display: inline-block; text-transform: uppercase; text-shadow: 0 0 18px rgba(0,255,224,0.4); }
+#introOverlay .epitaph { font-family: 'Playfair Display', serif; font-weight: 300; font-style: italic; font-size: clamp(0.85rem, 2vw, 1.3rem); color: rgba(255,234,172,0.85); letter-spacing: 0.3em; line-height: 2; opacity: 0; animation: fadeUp 0.8s ease 1s forwards; margin-top: 28px; display: block; text-shadow: 0 0 15px rgba(0,0,0,0.5); }
+#introOverlay .epitaph::before, #introOverlay .epitaph::after { content: '◈'; margin: 0 1.2em; opacity: 0.6; font-size: 0.7em; vertical-align: middle; }
+#introOverlay .label-bottom { font-family: 'Josefin Sans', sans-serif; font-weight: 200; font-size: clamp(0.5rem, 1.2vw, 0.7rem); letter-spacing: 0.8em; color: rgba(0,255,224,0.7); text-transform: uppercase; opacity: 0; animation: fadeUp 0.7s ease 1.2s forwards; margin-top: 52px; display: flex; align-items: center; justify-content: center; gap: 2.5em; }
+#introOverlay .label-bottom span + span::before { content: '✦'; margin-right: 2.5em; opacity: 0.8; }
+#introOverlay .corner { position: fixed; width: 80px; height: 80px; z-index: 10; pointer-events: none; opacity: 0; animation: fadeIn 0.8s ease 0.9s forwards; }
+#introOverlay .corner svg { width: 100%; height: 100%; stroke: #00ffe0; stroke-opacity: 0.7; filter: drop-shadow(0 0 5px #00ffe0); }
+#introOverlay .corner--tl { top: 32px; left: 32px; }
+#introOverlay .corner--tr { top: 32px; right: 32px; transform: scaleX(-1); }
+#introOverlay .corner--bl { bottom: 32px; left: 32px; transform: scaleY(-1); }
+#introOverlay .corner--br { bottom: 32px; right: 32px; transform: scale(-1,-1); }
+.float-particle { position: fixed; width: 2px; height: 2px; background: radial-gradient(circle, #00ffe0, #f01e8f); border-radius: 50%; pointer-events: none; z-index: 5; opacity: 0; box-shadow: 0 0 6px rgba(0,255,224,0.8); }
+#introOverlay .progress-bar { position: fixed; bottom: 0; left: 0; width: 100%; height: 3px; background: rgba(232,208,138,0.15); z-index: 20; backdrop-filter: blur(2px); }
+#introOverlay .progress-fill { width: 0%; height: 100%; background: linear-gradient(90deg, #e8d08a, #ff88cc, #88ffcc, #e8d08a); background-size: 300% 100%; animation: shimmerProgress 2.5s linear infinite; transition: width 0.12s cubic-bezier(0.4,0,0.2,1); box-shadow: 0 0 12px rgba(232,208,138,0.6); }
+@keyframes shimmerProgress { 0% { background-position: 100% 0; } 100% { background-position: -100% 0; } }
+#introOverlay .status { position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%); z-index: 10; display: flex; align-items: center; gap: 16px; opacity: 0; animation: fadeIn 1.8s ease 2.5s forwards; pointer-events: none; }
+#introOverlay .status-dot { width: 5px; height: 5px; background: #e8d08a; border-radius: 50%; animation: pulse 2s ease-in-out infinite; box-shadow: 0 0 8px rgba(232,208,138,0.8); }
+#introOverlay .status-text { font-family: 'Josefin Sans', sans-serif; font-weight: 100; font-size: 0.58rem; letter-spacing: 0.45em; color: rgba(232, 208, 138, 0.55); text-transform: uppercase; transition: opacity 0.5s ease; }
+@keyframes fadeSlideUp { from { opacity: 0; transform: translateY(40px); filter: blur(8px); } to { opacity: 1; transform: translateY(0); filter: blur(0); } }
+@keyframes staggerText { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes revealTitleGlow { 0% { opacity: 0; transform: translateY(50px) scale(0.96); filter: blur(20px); text-shadow: 0 0 0 transparent; } 100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); text-shadow: 0 0 40px rgba(240,30,143,0.6); } }
+@keyframes shimmerText { 0% { background-position: 0% 50%; } 100% { background-position: 200% 50%; } }
+@keyframes expandUnderlineNeon { from { width: 0; opacity: 0; } to { width: 70%; opacity: 1; } }
+@keyframes scrambleReveal { 0% { opacity: 0; transform: translateY(20px) scaleX(1.2); letter-spacing: 1.2em; filter: blur(12px); } 40% { opacity: 0.8; filter: blur(4px); } 100% { opacity: 1; transform: translateY(0) scaleX(1); letter-spacing: 0.4em; filter: blur(0); } }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes glitchPremium { 0%, 90%, 100% { opacity: 0; } 91% { opacity: 0.7; clip-path: polygon(0 10%, 100% 10%, 100% 30%, 0 30%); transform: translate(-5px, 0); } 93% { opacity: 0.4; clip-path: polygon(0 50%, 100% 50%, 100% 70%, 0 70%); transform: translate(5px, 0); } 95% { opacity: 0.6; clip-path: polygon(0 80%, 100% 80%, 100% 95%, 0 95%); transform: translate(-3px, 1px); } 97% { opacity: 0; } }
+@keyframes glitchPremium2 { 0%, 90%, 100% { opacity: 0; } 92% { opacity: 0.6; clip-path: polygon(0 15%, 100% 15%, 100% 35%, 0 35%); transform: translate(6px, 0); } 94% { opacity: 0.4; clip-path: polygon(0 60%, 100% 60%, 100% 75%, 0 75%); transform: translate(-4px, 0); } 96% { opacity: 0.5; clip-path: polygon(0 85%, 100% 85%, 100% 98%, 0 98%); transform: translate(2px, -1px); } 98% { opacity: 0; } }
 </style>
 </head>
 <body>
 
-<!-- INTRO PREMIUM MEJORADA -->
+<!-- INTRO PREMIUM (ULTRA MEJORADA CON TUBOS 3D, PARTÍCULAS Y BARRA DE PROGRESO) -->
 <div id="introOverlay">
   <canvas id="canvasIntro"></canvas>
   <div class="noise"></div>
   <div class="vignette"></div>
   <div class="scanlines"></div>
   <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
-  <div class="corner corner--tl"><svg viewBox="0 0 68 68" fill="none"><path d="M2 66 L2 2 L66 2" stroke="currentColor" stroke-width="0.8" stroke-opacity="0.5"/><path d="M2 2 L22 2" stroke="currentColor" stroke-width="1.8" stroke-opacity="1"/><path d="M2 2 L2 22" stroke="currentColor" stroke-width="1.8" stroke-opacity="1"/><circle cx="2" cy="2" r="2.5" fill="#e8d08a"/></svg></div>
-  <div class="corner corner--tr"><svg viewBox="0 0 68 68" fill="none"><path d="M2 66 L2 2 L66 2" stroke="currentColor" stroke-width="0.8" stroke-opacity="0.5"/><path d="M2 2 L22 2" stroke="currentColor" stroke-width="1.8" stroke-opacity="1"/><path d="M2 2 L2 22" stroke="currentColor" stroke-width="1.8" stroke-opacity="1"/><circle cx="2" cy="2" r="2.5" fill="#e8d08a"/></svg></div>
-  <div class="corner corner--bl"><svg viewBox="0 0 68 68" fill="none"><path d="M2 66 L2 2 L66 2" stroke="currentColor" stroke-width="0.8" stroke-opacity="0.5"/><path d="M2 2 L22 2" stroke="currentColor" stroke-width="1.8" stroke-opacity="1"/><path d="M2 2 L2 22" stroke="currentColor" stroke-width="1.8" stroke-opacity="1"/><circle cx="2" cy="2" r="2.5" fill="#e8d08a"/></svg></div>
-  <div class="corner corner--br"><svg viewBox="0 0 68 68" fill="none"><path d="M2 66 L2 2 L66 2" stroke="currentColor" stroke-width="0.8" stroke-opacity="0.5"/><path d="M2 2 L22 2" stroke="currentColor" stroke-width="1.8" stroke-opacity="1"/><path d="M2 2 L2 22" stroke="currentColor" stroke-width="1.8" stroke-opacity="1"/><circle cx="2" cy="2" r="2.5" fill="#e8d08a"/></svg></div>
-  <div class="year-mark">Obra & Autoría — MMXXV</div>
-  <div class="year-mark-left">Diseño · Movimiento · Identidad</div>
+  <div class="corner corner--tl"><svg viewBox="0 0 80 80" fill="none"><path d="M4 76 L4 4 L76 4" stroke="currentColor" stroke-width="1.2"/><path d="M4 4 L28 4" stroke="currentColor" stroke-width="2.5"/><path d="M4 4 L4 28" stroke="currentColor" stroke-width="2.5"/><circle cx="4" cy="4" r="3.5" fill="#00ffe0" stroke="none"/></svg></div>
+  <div class="corner corner--tr"><svg viewBox="0 0 80 80" fill="none"><path d="M4 76 L4 4 L76 4" stroke="currentColor" stroke-width="1.2"/><path d="M4 4 L28 4" stroke="currentColor" stroke-width="2.5"/><path d="M4 4 L4 28" stroke="currentColor" stroke-width="2.5"/><circle cx="4" cy="4" r="3.5" fill="#00ffe0" stroke="none"/></svg></div>
+  <div class="corner corner--bl"><svg viewBox="0 0 80 80" fill="none"><path d="M4 76 L4 4 L76 4" stroke="currentColor" stroke-width="1.2"/><path d="M4 4 L28 4" stroke="currentColor" stroke-width="2.5"/><path d="M4 4 L4 28" stroke="currentColor" stroke-width="2.5"/><circle cx="4" cy="4" r="3.5" fill="#00ffe0" stroke="none"/></svg></div>
+  <div class="corner corner--br"><svg viewBox="0 0 80 80" fill="none"><path d="M4 76 L4 4 L76 4" stroke="currentColor" stroke-width="1.2"/><path d="M4 4 L28 4" stroke="currentColor" stroke-width="2.5"/><path d="M4 4 L4 28" stroke="currentColor" stroke-width="2.5"/><circle cx="4" cy="4" r="3.5" fill="#00ffe0" stroke="none"/></svg></div>
   <div class="hero">
-    <div class="label-top"><span class="wipe-cover"></span>Estudio de Diseño</div>
+    <div class="label-top"><span>Estudio de Diseño Élite</span></div>
     <div class="title-wrap"><h1 id="mainTitleIntro" data-text="JEP DESIGNER">JEP DESIGNER</h1><div class="title-underline"></div></div>
-    <div class="divider-wrap"><div class="divider-line rev"></div><div class="divider-diamond"></div><div class="divider-diamond" style="width:4px;height:4px;opacity:0.5;margin:0 6px;"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
+    <div class="divider-wrap"><div class="divider-line rev"></div><div class="divider-diamond"></div><div class="divider-diamond" style="width:5px;height:5px;opacity:0.6;"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
     <h2 id="subtitleIntro">presenta</h2>
-    <span class="epitaph" id="epitaphIntro">Una experiencia visual única, creada con excelencia</span>
-    <div class="label-bottom"><span>Movimiento</span><span>Identidad</span><span>Digital</span><span>MMXXV</span></div>
+    <span class="epitaph" id="epitaphIntro">Una sinfonía visual que redefine la excelencia</span>
+    <div class="label-bottom"><span>Vanguardismo</span><span>Identidad</span><span>Inmersión</span><span>MMXXV</span></div>
   </div>
   <div class="status"><div class="status-dot"></div><div class="status-text" id="statusTextIntro">Cargando portafolio</div></div>
 </div>
 
-<!-- CONTENIDO DEL PORTAFOLIO (oculto inicialmente) -->
+<!-- CONTENIDO DEL PORTAFOLIO (inicialmente oculto) -->
 <div id="portfolioContent" style="display: none; opacity: 0; transition: opacity 1.2s cubic-bezier(0.2,0.9,0.4,1.1);">
 <div id="prog"></div>
 <div id="cur"></div>
@@ -895,12 +604,11 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
     <li><a href="#comentarios">Comentarios</a></li>
     <li><a href="#contact">Contacto</a></li>
   </ul>
-  <!-- Botón hamburguesa añadido para móvil (se crea con JS pero lo pongo fijo por si acaso) -->
   <button class="menu-toggle" id="menuToggle" aria-label="Menú" style="display:none;background:transparent;border:none;color:var(--gold);font-size:28px;cursor:pointer;"><i class="fa-solid fa-bars"></i></button>
 </nav>
 
 <script>
-  // Pequeño script para habilitar el menú hamburguesa en móviles sin romper nada
+  // Menú hamburguesa para móviles
   (function() {
     const toggle = document.getElementById('menuToggle');
     const navLinks = document.querySelector('.nav-links');
@@ -926,442 +634,141 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 <!-- MARQUEE -->
 <div class="mqw">
   <div class="mqt">
-    <div class="mqi g"><span class="d"></span>JEP Designer</div>
-    <div class="mqi"><span class="d"></span>Diseño Gráfico</div>
-    <div class="mqi c"><span class="d"></span>UI / UX</div>
-    <div class="mqi"><span class="d"></span>Diseño Web Premium</div>
-    <div class="mqi m"><span class="d"></span>Branding</div>
-    <div class="mqi"><span class="d"></span>Interiores</div>
-    <div class="mqi g"><span class="d"></span>Colombia 2026</div>
-    <div class="mqi"><span class="d"></span>Identidad Visual</div>
-    <div class="mqi c"><span class="d"></span>Creatividad</div>
-    <div class="mqi"><span class="d"></span>Innovación</div>
-    <div class="mqi g"><span class="d"></span>JEP Designer</div>
-    <div class="mqi"><span class="d"></span>Diseño Gráfico</div>
-    <div class="mqi c"><span class="d"></span>UI / UX</div>
-    <div class="mqi"><span class="d"></span>Diseño Web Premium</div>
-    <div class="mqi m"><span class="d"></span>Branding</div>
-    <div class="mqi"><span class="d"></span>Interiores</div>
-    <div class="mqi g"><span class="d"></span>Colombia 2026</div>
-    <div class="mqi"><span class="d"></span>Identidad Visual</div>
-    <div class="mqi c"><span class="d"></span>Creatividad</div>
-    <div class="mqi"><span class="d"></span>Innovación</div>
+    <div class="mqi g"><span class="d"></span>JEP Designer</div><div class="mqi"><span class="d"></span>Diseño Gráfico</div><div class="mqi c"><span class="d"></span>UI / UX</div><div class="mqi"><span class="d"></span>Diseño Web Premium</div><div class="mqi m"><span class="d"></span>Branding</div><div class="mqi"><span class="d"></span>Interiores</div><div class="mqi g"><span class="d"></span>Colombia 2026</div><div class="mqi"><span class="d"></span>Identidad Visual</div><div class="mqi c"><span class="d"></span>Creatividad</div><div class="mqi"><span class="d"></span>Innovación</div>
+    <div class="mqi g"><span class="d"></span>JEP Designer</div><div class="mqi"><span class="d"></span>Diseño Gráfico</div><div class="mqi c"><span class="d"></span>UI / UX</div><div class="mqi"><span class="d"></span>Diseño Web Premium</div><div class="mqi m"><span class="d"></span>Branding</div><div class="mqi"><span class="d"></span>Interiores</div><div class="mqi g"><span class="d"></span>Colombia 2026</div><div class="mqi"><span class="d"></span>Identidad Visual</div><div class="mqi c"><span class="d"></span>Creatividad</div><div class="mqi"><span class="d"></span>Innovación</div>
   </div>
 </div>
 
-<!-- HERO -->
+<!-- HERO (todas las páginas del libro y contenido completo) -->
 <section id="hero">
   <div class="h-eye">Portafolio Profesional 2026</div>
   <div class="book-wrap">
-    <div class="bk-rings">
-      <div class="bk-ring"></div><div class="bk-ring"></div><div class="bk-ring"></div>
-      <div class="bk-ring"></div><div class="bk-ring"></div><div class="bk-ring"></div>
-      <div class="bk-ring"></div>
-    </div>
+    <div class="bk-rings"><div class="bk-ring"></div><div class="bk-ring"></div><div class="bk-ring"></div><div class="bk-ring"></div><div class="bk-ring"></div><div class="bk-ring"></div><div class="bk-ring"></div></div>
     <div class="book-inner" id="bookInner">
-      <div class="bk-page" id="bkp1" style="z-index:9">
-        <div class="bk-front cover">
-          <div class="bk-corner tl"></div><div class="bk-corner tr"></div>
-          <div class="bk-corner bl"></div><div class="bk-corner br"></div>
-          <div class="cover-logo">JEP</div>
-          <div class="cover-div"></div>
-          <div class="cover-sub">Designer · Colombia 2026</div>
-          <div class="cover-div"></div>
-          <div class="cover-role">Portafolio Profesional</div>
-        </div>
-        <div class="bk-back"><div class="bk-back-inner"><div class="bi-logo">JEP</div><div class="bi-div"></div><div class="bi-tag">Designer · Colombia</div><div class="bi-it">Creatividad · Innovación · Elegancia</div><div class="bi-div"></div></div></div>
-      </div>
-      <div class="bk-page" id="bkp2" style="z-index:8">
-        <div class="bk-front">
-          <div class="spread">
-            <div class="spread-l">
-              <div class="sp-av">JEP</div>
-              <div class="sp-name">Junior Estiben<br>Portilla</div>
-              <div class="sp-role">Diseñador Gráfico · Web · Interiores</div>
-              <p class="sp-desc">Transformando ideas en experiencias visuales modernas desde el Putumayo al mundo.</p>
-              <div class="sp-btns">
-                <a href="#services" class="sp-btn-g">Ver Servicios</a>
-                <a href="https://wa.me/573223729232?text=Hola%20quiero%20información" target="_blank" rel="noopener noreferrer" class="sp-btn-o">Contactar</a>
-              </div>
-            </div>
-            <div class="spread-r">
-              <div class="sp-h2">Especialidades</div>
-              <div class="sp-tl">
-                <div class="sp-it"><div class="sp-by">Diseño Web</div><div class="sp-bt">UI/UX & Desarrollo Web</div><div class="sp-bd">Páginas modernas, rápidas y responsivas con estética premium.</div></div>
-                <div class="sp-it"><div class="sp-by">Identidad Visual</div><div class="sp-bt">Branding & Diseño Gráfico</div><div class="sp-bd">Logos, identidad corporativa y piezas digitales de alto impacto.</div></div>
-                <div class="sp-it"><div class="sp-by">Espacios</div><div class="sp-bt">Diseño de Interiores</div><div class="sp-bd">Espacios modernos, minimalistas y con identidad propia.</div></div>
-                <div class="sp-it"><div class="sp-by">Contenido</div><div class="sp-bt">Contenido Visual Premium</div><div class="sp-bd">Edición, publicidad digital y redes sociales de alto nivel.</div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="bk-back"><div class="text-spread"><span class="ts-icon">✦</span><div class="ts-title">Creatividad Auténtica</div><div class="ts-div"></div><p class="ts-body">Cada proyecto nace desde una visión artística genuina. La creatividad no es un accidente — es el resultado de pasión, proceso y propósito.</p><div class="ts-div"></div><div class="ts-tag">JEP Designer · 2026</div></div></div>
-      </div>
-      <div class="bk-page" id="bkp3" style="z-index:7">
-        <div class="bk-front"><div class="img-full"><img src="jep-portfolio-01.jpg" alt="Portfolio 01" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><div class=\'ph-icon\'>🖼️</div><div class=\'ph-name\'>jep-portfolio-01.jpg</div><div class=\'ph-size\'>1200 × 750 px</div></div><div class=\'img-cap\'><span class=\'img-cap-num\'>Portfolio · 01</span><div class=\'img-cap-title\'>Diseño Gráfico &amp; Branding</div><div class=\'img-cap-sub\'>JEP Designer · Identidad Visual</div></div>'"><div class="img-overlay"></div><div class="img-cap"><span class="img-cap-num">Portfolio · 01</span><div class="img-cap-title">Diseño Gráfico & Branding</div><div class="img-cap-sub">JEP Designer · Identidad Visual</div></div></div></div>
-        <div class="bk-back"><div class="img-full"><img src="jep-portfolio-02.jpg" alt="Portfolio 02" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><div class=\'ph-icon\'>🌐</div><div class=\'ph-name\'>jep-portfolio-02.jpg</div><div class=\'ph-size\'>1200 × 750 px</div></div><div class=\'img-cap\'><span class=\'img-cap-num\'>Portfolio · 02</span><div class=\'img-cap-title\'>Diseño Web Premium · UI/UX</div><div class=\'img-cap-sub\'>JEP Designer · Experiencia Digital</div></div>'"><div class="img-overlay"></div><div class="img-cap"><span class="img-cap-num">Portfolio · 02</span><div class="img-cap-title">Diseño Web Premium · UI/UX</div><div class="img-cap-sub">JEP Designer · Experiencia Digital</div></div></div></div>
-      </div>
-      <div class="bk-page" id="bkp4" style="z-index:6">
-        <div class="bk-front"><div class="img-full"><img src="jep-portfolio-03.jpg" alt="Portfolio 03" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><div class=\'ph-icon\'>🏠</div><div class=\'ph-name\'>jep-portfolio-03.jpg</div><div class=\'ph-size\'>1200 × 750 px</div></div><div class=\'img-cap\'><span class=\'img-cap-num\'>Portfolio · 03</span><div class=\'img-cap-title\'>Diseño de Interiores</div><div class=\'img-cap-sub\'>JEP Designer · Espacios Modernos</div></div>'"><div class="img-overlay"></div><div class="img-cap"><span class="img-cap-num">Portfolio · 03</span><div class="img-cap-title">Diseño de Interiores</div><div class="img-cap-sub">JEP Designer · Espacios Modernos</div></div></div></div>
-        <div class="bk-back"><div class="img-full"><img src="jep-portfolio-04.jpg" alt="Portfolio 04" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><div class=\'ph-icon\'>🎨</div><div class=\'ph-name\'>jep-portfolio-04.jpg</div><div class=\'ph-size\'>1200 × 750 px</div></div><div class=\'img-cap\'><span class=\'img-cap-num\'>Portfolio · 04</span><div class=\'img-cap-title\'>Contenido Visual &amp; Redes</div><div class=\'img-cap-sub\'>JEP Designer · Marketing Digital</div></div>'"><div class="img-overlay"></div><div class="img-cap"><span class="img-cap-num">Portfolio · 04</span><div class="img-cap-title">Contenido Visual & Redes</div><div class="img-cap-sub">JEP Designer · Marketing Digital</div></div></div></div>
-      </div>
-      <div class="bk-page" id="bkp5" style="z-index:5">
-        <div class="bk-front"><div class="img-full"><img src="jep-portfolio-05.jpg" alt="Portfolio 05" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><div class=\'ph-icon\'>◈</div><div class=\'ph-name\'>jep-portfolio-05.jpg</div><div class=\'ph-size\'>1200 × 750 px</div></div><div class=\'img-cap\'><span class=\'img-cap-num\'>Portfolio · 05</span><div class=\'img-cap-title\'>Proyecto Destacado 2026</div><div class=\'img-cap-sub\'>JEP Designer · Colombia</div></div>'"><div class="img-overlay"></div><div class="img-cap"><span class="img-cap-num">Portfolio · 05</span><div class="img-cap-title">Proyecto Destacado 2026</div><div class="img-cap-sub">JEP Designer · Colombia</div></div></div></div>
-        <div class="bk-back"><div class="text-spread" style="background:linear-gradient(145deg,#060612,#040408)"><span class="ts-icon">🎨</span><div class="ts-title" style="color:var(--magenta)">Filosofía Creativa</div><div class="ts-div" style="background:linear-gradient(90deg,transparent,var(--magenta),transparent)"></div><p class="ts-body">"El diseño no solo se observa, se siente. Cada detalle comunica una historia. Cada color despierta una emoción. Cada forma tiene un significado."</p><div class="ts-div" style="background:linear-gradient(90deg,transparent,var(--magenta),transparent)"></div><div class="ts-tag" style="color:var(--magenta)">— Junior Estiben Portilla</div></div></div>
-      </div>
-      <div class="bk-page" id="bkp6" style="z-index:4">
-        <div class="bk-front"><div class="text-spread" style="background:linear-gradient(145deg,#080814,#050508)"><span class="ts-icon">◉</span><div class="ts-title" style="color:var(--cyan)">Visión 2026</div><div class="ts-div" style="background:linear-gradient(90deg,transparent,var(--cyan),transparent)"></div><p class="ts-body">En 2026 una página web debe transmitir más que información: debe generar experiencia, emoción y conexión real con las personas.</p><div class="ts-div" style="background:linear-gradient(90deg,transparent,var(--cyan),transparent)"></div><div class="ts-tag" style="color:var(--cyan)">Futurista · Minimalista · Inmersivo</div></div></div>
-        <div class="bk-back"><div class="text-spread" style="background:linear-gradient(145deg,#06060f,#0a0a18)"><span class="ts-icon" style="font-size:28px;margin-bottom:6px">🏠</span><div class="ts-title" style="font-size:20px;margin-bottom:8px">Diseño de Interiores</div><div class="ts-div"></div><p class="ts-body" style="font-size:12px">Espacios que cuentan historias. Diseño interior moderno y minimalista que combina funcionalidad con elegancia y personalidad propia.</p><div class="ts-div"></div><span class="ts-icon" style="font-size:28px;margin-bottom:6px">◈</span><div class="ts-title" style="font-size:20px;margin-bottom:8px">Branding Profesional</div><p class="ts-body" style="font-size:12px">Construcción de marcas sólidas con identidad visual estratégica y presencia digital moderna y memorable.</p></div></div>
-      </div>
-      <div class="bk-page" id="bkp7" style="z-index:3">
-        <div class="bk-front"><div class="final-spread"><div class="fs-title">Trabajemos Juntos</div><p class="fs-body">¿Tienes una idea, proyecto o marca que deseas llevar al siguiente nivel? Será un placer crear algo único, moderno y extraordinario.</p><a href="https://wa.me/573223729232?text=Hola%20quiero%20información" target="_blank" rel="noopener noreferrer" class="fs-cta">Iniciar Proyecto ✦</a></div></div>
-        <div class="bk-back"><div class="bk-back-inner"><div class="bi-logo">JEP</div><div class="bi-div"></div><div class="bi-tag">Gracias por esta experiencia</div><div class="bi-it">Colombia · 2026 · jepdesigner.com</div><div class="bi-div"></div></div></div>
-      </div>
+      <div class="bk-page" id="bkp1" style="z-index:9"><div class="bk-front cover"><div class="bk-corner tl"></div><div class="bk-corner tr"></div><div class="bk-corner bl"></div><div class="bk-corner br"></div><div class="cover-logo">JEP</div><div class="cover-div"></div><div class="cover-sub">Designer · Colombia 2026</div><div class="cover-div"></div><div class="cover-role">Portafolio Profesional</div></div><div class="bk-back"><div class="bk-back-inner"><div class="bi-logo">JEP</div><div class="bi-div"></div><div class="bi-tag">Designer · Colombia</div><div class="bi-it">Creatividad · Innovación · Elegancia</div><div class="bi-div"></div></div></div></div>
+      <div class="bk-page" id="bkp2" style="z-index:8"><div class="bk-front"><div class="spread"><div class="spread-l"><div class="sp-av">JEP</div><div class="sp-name">Junior Estiben<br>Portilla</div><div class="sp-role">Diseñador Gráfico · Web · Interiores</div><p class="sp-desc">Transformando ideas en experiencias visuales modernas desde el Putumayo al mundo.</p><div class="sp-btns"><a href="#services" class="sp-btn-g">Ver Servicios</a><a href="https://wa.me/573223729232?text=Hola%20quiero%20información" target="_blank" rel="noopener noreferrer" class="sp-btn-o">Contactar</a></div></div><div class="spread-r"><div class="sp-h2">Especialidades</div><div class="sp-tl"><div class="sp-it"><div class="sp-by">Diseño Web</div><div class="sp-bt">UI/UX & Desarrollo Web</div><div class="sp-bd">Páginas modernas, rápidas y responsivas con estética premium.</div></div><div class="sp-it"><div class="sp-by">Identidad Visual</div><div class="sp-bt">Branding & Diseño Gráfico</div><div class="sp-bd">Logos, identidad corporativa y piezas digitales de alto impacto.</div></div><div class="sp-it"><div class="sp-by">Espacios</div><div class="sp-bt">Diseño de Interiores</div><div class="sp-bd">Espacios modernos, minimalistas y con identidad propia.</div></div><div class="sp-it"><div class="sp-by">Contenido</div><div class="sp-bt">Contenido Visual Premium</div><div class="sp-bd">Edición, publicidad digital y redes sociales de alto nivel.</div></div></div></div></div></div><div class="bk-back"><div class="text-spread"><span class="ts-icon">✦</span><div class="ts-title">Creatividad Auténtica</div><div class="ts-div"></div><p class="ts-body">Cada proyecto nace desde una visión artística genuina. La creatividad no es un accidente — es el resultado de pasión, proceso y propósito.</p><div class="ts-div"></div><div class="ts-tag">JEP Designer · 2026</div></div></div></div>
+      <div class="bk-page" id="bkp3" style="z-index:7"><div class="bk-front"><div class="img-full"><img src="jep-portfolio-01.jpg" alt="Portfolio 01" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><div class=\'ph-icon\'>🖼️</div><div class=\'ph-name\'>jep-portfolio-01.jpg</div><div class=\'ph-size\'>1200 × 750 px</div></div><div class=\'img-cap\'><span class=\'img-cap-num\'>Portfolio · 01</span><div class=\'img-cap-title\'>Diseño Gráfico &amp; Branding</div><div class=\'img-cap-sub\'>JEP Designer · Identidad Visual</div></div>'"><div class="img-overlay"></div><div class="img-cap"><span class="img-cap-num">Portfolio · 01</span><div class="img-cap-title">Diseño Gráfico & Branding</div><div class="img-cap-sub">JEP Designer · Identidad Visual</div></div></div></div><div class="bk-back"><div class="img-full"><img src="jep-portfolio-02.jpg" alt="Portfolio 02" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><div class=\'ph-icon\'>🌐</div><div class=\'ph-name\'>jep-portfolio-02.jpg</div><div class=\'ph-size\'>1200 × 750 px</div></div><div class=\'img-cap\'><span class=\'img-cap-num\'>Portfolio · 02</span><div class=\'img-cap-title\'>Diseño Web Premium · UI/UX</div><div class=\'img-cap-sub\'>JEP Designer · Experiencia Digital</div></div>'"><div class="img-overlay"></div><div class="img-cap"><span class="img-cap-num">Portfolio · 02</span><div class="img-cap-title">Diseño Web Premium · UI/UX</div><div class="img-cap-sub">JEP Designer · Experiencia Digital</div></div></div></div></div>
+      <div class="bk-page" id="bkp4" style="z-index:6"><div class="bk-front"><div class="img-full"><img src="jep-portfolio-03.jpg" alt="Portfolio 03" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><div class=\'ph-icon\'>🏠</div><div class=\'ph-name\'>jep-portfolio-03.jpg</div><div class=\'ph-size\'>1200 × 750 px</div></div><div class=\'img-cap\'><span class=\'img-cap-num\'>Portfolio · 03</span><div class=\'img-cap-title\'>Diseño de Interiores</div><div class=\'img-cap-sub\'>JEP Designer · Espacios Modernos</div></div>'"><div class="img-overlay"></div><div class="img-cap"><span class="img-cap-num">Portfolio · 03</span><div class="img-cap-title">Diseño de Interiores</div><div class="img-cap-sub">JEP Designer · Espacios Modernos</div></div></div></div><div class="bk-back"><div class="img-full"><img src="jep-portfolio-04.jpg" alt="Portfolio 04" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><div class=\'ph-icon\'>🎨</div><div class=\'ph-name\'>jep-portfolio-04.jpg</div><div class=\'ph-size\'>1200 × 750 px</div></div><div class=\'img-cap\'><span class=\'img-cap-num\'>Portfolio · 04</span><div class=\'img-cap-title\'>Contenido Visual &amp; Redes</div><div class=\'img-cap-sub\'>JEP Designer · Marketing Digital</div></div>'"><div class="img-overlay"></div><div class="img-cap"><span class="img-cap-num">Portfolio · 04</span><div class="img-cap-title">Contenido Visual & Redes</div><div class="img-cap-sub">JEP Designer · Marketing Digital</div></div></div></div></div>
+      <div class="bk-page" id="bkp5" style="z-index:5"><div class="bk-front"><div class="img-full"><img src="jep-portfolio-05.jpg" alt="Portfolio 05" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><div class=\'ph-icon\'>◈</div><div class=\'ph-name\'>jep-portfolio-05.jpg</div><div class=\'ph-size\'>1200 × 750 px</div></div><div class=\'img-cap\'><span class=\'img-cap-num\'>Portfolio · 05</span><div class=\'img-cap-title\'>Proyecto Destacado 2026</div><div class=\'img-cap-sub\'>JEP Designer · Colombia</div></div>'"><div class="img-overlay"></div><div class="img-cap"><span class="img-cap-num">Portfolio · 05</span><div class="img-cap-title">Proyecto Destacado 2026</div><div class="img-cap-sub">JEP Designer · Colombia</div></div></div></div><div class="bk-back"><div class="text-spread" style="background:linear-gradient(145deg,#060612,#040408)"><span class="ts-icon">🎨</span><div class="ts-title" style="color:var(--magenta)">Filosofía Creativa</div><div class="ts-div" style="background:linear-gradient(90deg,transparent,var(--magenta),transparent)"></div><p class="ts-body">"El diseño no solo se observa, se siente. Cada detalle comunica una historia. Cada color despierta una emoción. Cada forma tiene un significado."</p><div class="ts-div" style="background:linear-gradient(90deg,transparent,var(--magenta),transparent)"></div><div class="ts-tag" style="color:var(--magenta)">— Junior Estiben Portilla</div></div></div></div>
+      <div class="bk-page" id="bkp6" style="z-index:4"><div class="bk-front"><div class="text-spread" style="background:linear-gradient(145deg,#080814,#050508)"><span class="ts-icon">◉</span><div class="ts-title" style="color:var(--cyan)">Visión 2026</div><div class="ts-div" style="background:linear-gradient(90deg,transparent,var(--cyan),transparent)"></div><p class="ts-body">En 2026 una página web debe transmitir más que información: debe generar experiencia, emoción y conexión real con las personas.</p><div class="ts-div" style="background:linear-gradient(90deg,transparent,var(--cyan),transparent)"></div><div class="ts-tag" style="color:var(--cyan)">Futurista · Minimalista · Inmersivo</div></div></div><div class="bk-back"><div class="text-spread" style="background:linear-gradient(145deg,#06060f,#0a0a18)"><span class="ts-icon" style="font-size:28px;margin-bottom:6px">🏠</span><div class="ts-title" style="font-size:20px;margin-bottom:8px">Diseño de Interiores</div><div class="ts-div"></div><p class="ts-body" style="font-size:12px">Espacios que cuentan historias. Diseño interior moderno y minimalista que combina funcionalidad con elegancia y personalidad propia.</p><div class="ts-div"></div><span class="ts-icon" style="font-size:28px;margin-bottom:6px">◈</span><div class="ts-title" style="font-size:20px;margin-bottom:8px">Branding Profesional</div><p class="ts-body" style="font-size:12px">Construcción de marcas sólidas con identidad visual estratégica y presencia digital moderna y memorable.</p></div></div></div>
+      <div class="bk-page" id="bkp7" style="z-index:3"><div class="bk-front"><div class="final-spread"><div class="fs-title">Trabajemos Juntos</div><p class="fs-body">¿Tienes una idea, proyecto o marca que deseas llevar al siguiente nivel? Será un placer crear algo único, moderno y extraordinario.</p><a href="https://wa.me/573223729232?text=Hola%20quiero%20información" target="_blank" rel="noopener noreferrer" class="fs-cta">Iniciar Proyecto ✦</a></div></div><div class="bk-back"><div class="bk-back-inner"><div class="bi-logo">JEP</div><div class="bi-div"></div><div class="bi-tag">Gracias por esta experiencia</div><div class="bi-it">Colombia · 2026 · jepdesigner.com</div><div class="bi-div"></div></div></div></div>
     </div>
   </div>
-  <div class="bk-nav">
-    <button class="bk-btn" id="bkPrev" onclick="bkPrev()">‹ Anterior</button>
-    <div class="bk-pg-label" id="bkLabel">Portada · 1 / 7</div>
-    <button class="bk-btn" id="bkNext" onclick="bkNext()">Siguiente ›</button>
-  </div>
-  <div class="h-title">
-    <span class="gl" data-text="Junior Estiben">Junior Estiben</span>
-    <span class="grd gl" data-text="Portilla">Portilla</span>
-  </div>
+  <div class="bk-nav"><button class="bk-btn" id="bkPrev" onclick="bkPrev()">‹ Anterior</button><div class="bk-pg-label" id="bkLabel">Portada · 1 / 7</div><button class="bk-btn" id="bkNext" onclick="bkNext()">Siguiente ›</button></div>
+  <div class="h-title"><span class="gl" data-text="Junior Estiben">Junior Estiben</span><span class="grd gl" data-text="Portilla">Portilla</span></div>
   <div class="h-sub">Diseñador Gráfico, Web e Interiorista Colombiano</div>
   <div class="h-brand">✦ Creador de JEP Designer ✦</div>
   <p class="h-desc">Transformando ideas en experiencias visuales modernas, elegantes y funcionales. Desde el corazón del Putumayo hacia el mundo digital, combinando creatividad, innovación y diseño estratégico.</p>
-  <div class="h-cta">
-    <a href="#services" class="cta-g mag">Ver Portafolio</a>
-    <a href="https://wa.me/573223729232?text=Hola%20quiero%20información" target="_blank" rel="noopener noreferrer" class="cta-o mag">Contactar Ahora</a>
-  </div>
+  <div class="h-cta"><a href="#services" class="cta-g mag">Ver Portafolio</a><a href="https://wa.me/573223729232?text=Hola%20quiero%20información" target="_blank" rel="noopener noreferrer" class="cta-o mag">Contactar Ahora</a></div>
   <div class="sh"><span>Scroll</span><div class="sh-l"></div></div>
 </section>
 
 <!-- ABOUT -->
-<section id="about">
-  <div class="wrap">
-    <div class="ab-grid">
-      <div class="rv-l">
-        <div class="ab-card tilt">
-          <div class="badge-row"><div class="badge">23 años</div></div>
-          <div class="live"><div class="live-dot"></div><div class="live-t">San Miguel La Dorada · Putumayo · Colombia</div></div>
-          <div class="sl">Identidad</div>
-          <div class="st" style="font-size:34px">Quién<br>Soy <span class="ac">Yo</span></div>
-          <div class="sdv"></div>
-          <div class="pillars">
-            <div class="pl"><div class="pl-ic">✦</div><div class="pl-lb">Creatividad</div></div>
-            <div class="pl"><div class="pl-ic">◈</div><div class="pl-lb">Innovación</div></div>
-            <div class="pl"><div class="pl-ic">◉</div><div class="pl-lb">Propósito</div></div>
-          </div>
-        </div>
-      </div>
-      <div class="ab-text rv-r" style="transition-delay:.15s">
-        <div class="sl">Mi historia</div>
-        <div class="st">Sobre <span class="ac">Junior</span></div>
-        <p>Junior Estiben Portilla es un joven colombiano de 23 años apasionado por el diseño gráfico, el diseño web y el diseño de interiores. Nació en el departamento del Putumayo, en el municipio de San Miguel La Dorada, un lugar lleno de cultura, naturaleza e inspiración que marcó profundamente su visión artística y creativa.</p>
-        <p>Desde temprana edad mostró interés por el arte visual, la estética digital y la creación de conceptos innovadores. Con los años desarrolló una identidad profesional enfocada en la elegancia, el minimalismo moderno y la creación de experiencias visuales de alto impacto.</p>
-        <p>Actualmente es el fundador y creador de <strong>JEP Designer</strong>, una marca creativa enfocada en diseño profesional, branding, páginas web modernas, identidad visual y proyectos de interiores contemporáneos.</p>
-        <p>Su filosofía de trabajo se basa en tres pilares fundamentales: <strong>creatividad auténtica</strong>, <strong>innovación visual</strong> y <strong>diseño con propósito</strong>. Junior busca que cada proyecto transmita personalidad, profesionalismo y una conexión emocional genuina.</p>
-        <div class="stats-reveal" id="stats-reveal">
-          <div class="stat-row" style="transition-delay:.05s">
-            <div class="stat-item"><div class="stat-num"><span class="num" data-target="23">0</span></div><div class="stat-label">Años de edad</div><div class="stat-desc">Joven con visión global</div></div>
-            <div class="stat-item"><div class="stat-num"><span class="num" data-target="3">0</span></div><div class="stat-label">Disciplinas creativas</div><div class="stat-desc">Gráfico · Web · Interiores</div></div>
-          </div>
-          <div class="stat-row" style="transition-delay:.18s">
-            <div class="stat-item"><div class="stat-num"><span class="num" data-target="6">0</span></div><div class="stat-label">Servicios disponibles</div><div class="stat-desc">Soluciones integrales</div></div>
-            <div class="stat-item"><div class="stat-num"><span class="num" data-target="100">0</span><span class="suffix">%</span></div><div class="stat-label">Compromiso total</div><div class="stat-desc">En cada proyecto</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<section id="about"><div class="wrap"><div class="ab-grid"><div class="rv-l"><div class="ab-card tilt"><div class="badge-row"><div class="badge">23 años</div></div><div class="live"><div class="live-dot"></div><div class="live-t">San Miguel La Dorada · Putumayo · Colombia</div></div><div class="sl">Identidad</div><div class="st" style="font-size:34px">Quién<br>Soy <span class="ac">Yo</span></div><div class="sdv"></div><div class="pillars"><div class="pl"><div class="pl-ic">✦</div><div class="pl-lb">Creatividad</div></div><div class="pl"><div class="pl-ic">◈</div><div class="pl-lb">Innovación</div></div><div class="pl"><div class="pl-ic">◉</div><div class="pl-lb">Propósito</div></div></div></div></div><div class="ab-text rv-r" style="transition-delay:.15s"><div class="sl">Mi historia</div><div class="st">Sobre <span class="ac">Junior</span></div><p>Junior Estiben Portilla es un joven colombiano de 23 años apasionado por el diseño gráfico, el diseño web y el diseño de interiores. Nació en el departamento del Putumayo, en el municipio de San Miguel La Dorada, un lugar lleno de cultura, naturaleza e inspiración que marcó profundamente su visión artística y creativa.</p><p>Desde temprana edad mostró interés por el arte visual, la estética digital y la creación de conceptos innovadores. Con los años desarrolló una identidad profesional enfocada en la elegancia, el minimalismo moderno y la creación de experiencias visuales de alto impacto.</p><p>Actualmente es el fundador y creador de <strong>JEP Designer</strong>, una marca creativa enfocada en diseño profesional, branding, páginas web modernas, identidad visual y proyectos de interiores contemporáneos.</p><p>Su filosofía de trabajo se basa en tres pilares fundamentales: <strong>creatividad auténtica</strong>, <strong>innovación visual</strong> y <strong>diseño con propósito</strong>. Junior busca que cada proyecto transmita personalidad, profesionalismo y una conexión emocional genuina.</p><div class="stats-reveal" id="stats-reveal"><div class="stat-row" style="transition-delay:.05s"><div class="stat-item"><div class="stat-num"><span class="num" data-target="23">0</span></div><div class="stat-label">Años de edad</div><div class="stat-desc">Joven con visión global</div></div><div class="stat-item"><div class="stat-num"><span class="num" data-target="3">0</span></div><div class="stat-label">Disciplinas creativas</div><div class="stat-desc">Gráfico · Web · Interiores</div></div></div><div class="stat-row" style="transition-delay:.18s"><div class="stat-item"><div class="stat-num"><span class="num" data-target="6">0</span></div><div class="stat-label">Servicios disponibles</div><div class="stat-desc">Soluciones integrales</div></div><div class="stat-item"><div class="stat-num"><span class="num" data-target="100">0</span><span class="suffix">%</span></div><div class="stat-label">Compromiso total</div><div class="stat-desc">En cada proyecto</div></div></div></div></div></div></div></section>
 
 <!-- BRAND -->
-<section id="brand">
-  <div class="brand-bg"></div>
-  <div class="wrap">
-    <div class="brand-c rv">
-      <div class="sl" style="justify-content:center">La Marca</div>
-      <div class="brand-g"><span class="f">JEP</span><br>Designer</div>
-      <div class="sdv" style="margin:0 auto 28px"></div>
-      <p class="brand-p">JEP Designer nace como una marca creativa enfocada en ofrecer soluciones visuales modernas, exclusivas y profesionales para personas, marcas y empresas que desean destacar en el mundo digital. La visión es crear proyectos con identidad propia, mezclando elegancia visual, innovación tecnológica y creatividad artística.</p>
-      <div class="brand-vals">
-        <div class="vt">Innovación</div><div class="vt">Elegancia</div><div class="vt">Profesionalismo</div>
-        <div class="vt">Creatividad</div><div class="vt">Originalidad</div><div class="vt">Calidad Visual</div>
-        <div class="vt">Diseño Emocional</div>
-      </div>
-    </div>
-  </div>
-</section>
+<section id="brand"><div class="brand-bg"></div><div class="wrap"><div class="brand-c rv"><div class="sl" style="justify-content:center">La Marca</div><div class="brand-g"><span class="f">JEP</span><br>Designer</div><div class="sdv" style="margin:0 auto 28px"></div><p class="brand-p">JEP Designer nace como una marca creativa enfocada en ofrecer soluciones visuales modernas, exclusivas y profesionales para personas, marcas y empresas que desean destacar en el mundo digital. La visión es crear proyectos con identidad propia, mezclando elegancia visual, innovación tecnológica y creatividad artística.</p><div class="brand-vals"><div class="vt">Innovación</div><div class="vt">Elegancia</div><div class="vt">Profesionalismo</div><div class="vt">Creatividad</div><div class="vt">Originalidad</div><div class="vt">Calidad Visual</div><div class="vt">Diseño Emocional</div></div></div></div></section>
 
 <!-- SERVICES -->
-<section id="services">
-  <div class="wrap">
-    <div class="rv">
-      <div class="sl" style="color:var(--cyan)">Lo que ofrezco</div>
-      <div class="st">Servicios<br><span class="ac">Profesionales</span></div>
-    </div>
-    <div class="srv-grid">
-      <div class="sc rv tilt" style="transition-delay:.07s"><span class="s-ic">🌐</span><span class="s-nm-bg">01</span><div class="s-nm">Diseño Web Premium</div><p class="s-tx">Creación de páginas web modernas, rápidas, adaptables y optimizadas para todos los dispositivos.</p><div class="s-ln"></div></div>
-      <div class="sc rv tilt" style="transition-delay:.14s"><span class="s-ic">✏️</span><span class="s-nm-bg">02</span><div class="s-nm">Diseño Gráfico</div><p class="s-tx">Logos, identidad visual, banners, contenido publicitario y piezas digitales de alto impacto.</p><div class="s-ln"></div></div>
-      <div class="sc rv tilt" style="transition-delay:.21s"><span class="s-ic">🏠</span><span class="s-nm-bg">03</span><div class="s-nm">Diseño de Interiores</div><p class="s-tx">Espacios modernos, minimalistas y elegantes, pensados para transmitir armonía y personalidad.</p><div class="s-ln"></div></div>
-      <div class="sc rv tilt" style="transition-delay:.28s"><span class="s-ic">◈</span><span class="s-nm-bg">04</span><div class="s-nm">Branding Profesional</div><p class="s-tx">Construcción de marcas sólidas con identidad visual estratégica y presencia digital moderna.</p><div class="s-ln"></div></div>
-      <div class="sc rv tilt" style="transition-delay:.35s"><span class="s-ic">◉</span><span class="s-nm-bg">05</span><div class="s-nm">UI/UX Design</div><p class="s-tx">Interfaces intuitivas, visualmente atractivas y enfocadas en mejorar la experiencia del usuario.</p><div class="s-ln"></div></div>
-      <div class="sc rv tilt" style="transition-delay:.42s"><span class="s-ic">🎨</span><span class="s-nm-bg">06</span><div class="s-nm">Contenido Visual</div><p class="s-tx">Edición de imágenes, conceptos artísticos, publicidad digital y contenido premium para redes.</p><div class="s-ln"></div></div>
-    </div>
-  </div>
-</section>
+<section id="services"><div class="wrap"><div class="rv"><div class="sl" style="color:var(--cyan)">Lo que ofrezco</div><div class="st">Servicios<br><span class="ac">Profesionales</span></div></div><div class="srv-grid"><div class="sc rv tilt" style="transition-delay:.07s"><span class="s-ic">🌐</span><span class="s-nm-bg">01</span><div class="s-nm">Diseño Web Premium</div><p class="s-tx">Creación de páginas web modernas, rápidas, adaptables y optimizadas para todos los dispositivos.</p><div class="s-ln"></div></div><div class="sc rv tilt" style="transition-delay:.14s"><span class="s-ic">✏️</span><span class="s-nm-bg">02</span><div class="s-nm">Diseño Gráfico</div><p class="s-tx">Logos, identidad visual, banners, contenido publicitario y piezas digitales de alto impacto.</p><div class="s-ln"></div></div><div class="sc rv tilt" style="transition-delay:.21s"><span class="s-ic">🏠</span><span class="s-nm-bg">03</span><div class="s-nm">Diseño de Interiores</div><p class="s-tx">Espacios modernos, minimalistas y elegantes, pensados para transmitir armonía y personalidad.</p><div class="s-ln"></div></div><div class="sc rv tilt" style="transition-delay:.28s"><span class="s-ic">◈</span><span class="s-nm-bg">04</span><div class="s-nm">Branding Profesional</div><p class="s-tx">Construcción de marcas sólidas con identidad visual estratégica y presencia digital moderna.</p><div class="s-ln"></div></div><div class="sc rv tilt" style="transition-delay:.35s"><span class="s-ic">◉</span><span class="s-nm-bg">05</span><div class="s-nm">UI/UX Design</div><p class="s-tx">Interfaces intuitivas, visualmente atractivas y enfocadas en mejorar la experiencia del usuario.</p><div class="s-ln"></div></div><div class="sc rv tilt" style="transition-delay:.42s"><span class="s-ic">🎨</span><span class="s-nm-bg">06</span><div class="s-nm">Contenido Visual</div><p class="s-tx">Edición de imágenes, conceptos artísticos, publicidad digital y contenido premium para redes.</p><div class="s-ln"></div></div></div></div></section>
 
 <!-- VISION -->
-<section id="vision">
-  <div class="vg"></div>
-  <div class="wrap">
-    <div class="vi-grid">
-      <div class="rv-l">
-        <div class="sl" style="color:var(--magenta)">El futuro del diseño</div>
-        <div class="st">Visión<br><span class="ac">2026</span></div>
-        <p style="font-size:15px;color:var(--white-dim);line-height:1.9;margin-bottom:8px">En 2026 una página web debe transmitir más que información: debe generar experiencia, emoción y conexión real con las personas.</p>
-        <div class="feats">
-          <div class="feat"><div class="f-dot"></div><div class="f-lb">Futurista</div></div>
-          <div class="feat"><div class="f-dot"></div><div class="f-lb">Minimalista</div></div>
-          <div class="feat"><div class="f-dot"></div><div class="f-lb">Animaciones</div></div>
-          <div class="feat"><div class="f-dot"></div><div class="f-lb">Inmersivo</div></div>
-          <div class="feat"><div class="f-dot"></div><div class="f-lb">Responsive</div></div>
-          <div class="feat"><div class="f-dot"></div><div class="f-lb">Optimizado</div></div>
-          <div class="feat"><div class="f-dot"></div><div class="f-lb">Modo Oscuro</div></div>
-          <div class="feat"><div class="f-dot"></div><div class="f-lb">Estética Premium</div></div>
-          <div class="feat"><div class="f-dot"></div><div class="f-lb">3D Ligero</div></div>
-          <div class="feat"><div class="f-dot"></div><div class="f-lb">Interactivo</div></div>
-        </div>
-      </div>
-      <div class="vr rv-r" style="transition-delay:.2s">
-        <div class="v26">26</div>
-        <div class="vi-card tilt">
-          <span class="vi-ic">◈</span>
-          <div class="vi-tt">Diseño del Futuro</div>
-          <p class="vi-tx">Cada proyecto integra arte digital, tecnología moderna, estética profesional, tendencias globales e innovación visual. Una visión enfocada en crear experiencias únicas y memorables que conectan creatividad, elegancia e innovación.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<section id="vision"><div class="vg"></div><div class="wrap"><div class="vi-grid"><div class="rv-l"><div class="sl" style="color:var(--magenta)">El futuro del diseño</div><div class="st">Visión<br><span class="ac">2026</span></div><p style="font-size:15px;color:var(--white-dim);line-height:1.9;margin-bottom:8px">En 2026 una página web debe transmitir más que información: debe generar experiencia, emoción y conexión real con las personas.</p><div class="feats"><div class="feat"><div class="f-dot"></div><div class="f-lb">Futurista</div></div><div class="feat"><div class="f-dot"></div><div class="f-lb">Minimalista</div></div><div class="feat"><div class="f-dot"></div><div class="f-lb">Animaciones</div></div><div class="feat"><div class="f-dot"></div><div class="f-lb">Inmersivo</div></div><div class="feat"><div class="f-dot"></div><div class="f-lb">Responsive</div></div><div class="feat"><div class="f-dot"></div><div class="f-lb">Optimizado</div></div><div class="feat"><div class="f-dot"></div><div class="f-lb">Modo Oscuro</div></div><div class="feat"><div class="f-dot"></div><div class="f-lb">Estética Premium</div></div><div class="feat"><div class="f-dot"></div><div class="f-lb">3D Ligero</div></div><div class="feat"><div class="f-dot"></div><div class="f-lb">Interactivo</div></div></div></div><div class="vr rv-r" style="transition-delay:.2s"><div class="v26">26</div><div class="vi-card tilt"><span class="vi-ic">◈</span><div class="vi-tt">Diseño del Futuro</div><p class="vi-tx">Cada proyecto integra arte digital, tecnología moderna, estética profesional, tendencias globales e innovación visual. Una visión enfocada en crear experiencias únicas y memorables que conectan creatividad, elegancia e innovación.</p></div></div></div></div></section>
 
 <!-- QUOTE -->
-<section id="quote">
-  <div class="wrap">
-    <div class="rv" style="text-align:center">
-      <span class="q-mk">"</span>
-      <div class="q-tx">El diseño no solo se observa, se siente.<br>Cada detalle comunica una historia.</div>
-      <div class="q-au">— Junior Estiben Portilla</div>
-    </div>
-  </div>
-</section>
+<section id="quote"><div class="wrap"><div class="rv" style="text-align:center"><span class="q-mk">"</span><div class="q-tx">El diseño no solo se observa, se siente.<br>Cada detalle comunica una historia.</div><div class="q-au">— Junior Estiben Portilla</div></div></div></section>
 
 <!-- COMENTARIOS -->
-<section id="comentarios">
-  <div class="wrap">
-
-    <div class="cm-banner rv">
-      <div class="cm-banner-left">
-        <div class="cm-banner-icon">💬</div>
-        <div class="cm-banner-text">
-          <h3>¿Qué opinan mis clientes?</h3>
-          <p>Accede con tu contraseña y deja tu experiencia</p>
-        </div>
-      </div>
-      <a href="#comentarios" class="cm-banner-btn">
-        Ir a Comentarios <span class="arrow">↓</span>
-      </a>
-    </div>
-
-    <div class="rv" style="margin-bottom:40px">
-      <div class="sl">Lo que dicen</div>
-      <div class="st">Comentarios<br><span class="ac">& Reseñas</span></div>
-      <div class="sdv"></div>
-    </div>
-
-    <div class="cm-main-grid">
-
-      <!-- PANEL LOGIN -->
-      <div class="cm-login-panel rv-l" id="loginPanel">
-        <div class="cm-login-header">
-          <div class="cm-login-crown"><i class="fa-solid fa-crown"></i></div>
-          <h3>Acceso Premium</h3>
-          <p>Ingresa para dejar tu comentario</p>
-        </div>
-        <div class="cm-login-body">
-          <div class="cm-input-box">
-            <i class="fa-solid fa-user"></i>
-            <input type="text" id="cmUsuario" placeholder="Tu nombre de usuario" autocomplete="off">
-          </div>
-          <div class="cm-input-box">
-            <i class="fa-solid fa-lock"></i>
-            <input type="password" id="cmPassword" placeholder="Contraseña de acceso" autocomplete="off">
-          </div>
-          <button class="cm-login-btn" id="cmLoginBtn" onclick="cmLogin()">
-            <i class="fa-solid fa-right-to-bracket"></i> Ingresar
-          </button>
-          <div class="cm-login-links">
-            <a href="https://wa.me/573223729232?text=Hola%20quiero%20información" target="_blank" rel="noopener noreferrer">¿Eres cliente?</a>
-            <a href="https://wa.me/573223729232?text=Hola%20quiero%20información" target="_blank" rel="noopener noreferrer">Obtener acceso</a>
-          </div>
-          <div class="cm-login-note">
-            <p>⚡ Debes adquirir un <span>servicio con nosotros</span> para poder ingresar al sistema y dejar tu reseña.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- PANEL ESCRIBIR -->
-      <div class="cm-write-panel rv-l" id="writePanel">
-        <div class="cm-write-header">
-          <div class="cm-write-badge">✓ Verificado</div>
-          <h3>Escribe tu reseña</h3>
-          <div class="cm-user-logged">
-            <div class="cm-user-av" id="cmUserAv">U</div>
-            <div class="cm-user-name" id="cmUserName">Usuario</div>
-            <button class="cm-logout-btn" onclick="cmLogout()">Salir</button>
-          </div>
-        </div>
-        <div class="cm-write-body">
-          <div class="cm-stars-pick">
-            <label>Calificación:</label>
-            <button class="star-btn" data-star="1" onclick="setStar(1)">★</button>
-            <button class="star-btn" data-star="2" onclick="setStar(2)">★</button>
-            <button class="star-btn" data-star="3" onclick="setStar(3)">★</button>
-            <button class="star-btn" data-star="4" onclick="setStar(4)">★</button>
-            <button class="star-btn" data-star="5" onclick="setStar(5)">★</button>
-          </div>
-          <textarea class="cm-textarea" id="cmText" placeholder="Comparte tu experiencia trabajando con JEP Designer... ¿Qué te pareció el servicio? ¿Volvería a contratar?"></textarea>
-          <button class="cm-submit" onclick="cmSubmit()">
-            <i class="fa-solid fa-paper-plane"></i> Publicar Reseña
-          </button>
-        </div>
-      </div>
-
-      <!-- PANEL COMENTARIOS -->
-      <div class="cm-display-panel rv-r" style="transition-delay:.15s">
-        <div class="cm-display-header">
-          <h3>Reseñas <span>de clientes</span></h3>
-          <div class="cm-count" id="cmCount">0</div>
-        </div>
-        <div id="cmList" class="cm-empty">
-          <span class="cm-empty-icon">⟳</span>
-          <div class="cm-empty-txt">Cargando reseñas...</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
+<section id="comentarios"><div class="wrap"><div class="cm-banner rv"><div class="cm-banner-left"><div class="cm-banner-icon">💬</div><div class="cm-banner-text"><h3>¿Qué opinan mis clientes?</h3><p>Accede con tu contraseña y deja tu experiencia</p></div></div><a href="#comentarios" class="cm-banner-btn">Ir a Comentarios <span class="arrow">↓</span></a></div><div class="rv" style="margin-bottom:40px"><div class="sl">Lo que dicen</div><div class="st">Comentarios<br><span class="ac">& Reseñas</span></div><div class="sdv"></div></div><div class="cm-main-grid"><div class="cm-login-panel rv-l" id="loginPanel"><div class="cm-login-header"><div class="cm-login-crown"><i class="fa-solid fa-crown"></i></div><h3>Acceso Premium</h3><p>Ingresa para dejar tu comentario</p></div><div class="cm-login-body"><div class="cm-input-box"><i class="fa-solid fa-user"></i><input type="text" id="cmUsuario" placeholder="Tu nombre de usuario" autocomplete="off"></div><div class="cm-input-box"><i class="fa-solid fa-lock"></i><input type="password" id="cmPassword" placeholder="Contraseña de acceso" autocomplete="off"></div><button class="cm-login-btn" id="cmLoginBtn" onclick="cmLogin()"><i class="fa-solid fa-right-to-bracket"></i> Ingresar</button><div class="cm-login-links"><a href="https://wa.me/573223729232?text=Hola%20quiero%20información" target="_blank" rel="noopener noreferrer">¿Eres cliente?</a><a href="https://wa.me/573223729232?text=Hola%20quiero%20información" target="_blank" rel="noopener noreferrer">Obtener acceso</a></div><div class="cm-login-note"><p>⚡ Debes adquirir un <span>servicio con nosotros</span> para poder ingresar al sistema y dejar tu reseña.</p></div></div></div><div class="cm-write-panel rv-l" id="writePanel"><div class="cm-write-header"><div class="cm-write-badge">✓ Verificado</div><h3>Escribe tu reseña</h3><div class="cm-user-logged"><div class="cm-user-av" id="cmUserAv">U</div><div class="cm-user-name" id="cmUserName">Usuario</div><button class="cm-logout-btn" onclick="cmLogout()">Salir</button></div></div><div class="cm-write-body"><div class="cm-stars-pick"><label>Calificación:</label><button class="star-btn" data-star="1" onclick="setStar(1)">★</button><button class="star-btn" data-star="2" onclick="setStar(2)">★</button><button class="star-btn" data-star="3" onclick="setStar(3)">★</button><button class="star-btn" data-star="4" onclick="setStar(4)">★</button><button class="star-btn" data-star="5" onclick="setStar(5)">★</button></div><textarea class="cm-textarea" id="cmText" placeholder="Comparte tu experiencia trabajando con JEP Designer... ¿Qué te pareció el servicio? ¿Volvería a contratar?"></textarea><button class="cm-submit" onclick="cmSubmit()"><i class="fa-solid fa-paper-plane"></i> Publicar Reseña</button></div></div><div class="cm-display-panel rv-r" style="transition-delay:.15s"><div class="cm-display-header"><h3>Reseñas <span>de clientes</span></h3><div class="cm-count" id="cmCount">0</div></div><div id="cmList" class="cm-empty"><span class="cm-empty-icon">⟳</span><div class="cm-empty-txt">Cargando reseñas...</div></div></div></div></div></section>
 
 <!-- CONTACT -->
-<section id="contact">
-  <div class="wrap">
-    <div class="ct-grid">
-      <div class="rv-l">
-        <div class="sl">Hablemos</div>
-        <div class="st">Trabajemos<br><span class="ac">Juntos</span></div>
-        <div class="ci">
-          <div class="ci-it"><div class="ci-lb">Nombre</div><div class="ci-vl">Junior Estiben Portilla</div></div>
-          <div class="ci-it"><div class="ci-lb">Marca</div><div class="ci-vl">JEP Designer</div></div>
-          <div class="ci-it"><div class="ci-lb">País</div><div class="ci-vl">Colombia</div></div>
-          <div class="ci-it"><div class="ci-lb">Ubicación</div><div class="ci-vl">San Miguel La Dorada, Putumayo</div></div>
-        </div>
-        <div class="soc3d" id="soc3d">
-          <a href="https://www.instagram.com/estibenportilla" target="_blank" rel="noopener noreferrer" class="s3 ig" data-sm="220,39,67"><div class="s3-st"><canvas class="s3-sm" width="72" height="90"></canvas><div class="s3-ic"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="white" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="white" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="white"/></svg></div></div><span class="s3-lb">Instagram</span></a>
-          <a href="https://vm.tiktok.com/ZS98VnbD2kmaG-WQ069/" target="_blank" rel="noopener noreferrer" class="s3 tk" data-sm="105,201,208"><div class="s3-st"><canvas class="s3-sm" width="72" height="90"></canvas><div class="s3-ic"><svg viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.27 8.27 0 004.84 1.55V6.79a4.85 4.85 0 01-1.07-.1z"/></svg></div></div><span class="s3-lb">TikTok</span></a>
-          <a href="https://youtube.com/@jepvizion" target="_blank" rel="noopener noreferrer" class="s3 yt" data-sm="255,60,60"><div class="s3-st"><canvas class="s3-sm" width="72" height="90"></canvas><div class="s3-ic"><svg viewBox="0 0 24 24" fill="white"><path d="M23.5 6.2a3.02 3.02 0 00-2.12-2.13C19.53 3.62 12 3.62 12 3.62s-7.53 0-9.38.45A3.02 3.02 0 00.5 6.2C.06 8.05.06 12 .06 12s0 3.95.44 5.8a3.02 3.02 0 002.12 2.13C4.47 20.38 12 20.38 12 20.38s7.53 0 9.38-.45a3.02 3.02 0 002.12-2.13c.44-1.85.44-5.8.44-5.8s0-3.95-.44-5.8z"/><polygon points="9.75,15.5 15.75,12 9.75,8.5" fill="#ff0000"/></svg></div></div><span class="s3-lb">YouTube</span></a>
-          <a href="https://www.facebook.com/share/1E5MTZsxtm/" target="_blank" rel="noopener noreferrer" class="s3 fb" data-sm="25,118,210"><div class="s3-st"><canvas class="s3-sm" width="72" height="90"></canvas><div class="s3-ic"><svg viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></div></div><span class="s3-lb">Facebook</span></a>
-          <a href="https://www.facebook.com/share/1EB4PKjfDp/" target="_blank" rel="noopener noreferrer" class="s3 fb" data-sm="25,118,210"><div class="s3-st"><canvas class="s3-sm" width="72" height="90"></canvas><div class="s3-ic"><svg viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></div></div><span class="s3-lb">Facebook 2</span></a>
-          <a href="https://wa.me/573223729232?text=Hola%20quiero%20información" target="_blank" rel="noopener noreferrer" class="s3 wa" data-sm="37,211,102"><div class="s3-st"><canvas class="s3-sm" width="72" height="90"></canvas><div class="s3-ic"><svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div></div><span class="s3-lb">WhatsApp</span></a>
-        </div>
-      </div>
-      <div class="ct-r rv-r" style="transition-delay:.2s;padding-top:80px">
-        <div class="sl">¿Tienes un proyecto?</div>
-        <p>¿Tienes una idea, proyecto o marca que deseas llevar al siguiente nivel? Será un placer ayudarte a crear algo único, moderno y profesional.</p>
-        <p>Cada colaboración es una oportunidad de crear algo extraordinario. Mi enfoque combina creatividad auténtica con innovación visual y diseño con propósito real.</p>
-        <a href="https://wa.me/573223729232?text=Hola%20quiero%20información" target="_blank" rel="noopener noreferrer" class="c-cta mag">Iniciar Proyecto ✦</a>
-      </div>
-    </div>
-  </div>
-</section>
+<section id="contact"><div class="wrap"><div class="ct-grid"><div class="rv-l"><div class="sl">Hablemos</div><div class="st">Trabajemos<br><span class="ac">Juntos</span></div><div class="ci"><div class="ci-it"><div class="ci-lb">Nombre</div><div class="ci-vl">Junior Estiben Portilla</div></div><div class="ci-it"><div class="ci-lb">Marca</div><div class="ci-vl">JEP Designer</div></div><div class="ci-it"><div class="ci-lb">País</div><div class="ci-vl">Colombia</div></div><div class="ci-it"><div class="ci-lb">Ubicación</div><div class="ci-vl">San Miguel La Dorada, Putumayo</div></div></div><div class="soc3d" id="soc3d"><a href="https://www.instagram.com/estibenportilla" target="_blank" rel="noopener noreferrer" class="s3 ig" data-sm="220,39,67"><div class="s3-st"><canvas class="s3-sm" width="72" height="90"></canvas><div class="s3-ic"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="white" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="white" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="white"/></svg></div></div><span class="s3-lb">Instagram</span></a><a href="https://vm.tiktok.com/ZS98VnbD2kmaG-WQ069/" target="_blank" rel="noopener noreferrer" class="s3 tk" data-sm="105,201,208"><div class="s3-st"><canvas class="s3-sm" width="72" height="90"></canvas><div class="s3-ic"><svg viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.27 8.27 0 004.84 1.55V6.79a4.85 4.85 0 01-1.07-.1z"/></svg></div></div><span class="s3-lb">TikTok</span></a><a href="https://youtube.com/@jepvizion" target="_blank" rel="noopener noreferrer" class="s3 yt" data-sm="255,60,60"><div class="s3-st"><canvas class="s3-sm" width="72" height="90"></canvas><div class="s3-ic"><svg viewBox="0 0 24 24" fill="white"><path d="M23.5 6.2a3.02 3.02 0 00-2.12-2.13C19.53 3.62 12 3.62 12 3.62s-7.53 0-9.38.45A3.02 3.02 0 00.5 6.2C.06 8.05.06 12 .06 12s0 3.95.44 5.8a3.02 3.02 0 002.12 2.13C4.47 20.38 12 20.38 12 20.38s7.53 0 9.38-.45a3.02 3.02 0 002.12-2.13c.44-1.85.44-5.8.44-5.8s0-3.95-.44-5.8z"/><polygon points="9.75,15.5 15.75,12 9.75,8.5" fill="#ff0000"/></svg></div></div><span class="s3-lb">YouTube</span></a><a href="https://www.facebook.com/share/1E5MTZsxtm/" target="_blank" rel="noopener noreferrer" class="s3 fb" data-sm="25,118,210"><div class="s3-st"><canvas class="s3-sm" width="72" height="90"></canvas><div class="s3-ic"><svg viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></div></div><span class="s3-lb">Facebook</span></a><a href="https://www.facebook.com/share/1EB4PKjfDp/" target="_blank" rel="noopener noreferrer" class="s3 fb" data-sm="25,118,210"><div class="s3-st"><canvas class="s3-sm" width="72" height="90"></canvas><div class="s3-ic"><svg viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></div></div><span class="s3-lb">Facebook 2</span></a><a href="https://wa.me/573223729232?text=Hola%20quiero%20información" target="_blank" rel="noopener noreferrer" class="s3 wa" data-sm="37,211,102"><div class="s3-st"><canvas class="s3-sm" width="72" height="90"></canvas><div class="s3-ic"><svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div></div><span class="s3-lb">WhatsApp</span></a></div></div><div class="ct-r rv-r" style="transition-delay:.2s;padding-top:80px"><div class="sl">¿Tienes un proyecto?</div><p>¿Tienes una idea, proyecto o marca que deseas llevar al siguiente nivel? Será un placer ayudarte a crear algo único, moderno y profesional.</p><p>Cada colaboración es una oportunidad de crear algo extraordinario. Mi enfoque combina creatividad auténtica con innovación visual y diseño con propósito real.</p><a href="https://wa.me/573223729232?text=Hola%20quiero%20información" target="_blank" rel="noopener noreferrer" class="c-cta mag">Iniciar Proyecto ✦</a></div></div></div></section>
 
-<footer>
-  <div class="fl">JEP</div>
-  <div class="ft">© 2026 JEP Designer — Todos los derechos reservados.<br>Diseñado por Junior Estiben Portilla · Colombia</div>
-  <div class="fl" style="opacity:0;pointer-events:none">JEP</div>
-</footer>
+<footer><div class="fl">JEP</div><div class="ft">© 2026 JEP Designer — Todos los derechos reservados.<br>Diseñado por Junior Estiben Portilla · Colombia</div><div class="fl" style="opacity:0;pointer-events:none">JEP</div></footer>
 </div>
 
 <script>
-/* ══ INTRO PREMIUM CON BARRA LENTA Y TUBO 3D ══ */
+/* ══ INTRO PREMIUM CON TUBOS 3D Y BARRA DE PROGRESO LENTA ══ */
 let introApp, introAnimationId;
-async function initIntro(){
+async function initEliteIntro() {
   const overlay = document.getElementById('introOverlay');
   const canvasIntro = document.getElementById('canvasIntro');
-  try{
+  try {
     const TubesCursor = (await import('https://cdn.jsdelivr.net/npm/threejs-components@0.0.19/build/cursors/tubes1.min.js')).default;
     introApp = TubesCursor(canvasIntro, {
       tubes: { colors: ["#e8b34b","#ff3d9e","#00f7ff"], lights: { intensity: 420, colors: ["#ffcc44","#ff66cc","#00ffcc","#aa66ff"] } }
     });
-    let t=0;
-    function loop(){ if(!introApp||!overlay) return; t+=0.004; const x=0.7*Math.sin(0.29*t)+0.2*Math.sin(0.73*t+1.2); const y=0.65*Math.cos(0.26*t)+0.25*Math.cos(0.68*t+0.9); if(introApp.tubes?.setMouse) introApp.tubes.setMouse(x,y); else if(introApp.setMouse) introApp.setMouse(x,y); introAnimationId=requestAnimationFrame(loop); }
+    let t = 0;
+    function loop() {
+      if (!introApp || !overlay) return;
+      t += 0.004;
+      const x = 0.7 * Math.sin(0.29 * t) + 0.2 * Math.sin(0.73 * t + 1.2);
+      const y = 0.65 * Math.cos(0.26 * t) + 0.25 * Math.cos(0.68 * t + 0.9);
+      if (introApp.tubes?.setMouse) introApp.tubes.setMouse(x, y);
+      else if (introApp.setMouse) introApp.setMouse(x, y);
+      introAnimationId = requestAnimationFrame(loop);
+    }
     loop();
-  } catch(e){ console.warn('TubesCursor no disponible', e); }
+  } catch(e) { console.warn('TubesCursor no disponible', e); }
 
-  // partículas flotantes
-  for(let i=0;i<36;i++){
-    const p=document.createElement('div'); p.className='float-particle';
-    const x=Math.random()*100, y=Math.random()*100, size=Math.random()*2.2+0.6, delay=Math.random()*12, dur=Math.random()*14+16, drift=(Math.random()-0.5)*280;
-    p.style.cssText=`left:${x}vw;top:${y}vh;width:${size}px;height:${size}px;animation:floatUp${i} ${dur}s linear ${delay}s infinite;`;
+  // Partículas flotantes
+  for(let i=0;i<70;i++) {
+    const p = document.createElement('div');
+    p.className = 'float-particle';
+    const x = Math.random()*100, y = Math.random()*100, size = Math.random()*2.5+0.5, delay = Math.random()*14, dur = Math.random()*18+14, drift = (Math.random()-0.5)*300;
+    p.style.cssText = `left:${x}vw;top:${y}vh;width:${size}px;height:${size}px;animation:floatUp${i} ${dur}s linear ${delay}s infinite;`;
     overlay.appendChild(p);
-    const s=document.createElement('style');
-    s.textContent=`@keyframes floatUp${i}{0%{opacity:0;transform:translateY(0) translateX(0)}12%{opacity:${0.4+Math.random()*0.5}}88%{opacity:${0.15+Math.random()*0.25}}100%{opacity:0;transform:translateY(-${45+Math.random()*70}vh) translateX(${drift}px)}}`;
+    const s = document.createElement('style');
+    s.textContent = `@keyframes floatUp${i}{0%{opacity:0;transform:translateY(0) translateX(0)}12%{opacity:${0.5+Math.random()*0.4}}88%{opacity:${0.2+Math.random()*0.3}}100%{opacity:0;transform:translateY(-${50+Math.random()*70}vh) translateX(${drift}px)}}`;
     document.head.appendChild(s);
   }
 
-  const progressFill=document.getElementById('progressFill');
-  const statusText=document.getElementById('statusTextIntro');
-  let progress=0;
-  const interval=setInterval(()=>{
-    let inc=Math.random()*1.7+0.8;
-    progress+=inc;
-    if(progress>=100){
-      progress=100;
+  const progressFill = document.getElementById('progressFill');
+  const statusText = document.getElementById('statusTextIntro');
+  let progress = 0;
+  const interval = setInterval(() => {
+    let inc = Math.random() * 1.7 + 0.8;
+    progress += inc;
+    if (progress >= 100) {
+      progress = 100;
       clearInterval(interval);
-      if(progressFill) progressFill.style.width='100%';
-      if(statusText) statusText.textContent='Portafolio listo';
-      setTimeout(()=>{
-        const introDiv=document.getElementById('introOverlay');
-        if(introDiv) introDiv.classList.add('fade-out');
-        setTimeout(()=>{
-          introDiv.style.display='none';
-          const portfolio=document.getElementById('portfolioContent');
-          if(portfolio){ portfolio.style.display='block'; setTimeout(()=>{ portfolio.style.opacity='1'; },50); }
-          initPortfolioScripts();
+      if(progressFill) progressFill.style.width = '100%';
+      if(statusText) statusText.textContent = 'Portafolio listo';
+      setTimeout(() => {
+        overlay.classList.add('fade-out');
+        setTimeout(() => {
+          overlay.style.display = 'none';
           if(introAnimationId) cancelAnimationFrame(introAnimationId);
           if(introApp && introApp.tubes?.dispose) introApp.tubes.dispose();
-        },1200);
-      },300);
+          const portfolio = document.getElementById('portfolioContent');
+          if(portfolio) {
+            portfolio.style.display = 'block';
+            setTimeout(() => { portfolio.style.opacity = '1'; }, 50);
+          }
+          initPortfolioScripts();
+        }, 1200);
+      }, 300);
     }
-    if(progressFill) progressFill.style.width=Math.min(progress,100)+'%';
-    if(statusText) statusText.textContent=`Cargando ${Math.floor(progress)}%`;
-  },80);
+    if(progressFill) progressFill.style.width = Math.min(progress, 100) + '%';
+    if(statusText) statusText.textContent = `Cargando ${Math.floor(progress)}%`;
+  }, 80);
 }
-window.addEventListener('DOMContentLoaded', initIntro);
 
-/* ══ FUNCIONES DEL PORTAFOLIO (cursor, libro, etc) ══ */
-function initPortfolioScripts(){
+window.addEventListener('DOMContentLoaded', initEliteIntro);
+
+/* ══ FUNCIONES DEL PORTAFOLIO (cursor, canvas, book, comentarios, etc.) ══ */
+function initPortfolioScripts() {
+  // Cursor
   const cur=document.getElementById('cur'), ring=document.getElementById('cur-ring');
   let mx=0,my=0;
   document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;if(cur){cur.style.left=mx+'px';cur.style.top=my+'px'} if(ring){ring.style.left=mx+'px';ring.style.top=my+'px'}});
   document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>ring?.classList.add('big'));el.addEventListener('mouseleave',()=>ring?.classList.remove('big'))});
 
+  // Scroll progress
   const prog=document.getElementById('prog');
   window.addEventListener('scroll',()=>{if(prog) prog.style.transform='scaleX('+(window.scrollY/(document.documentElement.scrollHeight-window.innerHeight))+')'});
 
+  // Canvas de fondo
   const cv=document.getElementById('bg-canvas'), ctx=cv?.getContext('2d');
   let W,H;
   function resizeCanvas(){ if(cv){ W=cv.width=window.innerWidth; H=cv.height=window.innerHeight; } }
@@ -1377,19 +784,24 @@ function initPortfolioScripts(){
   }
   draw();
 
+  // Nav scroll
   const nav=document.getElementById('nav');
   window.addEventListener('scroll',()=>nav?.classList.toggle('scrolled',window.scrollY>60));
 
+  // Reveal on scroll
   const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on');}),{threshold:.08});
   document.querySelectorAll('.rv,.rv-l,.rv-r,.rv-scale').forEach(el=>obs.observe(el));
 
+  // Counters
   function animateCounter(el,target,duration=1200){ const start=performance.now(); function step(now){ const p=Math.min((now-start)/duration,1); const ease=1-Math.pow(1-p,4); el.textContent=Math.round(ease*target); if(p<1) requestAnimationFrame(step); else el.textContent=target; } requestAnimationFrame(step); }
   const statsObs=new IntersectionObserver(entries=>{ entries.forEach(entry=>{ if(!entry.isIntersecting) return; const rows=entry.target.querySelectorAll('.stat-row'); rows.forEach((row,i)=>{ setTimeout(()=>{ row.classList.add('on'); row.querySelectorAll('.num').forEach(num=>animateCounter(num,parseInt(num.dataset.target),1400)); }, i*180); }); statsObs.unobserve(entry.target); }); },{threshold:.25});
   const sr=document.getElementById('stats-reveal'); if(sr) statsObs.observe(sr);
 
+  // Hero parallax
   const ht=document.querySelector('.h-title');
   window.addEventListener('scroll',()=>{ if(ht) ht.style.transform=`translateY(${window.scrollY*.25}px)`; });
 
+  // Tilt y magnetic
   document.querySelectorAll('.tilt').forEach(card=>{
     card.addEventListener('mousemove',e=>{ const r=card.getBoundingClientRect(); const dx=(e.clientX-r.left-r.width/2)/r.width; const dy=(e.clientY-r.top-r.height/2)/r.height; card.style.transform=`perspective(900px) rotateY(${dx*11}deg) rotateX(${-dy*11}deg) scale(1.025)`; });
     card.addEventListener('mouseleave',()=>card.style.transform='');
@@ -1399,7 +811,7 @@ function initPortfolioScripts(){
     el.addEventListener('mouseleave',()=>el.style.transform='');
   });
 
-  // ========== BOOK CON CIERRE AUTOMÁTICO AL LLEGAR A LA ÚLTIMA PÁGINA ==========
+  // ========== LIBRO CON CIERRE AUTOMÁTICO ==========
   const bkPages = document.querySelectorAll('.bk-page');
   const TOTAL = bkPages.length;
   const labels = ['Portada','Perfil','Portfolio 1-2','Portfolio 3-4','Portfolio 5','Visión','Cierre'];
@@ -1408,28 +820,20 @@ function initPortfolioScripts(){
   const bkNextBtn = document.getElementById('bkNext');
   const bkLbl = document.getElementById('bkLabel');
   
-  // Función para actualizar la interfaz del libro
   function bkUpdateUI() {
     bkLbl.textContent = `${labels[bkCurrent]} · ${bkCurrent+1} / ${TOTAL}`;
     if(bkPrevBtn) bkPrevBtn.disabled = (bkCurrent === 0);
     if(bkNextBtn) bkNextBtn.disabled = (bkCurrent === TOTAL);
   }
-
-  // Reiniciar el libro: cerrar todas las páginas y volver a la portada
   function resetBook() {
-    // Remover clase 'flipped' de todas las páginas
     for(let i = 0; i < TOTAL; i++) {
       bkPages[i].classList.remove('flipped');
-      // Restaurar z-index original: página 0 -> 9, página 1 -> 8, ... página 6 -> 3
       bkPages[i].style.zIndex = 9 - i;
     }
     bkCurrent = 0;
     bkUpdateUI();
-    // Detener cualquier auto-avance activo
     stopAutoAdvance();
   }
-
-  // Avanzar una página (si es posible)
   function advancePage() {
     if(bkCurrent < TOTAL) {
       bkPages[bkCurrent].style.zIndex = 100 - bkCurrent;
@@ -1438,8 +842,6 @@ function initPortfolioScripts(){
       bkUpdateUI();
     }
   }
-
-  // Retroceder una página
   function retreatPage() {
     if(bkCurrent > 0) {
       bkCurrent--;
@@ -1447,81 +849,26 @@ function initPortfolioScripts(){
       bkUpdateUI();
     }
   }
-
-  // Variables para auto-avance lento
   let autoTimer = null;
-  function stopAutoAdvance() {
-    if(autoTimer) {
-      clearInterval(autoTimer);
-      autoTimer = null;
-    }
-  }
-  function startAutoAdvance(intervalMs) {
-    if(autoTimer) stopAutoAdvance();
-    autoTimer = setInterval(() => {
-      // Si ya estamos en la última página (todas volteadas), reiniciamos y detenemos autoavance
-      if(bkCurrent >= TOTAL) {
-        resetBook();
-        stopAutoAdvance();
-      } else {
-        advancePage();
-      }
-    }, intervalMs);
-  }
-
-  // Funciones globales para botones (detienen auto-avance)
-  window.bkNext = function() {
-    stopAutoAdvance();
-    if(bkCurrent < TOTAL) {
-      advancePage();
-      // Si después de avanzar llegamos exactamente al final (todas páginas volteadas), reiniciamos cerrando el libro
-      if(bkCurrent === TOTAL) {
-        resetBook();
-      }
-    } else {
-      // Si por algún motivo ya está al final, simplemente reiniciamos
-      resetBook();
-    }
-  };
-  
-  window.bkPrev = function() {
-    stopAutoAdvance();
-    retreatPage();
-  };
-
-  // Eventos táctiles y de teclado (también detienen auto-avance)
-  document.addEventListener('keydown', e => {
-    if(e.key === 'ArrowRight' || e.key === 'ArrowDown') { stopAutoAdvance(); window.bkNext(); }
-    if(e.key === 'ArrowLeft' || e.key === 'ArrowUp')   { stopAutoAdvance(); window.bkPrev(); }
-  });
-  
+  function stopAutoAdvance() { if(autoTimer) { clearInterval(autoTimer); autoTimer = null; } }
+  function startAutoAdvance(intervalMs) { if(autoTimer) stopAutoAdvance(); autoTimer = setInterval(() => { if(bkCurrent >= TOTAL) { resetBook(); stopAutoAdvance(); } else { advancePage(); } }, intervalMs); }
+  window.bkNext = function() { stopAutoAdvance(); if(bkCurrent < TOTAL) { advancePage(); if(bkCurrent === TOTAL) resetBook(); } else { resetBook(); } };
+  window.bkPrev = function() { stopAutoAdvance(); retreatPage(); };
+  document.addEventListener('keydown', e => { if(e.key === 'ArrowRight' || e.key === 'ArrowDown') { stopAutoAdvance(); window.bkNext(); } if(e.key === 'ArrowLeft' || e.key === 'ArrowUp')   { stopAutoAdvance(); window.bkPrev(); } });
   let tStartX = 0;
   const bookEl = document.querySelector('.book-wrap');
   bookEl?.addEventListener('touchstart', e => { tStartX = e.touches[0].clientX; });
-  bookEl?.addEventListener('touchend', e => {
-    const diff = tStartX - e.changedTouches[0].clientX;
-    if(Math.abs(diff) > 40) {
-      stopAutoAdvance();
-      diff > 0 ? window.bkNext() : window.bkPrev();
-    }
-  });
-  
+  bookEl?.addEventListener('touchend', e => { const diff = tStartX - e.changedTouches[0].clientX; if(Math.abs(diff) > 40) { stopAutoAdvance(); diff > 0 ? window.bkNext() : window.bkPrev(); } });
   bkUpdateUI();
+  setTimeout(() => { if(bkCurrent === 0) startAutoAdvance(3600); }, 1400);
 
-  // Iniciar el auto-avance elegante una vez que el portafolio esté visible
-  setTimeout(() => {
-    if(bkCurrent === 0) {
-      startAutoAdvance(3600); // 3.6 segundos entre páginas
-    }
-  }, 1400);
-
-  // smoke social
+  // Smoke social
   class Smoke{ constructor(cv,col){ this.cv=cv; this.cx=cv.getContext('2d'); this.col=col; this.ps=[]; } sp(){ this.ps.push({x:36+(Math.random()-.5)*8,y:82,vx:(Math.random()-.5)*.5,vy:-(0.5+Math.random()*.9),sz:3+Math.random()*5,l:0,ml:70+Math.random()*50,w:Math.random()*Math.PI*2,ws:.022+Math.random()*.02}); } tick(){ if(Math.random()<.38) this.sp(); this.ps=this.ps.filter(p=>p.l<p.ml); for(const p of this.ps){ p.l++; p.w+=p.ws; p.x+=p.vx+Math.sin(p.w)*.32; p.y+=p.vy; p.sz+=.12 } } draw(){ const c=this.cx; c.clearRect(0,0,72,90); for(const p of this.ps){ const t=p.l/p.ml, a=(1-t)*.44*(t<.15?t/.15:1), g=c.createRadialGradient(p.x,p.y,0,p.x,p.y,p.sz); g.addColorStop(0,`rgba(${this.col},${a})`); g.addColorStop(.5,`rgba(${this.col},${a*.45})`); g.addColorStop(1,`rgba(${this.col},0)`); c.beginPath(); c.arc(p.x,p.y,p.sz,0,Math.PI*2); c.fillStyle=g; c.fill() } } }
   const sys=[...document.querySelectorAll('#soc3d .s3')].map(el=>new Smoke(el.querySelector('.s3-sm'),el.dataset.sm));
   function smokeLoop(){ for(const s of sys){ s.tick(); s.draw(); } requestAnimationFrame(smokeLoop); }
   smokeLoop();
 
-  // comentarios persistentes
+  // Comentarios persistentes
   const CM_PASS='JEP328', CM_STORAGE_KEY='jep_designer_reviews';
   let cmLogged=false, cmUsername='', cmStars=5, cmComments=[];
   async function cmSave(){ const data=JSON.stringify(cmComments); if(window.storage){ try{ await window.storage.set(CM_STORAGE_KEY,data,true); return; }catch(e){} } try{ localStorage.setItem(CM_STORAGE_KEY,data); }catch(e){} }
