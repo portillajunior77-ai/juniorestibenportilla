@@ -27,6 +27,7 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth; overflow-x: hidden;}
 body{background:var(--bg);color:var(--white);font-family:'Libre Baskerville',serif;overflow-x:hidden;cursor:none; width:100%;}
+@media(hover:none),(pointer:coarse){body{cursor:auto;}}
 
 /* CURSOR */
 #cur{position:fixed;width:8px;height:8px;background:var(--cyan);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);mix-blend-mode:difference;transition:transform .12s}
@@ -575,13 +576,13 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
     <div class="divider-wrap"><div class="divider-line rev"></div><div class="divider-diamond"></div><div class="divider-diamond" style="width:5px;height:5px;opacity:0.6;"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
     <h2 id="subtitleIntro">presenta</h2>
     <span class="epitaph" id="epitaphIntro">Una sinfonía visual que redefine la excelencia</span>
-    <div class="label-bottom"><span>Vanguardismo</span><span>Identidad</span><span>Inmersión</span><span>MMXXV</span></div>
+    <div class="label-bottom"><span>Vanguardismo</span><span>Identidad</span><span>Inmersion</span><span>MMXXV</span></div>
   </div>
   <div class="status"><div class="status-dot"></div><div class="status-text" id="statusTextIntro">Cargando portafolio</div></div>
 </div>
 
 <!-- CONTENIDO DEL PORTAFOLIO (inicialmente oculto) -->
-<div id="portfolioContent" style="display: none; opacity: 0; transition: opacity 1.2s cubic-bezier(0.2,0.9,0.4,1.1);">
+<div id="portfolioContent" style="opacity: 0; transition: opacity 1.2s cubic-bezier(0.2,0.9,0.4,1.1); visibility: hidden; position: relative;">
 <div id="prog"></div>
 <div id="cur"></div>
 <div id="cur-ring"></div>
@@ -607,30 +608,6 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
   </ul>
   <button class="menu-toggle" id="menuToggle" aria-label="Menú" style="display:none;background:transparent;border:none;color:var(--gold);font-size:28px;cursor:pointer;"><i class="fa-solid fa-bars"></i></button>
 </nav>
-
-<script>
-  // Menú hamburguesa para móviles
-  (function() {
-    const toggle = document.getElementById('menuToggle');
-    const navLinks = document.querySelector('.nav-links');
-    if(toggle && navLinks) {
-      const isMobile = window.matchMedia('(max-width: 600px)');
-      function handleMenu() {
-        if(isMobile.matches) {
-          toggle.style.display = 'flex';
-          navLinks.classList.remove('active');
-          toggle.onclick = () => navLinks.classList.toggle('active');
-        } else {
-          toggle.style.display = 'none';
-          navLinks.classList.remove('active');
-          toggle.onclick = null;
-        }
-      }
-      handleMenu();
-      window.addEventListener('resize', handleMenu);
-    }
-  })();
-</script>
 
 <!-- MARQUEE -->
 <div class="mqw">
@@ -743,10 +720,15 @@ async function initEliteIntro() {
           if(introApp && introApp.tubes?.dispose) introApp.tubes.dispose();
           const portfolio = document.getElementById('portfolioContent');
           if(portfolio) {
-            portfolio.style.display = 'block';
-            setTimeout(() => { portfolio.style.opacity = '1'; }, 50);
+            portfolio.style.visibility = 'visible';
+            portfolio.style.position = 'relative';
+            requestAnimationFrame(() => {
+              requestAnimationFrame(() => {
+                portfolio.style.opacity = '1';
+              });
+            });
           }
-          initPortfolioScripts();
+          setTimeout(() => { initPortfolioScripts(); }, 100);
         }, 1200);
       }, 300);
     }
@@ -759,6 +741,28 @@ window.addEventListener('DOMContentLoaded', initEliteIntro);
 
 /* ══ FUNCIONES DEL PORTAFOLIO (cursor, canvas, book, comentarios, etc.) ══ */
 function initPortfolioScripts() {
+  // ========== MENÚ HAMBURGUESA ==========
+  (function() {
+    const toggle = document.getElementById('menuToggle');
+    const navLinks = document.querySelector('.nav-links');
+    if(!toggle || !navLinks) return;
+    function handleMenu() {
+      if(window.innerWidth <= 600) {
+        toggle.style.display = 'flex';
+      } else {
+        toggle.style.display = 'none';
+        navLinks.classList.remove('active');
+      }
+    }
+    toggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+    // Cerrar menú al hacer clic en un enlace
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => navLinks.classList.remove('active'));
+    });
+    handleMenu();
+    window.addEventListener('resize', handleMenu);
+  })();
+
   // Cursor
   const cur=document.getElementById('cur'), ring=document.getElementById('cur-ring');
   let mx=0,my=0;
