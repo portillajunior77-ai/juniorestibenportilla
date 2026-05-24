@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <style>
-/* ========== TODOS LOS ESTILOS DEL PORTAFOLIO ORIGINAL (sin cambios) ========== */
+/* ========== TODOS LOS ESTILOS DEL PORTAFOLIO ORIGINAL (con modificaciones aplicadas) ========== */
 :root{
   --bg:#020204;--surface:#08080f;
   --gold:#c9a84c;--gold-light:#e8cc7a;--gold-dim:rgba(201,168,76,0.10);
@@ -428,13 +428,15 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 /* TILT */
 .tilt{transform-style:preserve-3d;transition:transform .1s ease}
 
-/* ========== RESPONSIVE ========== */
+/* ========== RESPONSIVE (MODIFICADO SEGÚN SOLICITUD) ========== */
 @media(max-width:960px){
   nav,nav.scrolled{padding:18px 28px}
   .wrap{padding:0 28px}
-  .ab-grid,.ct-grid,.vi-grid,.cm-main-grid{grid-template-columns:1fr;gap:48px}
-  .ab-text{padding-top:0!important;margin-top:0!important}
-  .ab-card{min-height:auto}
+  .ab-grid,.ct-grid,.vi-grid,.cm-main-grid{grid-template-columns:1fr;gap:32px}
+  .ab-text{padding-top:0!important;margin-top:0!important;order:2}
+  .rv-l{order:1}
+  .ab-card{min-height:auto;padding:28px 20px}
+  #about{padding:80px 0}
   .srv-grid{grid-template-columns:1fr 1fr}
   footer{flex-direction:column;gap:14px;text-align:center}
   .wa-f{bottom:24px;right:24px;width:54px;height:54px}
@@ -482,14 +484,14 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
   .v26{display:none}
   .cm-banner{padding:24px}
   .cm-banner-btn{white-space:normal;text-align:center}
-  .cm-main-grid{gap:32px}
+  .cm-main-grid{display:flex!important;flex-direction:column!important;gap:24px!important;width:100%}
+  .cm-display-panel{order:1!important;display:block!important;width:100%!important}
+  .cm-login-panel{order:2!important;display:block!important;width:100%!important}
+  .cm-write-panel.visible{order:2!important;display:block!important;width:100%!important}
+  .cm-list{max-height:none!important;overflow-y:visible!important}
   footer{padding:28px}
   .wa-f{width:48px;height:48px;bottom:20px;right:20px}
   .wa-f svg{width:26px;height:26px}
-  .cm-main-grid{display:flex;flex-direction:column;gap:28px}
-  .cm-display-panel{order:1}
-  .cm-login-panel,.cm-write-panel{order:2}
-  .cm-list{max-height:none}
 }
 @media(max-width:400px){
   .book-wrap{height:300px}
@@ -500,26 +502,42 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
   .h-cta{gap:12px}
 }
 
-/* ── CÍRCULO PROGRESO PREMIUM ── */
+/* ── CÍRCULO PROGRESO PREMIUM (MODIFICADO) ── */
 .stat-circle-wrap{display:flex;align-items:center;gap:18px;margin-bottom:6px}
-.stat-circle{position:relative;width:64px;height:64px;flex-shrink:0}
-.stat-circle svg{width:64px;height:64px;transform:rotate(-90deg)}
-.stat-circle .track{fill:none;stroke:rgba(201,168,76,.12);stroke-width:5}
-.stat-circle .fill{fill:none;stroke:url(#circleGrad);stroke-width:5;stroke-linecap:round;stroke-dasharray:175.93;stroke-dashoffset:175.93;transition:stroke-dashoffset 1.8s cubic-bezier(.2,1,.2,1)}
+.stat-circle{position:relative;width:80px;height:80px;flex-shrink:0}
+.stat-circle svg{width:80px;height:80px;transform:rotate(-90deg)}
+.stat-circle .track{fill:none;stroke:rgba(201,168,76,.12);stroke-width:6}
+.stat-circle .fill{fill:none;stroke:url(#circleGrad);stroke-width:6;stroke-linecap:round;stroke-dasharray:220.0;stroke-dashoffset:220.0;transition:stroke-dashoffset 2.2s cubic-bezier(.2,1,.2,1)}
 .stat-circle .fill.animated{stroke-dashoffset:0}
-.stat-circle .center-text{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:13px;font-weight:800;background:linear-gradient(135deg,var(--gold),var(--orange));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-@keyframes glowPulse{0%,100%{filter:drop-shadow(0 0 4px rgba(201,168,76,.3))}50%{filter:drop-shadow(0 0 12px rgba(240,30,143,.6))}}
+.stat-circle .center-text{
+  position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:0;
+  font-family:'Syne',sans-serif;font-size:15px;font-weight:800;
+  background:linear-gradient(135deg,var(--gold),var(--orange));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  line-height:1
+}
+.stat-circle .center-pct{font-size:15px;font-weight:800}
+.stat-circle .center-sym{font-size:9px;font-weight:700;opacity:.7;margin-top:1px}
+.stat-circle-ring-outer{
+  position:absolute;inset:-6px;border-radius:50%;
+  border:1px solid rgba(201,168,76,.18);
+  animation:circleRingPulse 2.8s ease-in-out infinite
+}
+@keyframes circleRingPulse{0%,100%{opacity:.3;transform:scale(1)}50%{opacity:.9;transform:scale(1.04)}}
+@keyframes glowPulse{0%,100%{filter:drop-shadow(0 0 4px rgba(201,168,76,.3))}50%{filter:drop-shadow(0 0 14px rgba(240,30,143,.7))}}
 .stat-circle svg{animation:glowPulse 2.5s ease infinite}
+
 @media(max-width:600px){
-  .stat-circle{width:52px;height:52px}
-  .stat-circle svg{width:52px;height:52px}
-  .stat-circle .center-text{font-size:11px}
-  .stat-circle .track,.stat-circle .fill{stroke-width:4}
-  .stat-circle .fill{stroke-dasharray:143.3;stroke-dashoffset:143.3}
+  .stat-circle{width:64px;height:64px}
+  .stat-circle svg{width:64px;height:64px}
+  .stat-circle .center-pct{font-size:12px}
+  .stat-circle .fill{stroke-dasharray:175.93;stroke-dashoffset:175.93}
   .stat-circle .fill.animated{stroke-dashoffset:0}
+  .stat-circle .track,.stat-circle .fill{stroke-width:5}
 }
 
-/* ========== INTRO PREMIUM (ULTRA MEJORADA) - ESTILOS ADICIONALES ========== */
+/* ========== INTRO PREMIUM (ULTRA MEJORADA) ========== */
 #introOverlay {
   position: fixed;
   top: 0;
@@ -584,7 +602,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 </head>
 <body>
 
-<!-- INTRO PREMIUM (ULTRA MEJORADA CON TUBOS 3D, PARTÍCULAS Y BARRA DE PROGRESO) -->
+<!-- INTRO PREMIUM -->
 <div id="introOverlay">
   <canvas id="canvasIntro"></canvas>
   <div class="noise"></div>
@@ -606,7 +624,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
   <div class="status"><div class="status-dot"></div><div class="status-text" id="statusTextIntro">Cargando portafolio</div></div>
 </div>
 
-<!-- CONTENIDO DEL PORTAFOLIO (inicialmente oculto) -->
+<!-- CONTENIDO PRINCIPAL -->
 <div id="portfolioContent" style="opacity: 0; transition: opacity 1.2s cubic-bezier(0.2,0.9,0.4,1.1); visibility: hidden; position: relative;">
 <div id="prog"></div>
 <div id="cur"></div>
@@ -642,7 +660,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
   </div>
 </div>
 
-<!-- HERO (todas las páginas del libro y contenido completo) -->
+<!-- HERO -->
 <section id="hero">
   <div class="h-eye">Portafolio Profesional 2026</div>
   <div class="book-wrap">
@@ -670,7 +688,8 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 <section id="about"><div class="wrap"><div class="ab-grid"><div class="rv-l"><div class="ab-card tilt"><div class="badge-row"><div class="badge">23 años</div></div><div class="live"><div class="live-dot"></div><div class="live-t">San Miguel La Dorada · Putumayo · Colombia</div></div><div class="sl">Identidad</div><div class="st" style="font-size:34px">Quién<br>Soy <span class="ac">Yo</span></div><div class="sdv"></div><div class="pillars"><div class="pl"><div class="pl-ic">✦</div><div class="pl-lb">Creatividad</div></div><div class="pl"><div class="pl-ic">◈</div><div class="pl-lb">Innovación</div></div><div class="pl"><div class="pl-ic">◉</div><div class="pl-lb">Propósito</div></div></div></div></div><div class="ab-text rv-r" style="transition-delay:.15s"><div class="sl">Mi historia</div><div class="st">Sobre <span class="ac">Junior</span></div><p>Junior Estiben Portilla es un joven colombiano de 23 años apasionado por el diseño gráfico, el diseño web y el diseño de interiores. Nació en el departamento del Putumayo, en el municipio de San Miguel La Dorada, un lugar lleno de cultura, naturaleza e inspiración que marcó profundamente su visión artística y creativa.</p><p>Desde temprana edad mostró interés por el arte visual, la estética digital y la creación de conceptos innovadores. Con los años desarrolló una identidad profesional enfocada en la elegancia, el minimalismo moderno y la creación de experiencias visuales de alto impacto.</p><p>Actualmente es el fundador y creador de <strong>JEP Designer</strong>, una marca creativa enfocada en diseño profesional, branding, páginas web modernas, identidad visual y proyectos de interiores contemporáneos.</p><p>Su filosofía de trabajo se basa en tres pilares fundamentales: <strong>creatividad auténtica</strong>, <strong>innovación visual</strong> y <strong>diseño con propósito</strong>. Junior busca que cada proyecto transmita personalidad, profesionalismo y una conexión emocional genuina.</p><div class="stats-reveal" id="stats-reveal"><div class="stat-row" style="transition-delay:.05s"><div class="stat-item"><div class="stat-num"><span class="num" data-target="23">0</span></div><div class="stat-label">Años de edad</div><div class="stat-desc">Joven con visión global</div></div><div class="stat-item"><div class="stat-num"><span class="num" data-target="3">0</span></div><div class="stat-label">Disciplinas creativas</div><div class="stat-desc">Gráfico · Web · Interiores</div></div></div><div class="stat-row" style="transition-delay:.18s"><div class="stat-item"><div class="stat-num"><span class="num" data-target="6">0</span></div><div class="stat-label">Servicios disponibles</div><div class="stat-desc">Soluciones integrales</div></div><div class="stat-item">
   <div class="stat-circle-wrap">
     <div class="stat-circle" id="commitCircle">
-      <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+      <div class="stat-circle-ring-outer"></div>
+      <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="circleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stop-color="#c9a84c"/>
@@ -678,10 +697,13 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
             <stop offset="100%" stop-color="#f01e8f"/>
           </linearGradient>
         </defs>
-        <circle class="track" cx="32" cy="32" r="28"/>
-        <circle class="fill" id="commitFill" cx="32" cy="32" r="28"/>
+        <circle class="track" cx="40" cy="40" r="35"/>
+        <circle class="fill" id="commitFill" cx="40" cy="40" r="35"/>
       </svg>
-      <div class="center-text" id="commitPct">0%</div>
+      <div class="center-text">
+        <span class="center-pct" id="commitPct">0%</span>
+        <span class="center-sym">★</span>
+      </div>
     </div>
     <div>
       <div class="stat-label">Compromiso total</div>
@@ -801,7 +823,6 @@ function initPortfolioScripts() {
       }
     }
     toggle.addEventListener('click', () => navLinks.classList.toggle('active'));
-    // Cerrar menú al hacer clic en un enlace
     navLinks.querySelectorAll('a').forEach(a => {
       a.addEventListener('click', () => navLinks.classList.remove('active'));
     });
@@ -846,21 +867,26 @@ function initPortfolioScripts() {
   // Counters
   function animateCounter(el,target,duration=1200){ const start=performance.now(); function step(now){ const p=Math.min((now-start)/duration,1); const ease=1-Math.pow(1-p,4); el.textContent=Math.round(ease*target); if(p<1) requestAnimationFrame(step); else el.textContent=target; } requestAnimationFrame(step); }
   
-  // Función para animar el círculo de compromiso
+  // Función para animar el círculo de compromiso (versión mejorada)
   function animateCommitCircle(){
     const fill=document.getElementById('commitFill');
     const pct=document.getElementById('commitPct');
     if(!fill||!pct) return;
-    fill.classList.add('animated');
+    const isMobile=window.innerWidth<=600;
+    const r=isMobile?28:35;
+    const circumference=2*Math.PI*r;
+    fill.style.strokeDasharray=circumference;
+    fill.style.strokeDashoffset=circumference;
     let n=0;
-    const dur=1800, start=performance.now();
+    const dur=2200, start=performance.now();
     function step(now){
       const p=Math.min((now-start)/dur,1);
       const ease=1-Math.pow(1-p,4);
       n=Math.round(ease*100);
       pct.textContent=n+'%';
+      fill.style.strokeDashoffset=circumference*(1-ease);
       if(p<1) requestAnimationFrame(step);
-      else pct.textContent='100%';
+      else{ pct.textContent='100%'; fill.style.strokeDashoffset=0; }
     }
     requestAnimationFrame(step);
   }
