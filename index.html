@@ -433,6 +433,8 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
   nav,nav.scrolled{padding:18px 28px}
   .wrap{padding:0 28px}
   .ab-grid,.ct-grid,.vi-grid,.cm-main-grid{grid-template-columns:1fr;gap:48px}
+  .ab-text{padding-top:0!important;margin-top:0!important}
+  .ab-card{min-height:auto}
   .srv-grid{grid-template-columns:1fr 1fr}
   footer{flex-direction:column;gap:14px;text-align:center}
   .wa-f{bottom:24px;right:24px;width:54px;height:54px}
@@ -484,6 +486,10 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
   footer{padding:28px}
   .wa-f{width:48px;height:48px;bottom:20px;right:20px}
   .wa-f svg{width:26px;height:26px}
+  .cm-main-grid{display:flex;flex-direction:column;gap:28px}
+  .cm-display-panel{order:1}
+  .cm-login-panel,.cm-write-panel{order:2}
+  .cm-list{max-height:none}
 }
 @media(max-width:400px){
   .book-wrap{height:300px}
@@ -492,6 +498,25 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
   .sp-role{font-size:7px}
   .cta-g,.cta-o{padding:10px 20px}
   .h-cta{gap:12px}
+}
+
+/* ── CÍRCULO PROGRESO PREMIUM ── */
+.stat-circle-wrap{display:flex;align-items:center;gap:18px;margin-bottom:6px}
+.stat-circle{position:relative;width:64px;height:64px;flex-shrink:0}
+.stat-circle svg{width:64px;height:64px;transform:rotate(-90deg)}
+.stat-circle .track{fill:none;stroke:rgba(201,168,76,.12);stroke-width:5}
+.stat-circle .fill{fill:none;stroke:url(#circleGrad);stroke-width:5;stroke-linecap:round;stroke-dasharray:175.93;stroke-dashoffset:175.93;transition:stroke-dashoffset 1.8s cubic-bezier(.2,1,.2,1)}
+.stat-circle .fill.animated{stroke-dashoffset:0}
+.stat-circle .center-text{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:13px;font-weight:800;background:linear-gradient(135deg,var(--gold),var(--orange));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+@keyframes glowPulse{0%,100%{filter:drop-shadow(0 0 4px rgba(201,168,76,.3))}50%{filter:drop-shadow(0 0 12px rgba(240,30,143,.6))}}
+.stat-circle svg{animation:glowPulse 2.5s ease infinite}
+@media(max-width:600px){
+  .stat-circle{width:52px;height:52px}
+  .stat-circle svg{width:52px;height:52px}
+  .stat-circle .center-text{font-size:11px}
+  .stat-circle .track,.stat-circle .fill{stroke-width:4}
+  .stat-circle .fill{stroke-dasharray:143.3;stroke-dashoffset:143.3}
+  .stat-circle .fill.animated{stroke-dashoffset:0}
 }
 
 /* ========== INTRO PREMIUM (ULTRA MEJORADA) - ESTILOS ADICIONALES ========== */
@@ -642,7 +667,28 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 </section>
 
 <!-- ABOUT -->
-<section id="about"><div class="wrap"><div class="ab-grid"><div class="rv-l"><div class="ab-card tilt"><div class="badge-row"><div class="badge">23 años</div></div><div class="live"><div class="live-dot"></div><div class="live-t">San Miguel La Dorada · Putumayo · Colombia</div></div><div class="sl">Identidad</div><div class="st" style="font-size:34px">Quién<br>Soy <span class="ac">Yo</span></div><div class="sdv"></div><div class="pillars"><div class="pl"><div class="pl-ic">✦</div><div class="pl-lb">Creatividad</div></div><div class="pl"><div class="pl-ic">◈</div><div class="pl-lb">Innovación</div></div><div class="pl"><div class="pl-ic">◉</div><div class="pl-lb">Propósito</div></div></div></div></div><div class="ab-text rv-r" style="transition-delay:.15s"><div class="sl">Mi historia</div><div class="st">Sobre <span class="ac">Junior</span></div><p>Junior Estiben Portilla es un joven colombiano de 23 años apasionado por el diseño gráfico, el diseño web y el diseño de interiores. Nació en el departamento del Putumayo, en el municipio de San Miguel La Dorada, un lugar lleno de cultura, naturaleza e inspiración que marcó profundamente su visión artística y creativa.</p><p>Desde temprana edad mostró interés por el arte visual, la estética digital y la creación de conceptos innovadores. Con los años desarrolló una identidad profesional enfocada en la elegancia, el minimalismo moderno y la creación de experiencias visuales de alto impacto.</p><p>Actualmente es el fundador y creador de <strong>JEP Designer</strong>, una marca creativa enfocada en diseño profesional, branding, páginas web modernas, identidad visual y proyectos de interiores contemporáneos.</p><p>Su filosofía de trabajo se basa en tres pilares fundamentales: <strong>creatividad auténtica</strong>, <strong>innovación visual</strong> y <strong>diseño con propósito</strong>. Junior busca que cada proyecto transmita personalidad, profesionalismo y una conexión emocional genuina.</p><div class="stats-reveal" id="stats-reveal"><div class="stat-row" style="transition-delay:.05s"><div class="stat-item"><div class="stat-num"><span class="num" data-target="23">0</span></div><div class="stat-label">Años de edad</div><div class="stat-desc">Joven con visión global</div></div><div class="stat-item"><div class="stat-num"><span class="num" data-target="3">0</span></div><div class="stat-label">Disciplinas creativas</div><div class="stat-desc">Gráfico · Web · Interiores</div></div></div><div class="stat-row" style="transition-delay:.18s"><div class="stat-item"><div class="stat-num"><span class="num" data-target="6">0</span></div><div class="stat-label">Servicios disponibles</div><div class="stat-desc">Soluciones integrales</div></div><div class="stat-item"><div class="stat-num"><span class="num" data-target="100">0</span><span class="suffix">%</span></div><div class="stat-label">Compromiso total</div><div class="stat-desc">En cada proyecto</div></div></div></div></div></div></div></section>
+<section id="about"><div class="wrap"><div class="ab-grid"><div class="rv-l"><div class="ab-card tilt"><div class="badge-row"><div class="badge">23 años</div></div><div class="live"><div class="live-dot"></div><div class="live-t">San Miguel La Dorada · Putumayo · Colombia</div></div><div class="sl">Identidad</div><div class="st" style="font-size:34px">Quién<br>Soy <span class="ac">Yo</span></div><div class="sdv"></div><div class="pillars"><div class="pl"><div class="pl-ic">✦</div><div class="pl-lb">Creatividad</div></div><div class="pl"><div class="pl-ic">◈</div><div class="pl-lb">Innovación</div></div><div class="pl"><div class="pl-ic">◉</div><div class="pl-lb">Propósito</div></div></div></div></div><div class="ab-text rv-r" style="transition-delay:.15s"><div class="sl">Mi historia</div><div class="st">Sobre <span class="ac">Junior</span></div><p>Junior Estiben Portilla es un joven colombiano de 23 años apasionado por el diseño gráfico, el diseño web y el diseño de interiores. Nació en el departamento del Putumayo, en el municipio de San Miguel La Dorada, un lugar lleno de cultura, naturaleza e inspiración que marcó profundamente su visión artística y creativa.</p><p>Desde temprana edad mostró interés por el arte visual, la estética digital y la creación de conceptos innovadores. Con los años desarrolló una identidad profesional enfocada en la elegancia, el minimalismo moderno y la creación de experiencias visuales de alto impacto.</p><p>Actualmente es el fundador y creador de <strong>JEP Designer</strong>, una marca creativa enfocada en diseño profesional, branding, páginas web modernas, identidad visual y proyectos de interiores contemporáneos.</p><p>Su filosofía de trabajo se basa en tres pilares fundamentales: <strong>creatividad auténtica</strong>, <strong>innovación visual</strong> y <strong>diseño con propósito</strong>. Junior busca que cada proyecto transmita personalidad, profesionalismo y una conexión emocional genuina.</p><div class="stats-reveal" id="stats-reveal"><div class="stat-row" style="transition-delay:.05s"><div class="stat-item"><div class="stat-num"><span class="num" data-target="23">0</span></div><div class="stat-label">Años de edad</div><div class="stat-desc">Joven con visión global</div></div><div class="stat-item"><div class="stat-num"><span class="num" data-target="3">0</span></div><div class="stat-label">Disciplinas creativas</div><div class="stat-desc">Gráfico · Web · Interiores</div></div></div><div class="stat-row" style="transition-delay:.18s"><div class="stat-item"><div class="stat-num"><span class="num" data-target="6">0</span></div><div class="stat-label">Servicios disponibles</div><div class="stat-desc">Soluciones integrales</div></div><div class="stat-item">
+  <div class="stat-circle-wrap">
+    <div class="stat-circle" id="commitCircle">
+      <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="circleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#c9a84c"/>
+            <stop offset="50%" stop-color="#ff6a1a"/>
+            <stop offset="100%" stop-color="#f01e8f"/>
+          </linearGradient>
+        </defs>
+        <circle class="track" cx="32" cy="32" r="28"/>
+        <circle class="fill" id="commitFill" cx="32" cy="32" r="28"/>
+      </svg>
+      <div class="center-text" id="commitPct">0%</div>
+    </div>
+    <div>
+      <div class="stat-label">Compromiso total</div>
+      <div class="stat-desc">En cada proyecto</div>
+    </div>
+  </div>
+</div></div></div></div></div></div></section>
 
 <!-- BRAND -->
 <section id="brand"><div class="brand-bg"></div><div class="wrap"><div class="brand-c rv"><div class="sl" style="justify-content:center">La Marca</div><div class="brand-g"><span class="f">JEP</span><br>Designer</div><div class="sdv" style="margin:0 auto 28px"></div><p class="brand-p">JEP Designer nace como una marca creativa enfocada en ofrecer soluciones visuales modernas, exclusivas y profesionales para personas, marcas y empresas que desean destacar en el mundo digital. La visión es crear proyectos con identidad propia, mezclando elegancia visual, innovación tecnológica y creatividad artística.</p><div class="brand-vals"><div class="vt">Innovación</div><div class="vt">Elegancia</div><div class="vt">Profesionalismo</div><div class="vt">Creatividad</div><div class="vt">Originalidad</div><div class="vt">Calidad Visual</div><div class="vt">Diseño Emocional</div></div></div></div></section>
@@ -799,7 +845,27 @@ function initPortfolioScripts() {
 
   // Counters
   function animateCounter(el,target,duration=1200){ const start=performance.now(); function step(now){ const p=Math.min((now-start)/duration,1); const ease=1-Math.pow(1-p,4); el.textContent=Math.round(ease*target); if(p<1) requestAnimationFrame(step); else el.textContent=target; } requestAnimationFrame(step); }
-  const statsObs=new IntersectionObserver(entries=>{ entries.forEach(entry=>{ if(!entry.isIntersecting) return; const rows=entry.target.querySelectorAll('.stat-row'); rows.forEach((row,i)=>{ setTimeout(()=>{ row.classList.add('on'); row.querySelectorAll('.num').forEach(num=>animateCounter(num,parseInt(num.dataset.target),1400)); }, i*180); }); statsObs.unobserve(entry.target); }); },{threshold:.25});
+  
+  // Función para animar el círculo de compromiso
+  function animateCommitCircle(){
+    const fill=document.getElementById('commitFill');
+    const pct=document.getElementById('commitPct');
+    if(!fill||!pct) return;
+    fill.classList.add('animated');
+    let n=0;
+    const dur=1800, start=performance.now();
+    function step(now){
+      const p=Math.min((now-start)/dur,1);
+      const ease=1-Math.pow(1-p,4);
+      n=Math.round(ease*100);
+      pct.textContent=n+'%';
+      if(p<1) requestAnimationFrame(step);
+      else pct.textContent='100%';
+    }
+    requestAnimationFrame(step);
+  }
+  
+  const statsObs=new IntersectionObserver(entries=>{ entries.forEach(entry=>{ if(!entry.isIntersecting) return; const rows=entry.target.querySelectorAll('.stat-row'); rows.forEach((row,i)=>{ setTimeout(()=>{ row.classList.add('on'); row.querySelectorAll('.num').forEach(num=>animateCounter(num,parseInt(num.dataset.target),1400)); if(i===1) animateCommitCircle(); }, i*180); }); statsObs.unobserve(entry.target); }); },{threshold:.25});
   const sr=document.getElementById('stats-reveal'); if(sr) statsObs.observe(sr);
 
   // Hero parallax
