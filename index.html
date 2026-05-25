@@ -195,7 +195,7 @@ section{position:relative;z-index:1}
 /* ========== ABOUT ========== */
 #about{padding:150px 0}
 .ab-grid{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:start}
-.ab-card{background:var(--glass);border:1px solid var(--glass-b);border-radius:24px;padding:52px 46px;position:relative;overflow:hidden;backdrop-filter:blur(24px)}
+.ab-card{background:var(--glass);border:1px solid var(--glass-b);border-radius:24px;padding:52px 46px;position:relative;overflow:hidden;backdrop-filter:blur(24px);height:auto}
 .ab-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),var(--magenta),transparent)}
 .ab-card::after{content:'';position:absolute;bottom:-80px;right:-80px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(240,30,143,.05),transparent);pointer-events:none}
 .badge-row{display:flex;justify-content:flex-end;margin-bottom:22px}
@@ -457,7 +457,11 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 #introOverlay .label-top{font-family:'Josefin Sans',sans-serif;font-weight:300;font-size:clamp(0.7rem,1.5vw,0.9rem);letter-spacing:1.1em;color:#ffeaac;text-transform:uppercase;opacity:0;animation:fadeSlideUp 0.9s cubic-bezier(0.2,0.9,0.4,1.1) 0.1s forwards;margin-bottom:32px;position:relative;text-shadow:0 0 20px rgba(255,234,172,0.6)}
 #introOverlay .label-top span{display:inline-block;transform:translateY(30px);opacity:0;animation:staggerText 0.5s cubic-bezier(0.2,0.9,0.4,1.1) 0.2s forwards}
 #introOverlay .title-wrap{position:relative;line-height:0.95;margin-bottom:20px;filter:drop-shadow(0 0 40px rgba(0,255,224,0.3))}
-#introOverlay h1{font-family:'Orbitron','Cinzel',sans-serif;font-size:clamp(3.8rem,11vw,9rem);font-weight:900;color:transparent;background:linear-gradient(135deg,#ffb347 0%,#ff6a1a 20%,#f01e8f 50%,#00ffe0 80%,#c9a84c 100%);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;letter-spacing:0.16em;line-height:1.1;opacity:0;animation:revealTitleGlow 0.9s cubic-bezier(0.16,1,0.3,1) 0.3s forwards,shimmerText 8s linear infinite 1s;position:relative;display:inline-block;text-shadow:0 0 30px rgba(240,30,143,0.5)}
+#introOverlay h1{font-family:'Orbitron','Cinzel',sans-serif;font-size:clamp(2.8rem, 10vw, 9rem);font-weight:900;color:transparent;background:linear-gradient(135deg,#ffb347 0%,#ff6a1a 20%,#f01e8f 50%,#00ffe0 80%,#c9a84c 100%);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;letter-spacing:0.12em;line-height:1.1;opacity:0;animation:revealTitleGlow 0.9s cubic-bezier(0.16,1,0.3,1) 0.3s forwards,shimmerText 8s linear infinite 1s;position:relative;display:inline-block;text-shadow:0 0 30px rgba(240,30,143,0.5);white-space:nowrap;max-width:100%;overflow-x:visible;word-break:keep-all}
+@media (max-width: 600px) {
+  #introOverlay h1 { font-size: clamp(2rem, 9vw, 3.5rem); letter-spacing: 0.06em; white-space: normal; word-break: keep-all; }
+  #introOverlay .title-wrap { line-height: 1.2; }
+}
 #introOverlay h1::before{content:attr(data-text);position:absolute;left:-2px;top:0;width:100%;font-family:inherit;font-size:inherit;font-weight:900;letter-spacing:inherit;color:transparent;background:linear-gradient(135deg,#ffb347,#f01e8f,#00ffe0);-webkit-background-clip:text;background-clip:text;opacity:0;animation:glitchPremium 8s infinite 4s;transform:translate(-4px,0);clip-path:polygon(0 40%,100% 40%,100% 55%,0 55%)}
 #introOverlay h1::after{content:attr(data-text);position:absolute;left:2px;top:0;width:100%;font-family:inherit;font-size:inherit;font-weight:900;letter-spacing:inherit;color:transparent;background:linear-gradient(135deg,#00ffe0,#c9a84c,#ff6a1a);-webkit-background-clip:text;background-clip:text;opacity:0;animation:glitchPremium2 8s infinite 4.2s;transform:translate(4px,0);clip-path:polygon(0 65%,100% 65%,100% 80%,0 80%)}
 #introOverlay .title-underline{position:absolute;bottom:-18px;left:50%;transform:translateX(-50%);width:0;height:3px;background:linear-gradient(90deg,transparent,#ffb347,#f01e8f,#00ffe0,#c9a84c,transparent);animation:expandUnderlineNeon 0.9s cubic-bezier(0.16,1,0.3,1) 0.8s forwards;filter:blur(0.8px);box-shadow:0 0 12px rgba(0,255,224,0.8)}
@@ -509,7 +513,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
   .ab-grid,.ct-grid,.vi-grid,.cm-main-grid{grid-template-columns:1fr;gap:48px}
   .ab-text{padding-top:0!important;margin-top:0!important;order:2}
   .rv-l{order:1}
-  .ab-card{min-height:auto;padding:40px 32px}
+  .ab-card{min-height:auto;padding:40px 32px; height: auto; overflow: visible;}
   #about{padding:100px 0}
   .srv-grid{grid-template-columns:1fr 1fr}
   footer{flex-direction:column;gap:14px;text-align:center}
@@ -554,7 +558,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
   .cta-g,.cta-o{padding:12px 28px;font-size:10px}
   #hero{padding:100px 20px 80px}
   .book-wrap{height:340px}
-  .ab-card{padding:28px 22px}
+  .ab-card{padding:28px 22px; height: auto; overflow: visible;}
   .stat-num{font-size:36px}
   .badge{font-size:11px;padding:5px 14px}
   .vi-card{padding:36px 24px}
@@ -578,6 +582,11 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
   .track,.fill{stroke-width:5}
   .cm-write-header{flex-direction:column;align-items:flex-start;gap:16px;}
   .cm-user-logged{margin-left:0;}
+  /* Asegurar que la intro muestre completo JEP DESIGNER */
+  #introOverlay .title-wrap { line-height: 1.2; margin-bottom: 12px; }
+  #introOverlay h1 { font-size: clamp(2rem, 8vw, 3.2rem); letter-spacing: 0.05em; white-space: normal; word-break: keep-all; background-size: 200% 100%; }
+  #introOverlay .divider-line { width: 80px; }
+  #introOverlay .divider-wrap { gap: 12px; margin: 28px auto 20px; }
 }
 @media(max-width:480px){
   .wrap{padding:0 20px;}
@@ -598,12 +607,15 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
   .s3-ic svg{width:24px;height:24px;}
   .s3-lb{font-size:6px;}
   .fl,.ft{font-size:10px;}
+  /* Ajuste extra para intro en móviles muy pequeños */
+  #introOverlay h1 { font-size: clamp(1.6rem, 7vw, 2.5rem); letter-spacing: 0.03em; }
+  #introOverlay .title-underline { bottom: -12px; }
 }
 </style>
 </head>
 <body>
 
-<!-- INTRO PREMIUM (SIN CANVAS 3D) -->
+<!-- INTRO PREMIUM (CORREGIDA) -->
 <div id="introOverlay">
   <div class="noise"></div>
   <div class="vignette"></div>
