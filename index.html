@@ -478,11 +478,11 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .stat-circle.complete svg{animation:circleComplete 1.2s ease-out forwards}
 
 /* ========== CORONA FLORAL ========== */
-.floral-crown-wrap{width:min(480px,92vw);margin:0 auto 6px;opacity:0;animation:fu 1s 1.6s ease forwards;line-height:0}
-.floral-crown-wrap svg{width:100%;height:auto;display:block}
+.floral-crown-wrap{width:min(520px,92vw);margin:0 auto 6px;opacity:0;animation:fu 1s 1.6s ease forwards;line-height:0;background:transparent;border:none;outline:none;box-shadow:none}
+.floral-crown-wrap svg{width:100%;height:auto;display:block;background:transparent}
 
 /* ========== INTRO PREMIUM (CORREGIDA) ========== */
-#introOverlay{position:fixed;top:0;left:0;width:100%;height:100%;z-index:20000;background:radial-gradient(ellipse at 50% 40%,#1a0820 0%,#0a0210 45%,#020204 100%);pointer-events:auto;overflow:hidden;font-family:'Cinzel','Playfair Display',serif;transition:opacity 1.2s cubic-bezier(0.2,0.9,0.4,1.1)}
+#introOverlay{position:fixed;top:0;left:0;width:100%;height:100%;z-index:20000;background:#020204;pointer-events:auto;overflow:hidden;font-family:'Cinzel','Playfair Display',serif;transition:opacity 1.2s cubic-bezier(0.2,0.9,0.4,1.1)}
 #introOverlay.fade-out{opacity:0;pointer-events:none}
 #introOverlay .noise,#introOverlay .vignette,#introOverlay .scanlines{position:absolute;inset:0;z-index:1;pointer-events:none}
 #introOverlay .noise{opacity:0.08;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px}
@@ -923,7 +923,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
       <title>Corona floral JEP Designer</title>
       <defs>
         <radialGradient id="bg" cx="50%" cy="55%" r="55%"><stop offset="0%" stop-color="#160820"/><stop offset="60%" stop-color="#0a0410"/><stop offset="100%" stop-color="#020204"/></radialGradient>
-        <radialGradient id="halo" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#c9a84c" stop-opacity="0.18"/><stop offset="55%" stop-color="#f01e8f" stop-opacity="0.06"/><stop offset="100%" stop-color="#c9a84c" stop-opacity="0"/></radialGradient>
+        <radialGradient id="halo" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#c9a84c" stop-opacity="0.10"/><stop offset="40%" stop-color="#f01e8f" stop-opacity="0.04"/><stop offset="70%" stop-color="#00ffe0" stop-opacity="0.02"/><stop offset="100%" stop-color="#c9a84c" stop-opacity="0"/></radialGradient>
         <radialGradient id="roseGold" cx="35%" cy="30%" r="65%"><stop offset="0%" stop-color="#ffe8a0"/><stop offset="40%" stop-color="#e8cc7a"/><stop offset="100%" stop-color="#a06820"/></radialGradient>
         <radialGradient id="roseMag" cx="35%" cy="30%" r="65%"><stop offset="0%" stop-color="#ffaad4"/><stop offset="40%" stop-color="#f01e8f"/><stop offset="100%" stop-color="#8a0050"/></radialGradient>
         <radialGradient id="roseCream" cx="35%" cy="30%" r="65%"><stop offset="0%" stop-color="#fff8e8"/><stop offset="50%" stop-color="#f5dfa0"/><stop offset="100%" stop-color="#c9a84c"/></radialGradient>
@@ -951,8 +951,21 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
         .cr-tg{animation:crFloat 4s ease-in-out infinite}
         .cr-hl{animation:crHalo 4s ease-in-out infinite}
       </style>
-      <rect width="680" height="460" fill="url(#bg)" rx="20"/>
-      <ellipse cx="340" cy="230" rx="220" ry="180" fill="url(#halo)" class="cr-hl"/>
+      <rect width="680" height="460" fill="transparent" rx="0"/>
+      <!-- GLOW AMBIENTAL PREMIUM (sin cuadro) -->
+      <defs>
+        <radialGradient id="ambientGlow" cx="50%" cy="52%" r="45%">
+          <stop offset="0%" stop-color="#c9a84c" stop-opacity="0.06"/>
+          <stop offset="30%" stop-color="#f01e8f" stop-opacity="0.03"/>
+          <stop offset="60%" stop-color="#00ffe0" stop-opacity="0.02"/>
+          <stop offset="100%" stop-color="#020204" stop-opacity="0"/>
+        </radialGradient>
+        <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="18"/>
+        </filter>
+      </defs>
+      <ellipse cx="340" cy="240" rx="280" ry="200" fill="url(#ambientGlow)" filter="url(#softGlow)" opacity=".8"/>
+      <ellipse cx="340" cy="240" rx="300" ry="210" fill="url(#halo)" class="cr-hl"/>
       <!-- RAMA IZQUIERDA -->
       <g class="cr-bl">
         <path d="M338,318 C310,300 272,272 238,250 C210,232 178,215 152,200" stroke="url(#stemL)" stroke-width="3" fill="none" stroke-linecap="round"/>
