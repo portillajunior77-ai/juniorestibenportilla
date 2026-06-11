@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -453,18 +454,25 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 
 /* ========== CÍRCULO PROGRESO PREMIUM ========== */
 .stat-circle-wrap{display:flex;align-items:center;gap:18px;margin-bottom:6px}
-.stat-circle{position:relative;width:80px;height:80px;flex-shrink:0}
-.stat-circle svg{width:80px;height:80px;transform:rotate(-90deg)}
-.stat-circle .track{fill:none;stroke:rgba(201,168,76,.12);stroke-width:6}
-.stat-circle .fill{fill:none;stroke:url(#circleGrad);stroke-width:6;stroke-linecap:round;stroke-dasharray:220.0;stroke-dashoffset:220.0;transition:stroke-dashoffset 2.2s cubic-bezier(.2,1,.2,1)}
-.stat-circle .fill.animated{stroke-dashoffset:0}
-.stat-circle .center-text{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;font-family:'Syne',sans-serif;font-size:15px;font-weight:800;background:linear-gradient(135deg,var(--gold),var(--orange));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
-.stat-circle .center-pct{font-size:15px;font-weight:800}
-.stat-circle .center-sym{font-size:9px;font-weight:700;opacity:.7;margin-top:1px}
-.stat-circle-ring-outer{position:absolute;inset:-6px;border-radius:50%;border:1px solid rgba(201,168,76,.18);animation:circleRingPulse 2.8s ease-in-out infinite}
-@keyframes circleRingPulse{0%,100%{opacity:.3;transform:scale(1)}50%{opacity:.9;transform:scale(1.04)}}
-@keyframes glowPulse{0%,100%{filter:drop-shadow(0 0 4px rgba(201,168,76,.3))}50%{filter:drop-shadow(0 0 14px rgba(240,30,143,.7))}}
-.stat-circle svg{animation:glowPulse 2.5s ease infinite}
+.stat-circle{position:relative;width:100px;height:100px;flex-shrink:0}
+.stat-circle svg{width:100%;height:100%;transform:rotate(-90deg);filter:drop-shadow(0 0 8px rgba(201,168,76,.25))}
+.stat-circle .track{fill:none;stroke:rgba(201,168,76,.08);stroke-width:4}
+.stat-circle .track-glow{fill:none;stroke:rgba(201,168,76,.04);stroke-width:10;filter:blur(3px)}
+.stat-circle .fill{fill:none;stroke:url(#circleGrad);stroke-width:5;stroke-linecap:round;transition:none}
+.stat-circle .fill-glow{fill:none;stroke:url(#circleGrad);stroke-width:12;stroke-linecap:round;filter:blur(6px);opacity:.5;transition:none}
+.stat-circle .center-text{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;font-family:'Syne',sans-serif;line-height:1;pointer-events:none}
+.stat-circle .center-pct{font-size:18px;font-weight:800;background:linear-gradient(135deg,var(--gold-light),var(--orange),var(--magenta));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-circle .center-sym{font-size:10px;font-weight:700;opacity:.6;margin-top:2px;background:linear-gradient(135deg,var(--cyan),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-circle-ring-outer{position:absolute;inset:-8px;border-radius:50%;border:1px solid rgba(201,168,76,.12);animation:circleRingPulse 3s ease-in-out infinite}
+.stat-circle-ring-mid{position:absolute;inset:-4px;border-radius:50%;border:1px dashed rgba(0,255,224,.08);animation:circleRingSpin 20s linear infinite}
+.stat-circle-dot{position:absolute;top:-2px;left:50%;transform:translateX(-50%);width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan),0 0 20px rgba(0,255,224,.4);opacity:0;transition:opacity .5s;z-index:2}
+.stat-circle-dot.visible{opacity:1}
+@keyframes circleRingPulse{0%,100%{opacity:.2;transform:scale(1)}50%{opacity:.8;transform:scale(1.03)}}
+@keyframes circleRingSpin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+@keyframes circleGlow{0%,100%{filter:drop-shadow(0 0 6px rgba(201,168,76,.3)) drop-shadow(0 0 2px rgba(240,30,143,.2))}50%{filter:drop-shadow(0 0 16px rgba(201,168,76,.6)) drop-shadow(0 0 6px rgba(240,30,143,.4))}}
+.stat-circle.active svg{animation:circleGlow 2.5s ease infinite}
+@keyframes circleComplete{0%{filter:drop-shadow(0 0 8px rgba(0,255,224,.3))}30%{filter:drop-shadow(0 0 30px rgba(0,255,224,.8)) drop-shadow(0 0 60px rgba(201,168,76,.4))}100%{filter:drop-shadow(0 0 12px rgba(0,255,224,.4))}}
+.stat-circle.complete svg{animation:circleComplete 1.2s ease-out forwards}
 
 /* ========== CORONA FLORAL ========== */
 .floral-crown-wrap{width:min(480px,92vw);margin:0 auto 6px;opacity:0;animation:fu 1s 1.6s ease forwards;line-height:0}
@@ -577,8 +585,8 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
   .stat-circle-wrap{flex-direction:column !important;align-items:center !important;text-align:center !important;gap:10px !important}
   .stat-circle{width:60px !important;height:60px !important}
   .stat-circle svg{width:60px !important;height:60px !important}
-  .stat-circle .center-pct{font-size:12px !important}
-  .stat-circle .center-sym{font-size:8px !important}
+  .stat-circle .center-pct{font-size:13px !important}
+  .stat-circle .center-sym{font-size:7px !important}
   .stat-circle-ring-outer{inset:-4px !important}
   #about{padding:100px 0}
   .srv-grid{grid-template-columns:1fr 1fr}
@@ -702,13 +710,13 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
   footer{padding:28px}
   .wa-f{width:48px;height:48px;bottom:20px;right:20px}
   .wa-f svg{width:26px;height:26px}
-  .stat-circle-wrap{gap:12px;}
-  .stat-circle{width:64px;height:64px}
-  .stat-circle svg{width:64px;height:64px}
-  .stat-circle .center-pct{font-size:12px}
-  .fill{stroke-dasharray:175.93;stroke-dashoffset:175.93}
-  .fill.animated{stroke-dashoffset:0}
-  .track,.fill{stroke-width:5}
+  .stat-circle-wrap{gap:12px}
+  .stat-circle{width:76px;height:76px}
+  .stat-circle .center-pct{font-size:14px}
+  .stat-circle .center-sym{font-size:8px}
+  .stat-circle-ring-outer{inset:-6px}
+  .stat-circle-ring-mid{inset:-3px}
+  .stat-circle-dot{width:5px;height:5px}
   .cm-write-header{flex-direction:column;align-items:flex-start;gap:16px;}
   .cm-user-logged{margin-left:0;}
   #introOverlay .title-wrap { line-height: 1.1; margin-bottom: 8px; width:100%; padding:0 10px; box-sizing:border-box }
@@ -751,6 +759,117 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
   .fl,.ft{font-size:10px;}
   #introOverlay h1 { font-size: clamp(1.6rem, 7vw, 2.5rem); letter-spacing: 0.03em; }
   #introOverlay .title-underline { bottom: -12px; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   PREMIUM ENHANCEMENT — 20 NEW EFFECTS
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── 1. AURORA BOREALIS BACKGROUND ── */
+#aurora-borealis{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;opacity:.45}
+.aur-layer{position:absolute;width:200%;height:200%;top:-50%;left:-50%;filter:blur(80px);mix-blend-mode:screen}
+.aur-layer:nth-child(1){background:linear-gradient(120deg,transparent 30%,rgba(0,255,224,.07) 45%,rgba(240,30,143,.05) 55%,transparent 70%);animation:aurDrift1 18s ease-in-out infinite alternate}
+.aur-layer:nth-child(2){background:linear-gradient(240deg,transparent 25%,rgba(201,168,76,.06) 40%,rgba(0,255,224,.04) 60%,transparent 75%);animation:aurDrift2 22s ease-in-out infinite alternate}
+.aur-layer:nth-child(3){background:linear-gradient(60deg,transparent 35%,rgba(240,30,143,.04) 50%,rgba(201,168,76,.03) 65%,transparent 80%);animation:aurDrift3 26s ease-in-out infinite alternate}
+@keyframes aurDrift1{0%{transform:translateX(-10%) rotate(-3deg) scaleY(1)}50%{transform:translateX(5%) rotate(2deg) scaleY(1.15)}100%{transform:translateX(-5%) rotate(-1deg) scaleY(.9)}}
+@keyframes aurDrift2{0%{transform:translateX(8%) rotate(2deg) scaleY(.95)}50%{transform:translateX(-8%) rotate(-3deg) scaleY(1.1)}100%{transform:translateX(3%) rotate(1deg) scaleY(1.05)}}
+@keyframes aurDrift3{0%{transform:translateX(-5%) rotate(1deg) scaleY(1.05)}50%{transform:translateX(10%) rotate(-2deg) scaleY(.9)}100%{transform:translateX(-8%) rotate(3deg) scaleY(1.12)}}
+
+/* ── 2. CURSOR SPARKLE TRAIL ── */
+.sparkle{position:fixed;pointer-events:none;z-index:99997;border-radius:50%;animation:sparkleFade .6s ease-out forwards}
+@keyframes sparkleFade{0%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(0)}}
+
+/* ── 3. TEXT SCRAMBLE HEADINGS ── */
+.scramble-heading{display:inline-block}
+
+/* ── 4. ROTATING GRADIENT BORDER CARDS ── */
+.rotating-border{position:relative;z-index:0}
+.rotating-border::before{content:'';position:absolute;inset:-2px;border-radius:inherit;padding:2px;background:conic-gradient(from var(--border-angle,0deg),var(--gold),var(--magenta),var(--cyan),var(--gold));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;z-index:-1;animation:rotateBorder 4s linear infinite;opacity:0;transition:opacity .5s}
+.rotating-border:hover::before{opacity:1}
+@keyframes rotateBorder{to{--border-angle:360deg}}
+@property --border-angle{syntax:'<angle>';inherits:false;initial-value:0deg}
+
+/* ── 5. SPOTLIGHT/FLASHLIGHT EFFECT ── */
+.spotlight-section{position:relative;overflow:hidden}
+.spotlight-section::after{content:'';position:absolute;inset:0;background:radial-gradient(600px circle at var(--spot-x,50%) var(--spot-y,50%),rgba(201,168,76,.04),transparent 50%);pointer-events:none;z-index:1;transition:opacity .3s;opacity:0}
+.spotlight-section:hover::after{opacity:1}
+
+/* ── 6. FLOATING GEOMETRIC SHAPES ── */
+#floating-shapes{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.float-shape{position:absolute;opacity:.08;animation:floatShape var(--dur) ease-in-out infinite alternate}
+.float-shape.triangle{width:0;height:0;border-left:20px solid transparent;border-right:20px solid transparent;border-bottom:35px solid var(--gold)}
+.float-shape.circle{width:30px;height:30px;border-radius:50%;border:1.5px solid var(--cyan)}
+.float-shape.hexagon{width:28px;height:28px;background:var(--magenta);clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);opacity:.06}
+.float-shape.diamond{width:22px;height:22px;background:var(--gold);transform:rotate(45deg);opacity:.05}
+.float-shape.cross{width:24px;height:24px;position:relative}
+.float-shape.cross::before,.float-shape.cross::after{content:'';position:absolute;background:var(--cyan)}
+.float-shape.cross::before{width:100%;height:2px;top:50%;transform:translateY(-50%)}
+.float-shape.cross::after{height:100%;width:2px;left:50%;transform:translateX(-50%)}
+@keyframes floatShape{0%{transform:translateY(0) rotate(0deg)}100%{transform:translateY(var(--drift-y,-30px)) rotate(var(--rot,15deg))}}
+
+/* ── 7. SHIMMER/SHINE SWEEP ON CARDS ── */
+.shimmer-sweep{position:relative;overflow:hidden}
+.shimmer-sweep::after{content:'';position:absolute;top:-50%;left:-60%;width:40%;height:200%;background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.03) 45%,rgba(255,255,255,.07) 50%,rgba(255,255,255,.03) 55%,transparent 60%);transform:skewX(-15deg);animation:shimmerSweep 6s ease-in-out infinite;pointer-events:none;z-index:2}
+@keyframes shimmerSweep{0%,100%{left:-60%}50%{left:120%}}
+
+/* ── 8. SECTION WAVE DIVIDERS ── */
+.wave-divider{width:100%;overflow:hidden;line-height:0;position:relative;z-index:2}
+.wave-divider svg{display:block;width:100%;height:60px}
+.wave-divider .wave-fill{fill:url(#waveGrad)}
+
+/* ── 9. MORPHING BLOB BEHIND HERO ── */
+.morph-blob{position:absolute;width:600px;height:600px;top:50%;left:50%;transform:translate(-50%,-50%);z-index:0;pointer-events:none;filter:blur(60px);opacity:.18;animation:morphBlob 12s ease-in-out infinite alternate}
+.morph-blob-inner{width:100%;height:100%;background:linear-gradient(135deg,var(--gold),var(--magenta),var(--cyan));border-radius:60% 40% 30% 70% / 60% 30% 70% 40%;animation:morphShape 8s ease-in-out infinite}
+@keyframes morphShape{0%{border-radius:60% 40% 30% 70% / 60% 30% 70% 40%}25%{border-radius:30% 60% 70% 40% / 50% 60% 30% 60%}50%{border-radius:50% 60% 30% 60% / 30% 60% 70% 40%}75%{border-radius:40% 30% 60% 50% / 60% 40% 30% 70%}100%{border-radius:60% 40% 30% 70% / 60% 30% 70% 40%}}
+@keyframes morphBlob{0%{transform:translate(-50%,-50%) scale(1) rotate(0deg)}100%{transform:translate(-50%,-50%) scale(1.15) rotate(10deg)}}
+
+/* ── 10. ENHANCED 3D TILT WITH GLARE ── */
+.tilt-glare{position:relative;overflow:hidden}
+.glare-overlay{position:absolute;inset:0;background:radial-gradient(circle at var(--glare-x,50%) var(--glare-y,50%),rgba(255,255,255,.12),transparent 60%);pointer-events:none;z-index:3;opacity:0;transition:opacity .3s;border-radius:inherit}
+.tilt-glare:hover .glare-overlay{opacity:1}
+
+/* ── 11. BREATHING/PULSING GLOW ── */
+.breath-glow{animation:breathGlow 3s ease-in-out infinite}
+.breath-glow-gold{animation:breathGlowGold 3s ease-in-out infinite}
+.breath-glow-cyan{animation:breathGlowCyan 4s ease-in-out infinite}
+@keyframes breathGlow{0%,100%{filter:drop-shadow(0 0 4px rgba(201,168,76,.2))}50%{filter:drop-shadow(0 0 18px rgba(201,168,76,.5))}}
+@keyframes breathGlowGold{0%,100%{text-shadow:0 0 4px rgba(201,168,76,.2)}50%{text-shadow:0 0 20px rgba(201,168,76,.45),0 0 40px rgba(201,168,76,.15)}}
+@keyframes breathGlowCyan{0%,100%{text-shadow:0 0 4px rgba(0,255,224,.15)}50%{text-shadow:0 0 20px rgba(0,255,224,.4),0 0 40px rgba(0,255,224,.1)}}
+
+/* ── 12. STAGGERED GRID ENTRANCE ── */
+.stagger-grid .stagger-item{opacity:0;transform:translateY(40px);transition:opacity .7s cubic-bezier(.2,1,.2,1),transform .7s cubic-bezier(.2,1,.2,1)}
+.stagger-grid .stagger-item.stagger-visible{opacity:1;transform:translateY(0)}
+
+/* ── 13. RIPPLE EFFECT ON BUTTONS ── */
+.ripple-wrap{position:relative;overflow:hidden}
+.ripple-span{position:absolute;border-radius:50%;background:rgba(255,255,255,.25);transform:scale(0);animation:rippleAnim .6s ease-out forwards;pointer-events:none}
+@keyframes rippleAnim{to{transform:scale(4);opacity:0}}
+
+/* ── 14. SVG PATH DRAWING ON SCROLL ── */
+.svg-draw-path{stroke-dasharray:var(--dash-len);stroke-dashoffset:var(--dash-len);transition:stroke-dashoffset 1.2s cubic-bezier(.2,1,.2,1)}
+.svg-draw-path.drawn{stroke-dashoffset:0}
+
+/* ── 18. NOISE/GRAIN OVERLAY ENHANCEMENT ── */
+#noise-grain{position:fixed;inset:0;pointer-events:none;z-index:9998;opacity:.035;mix-blend-mode:overlay}
+#noise-grain::after{content:'';position:absolute;inset:-200%;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");background-size:256px 256px;animation:grainShift .5s steps(3) infinite}
+@keyframes grainShift{0%{transform:translate(0,0)}33%{transform:translate(-5%,-5%)}66%{transform:translate(5%,3%)}100%{transform:translate(-3%,5%)}}
+
+/* ── 19. TYPING EFFECT ── */
+.typing-cursor{display:inline-block;width:2px;height:1em;background:var(--cyan);margin-left:2px;animation:blink .7s step-end infinite;vertical-align:text-bottom}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+
+/* ── 20. LOADING BAR GLOW ENHANCEMENT ── */
+.progress-fill{position:relative}
+.progress-fill::after{content:'';position:absolute;top:-4px;right:0;width:60px;height:calc(100% + 8px);background:linear-gradient(90deg,transparent,rgba(0,255,224,.5),rgba(201,168,76,.6),transparent);filter:blur(4px);animation:barGlow 1.2s ease-in-out infinite alternate;border-radius:4px}
+@keyframes barGlow{0%{opacity:.5;filter:blur(4px)}100%{opacity:1;filter:blur(8px)}}
+@keyframes travelGlow{0%{left:0;opacity:.4}50%{opacity:.8}100%{left:calc(100% - 30px);opacity:.4}}
+
+/* ── RESPONSIVE ADJUSTMENTS FOR NEW EFFECTS ── */
+@media(max-width:600px){
+  .morph-blob{width:300px;height:300px;opacity:.1}
+  .float-shape{opacity:.04}
+  #aurora-borealis{opacity:.25}
+  .wave-divider svg{height:40px !important}
 }
 </style>
 <base target="_blank">
@@ -891,6 +1010,20 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 <div id="cur"></div>
 <div id="cur-ring"></div>
 <div id="aurora"><div class="ab"></div><div class="ab"></div><div class="ab"></div></div>
+<div id="aurora-borealis"><div class="aur-layer"></div><div class="aur-layer"></div><div class="aur-layer"></div></div>
+<div id="floating-shapes">
+  <div class="float-shape triangle" style="left:8%;top:15%;--dur:14s;--drift-y:-40px;--rot:20deg"></div>
+  <div class="float-shape circle" style="left:85%;top:25%;--dur:18s;--drift-y:-35px;--rot:10deg"></div>
+  <div class="float-shape hexagon" style="left:20%;top:65%;--dur:16s;--drift-y:-28px;--rot:25deg"></div>
+  <div class="float-shape diamond" style="left:70%;top:50%;--dur:20s;--drift-y:-45px;--rot:15deg"></div>
+  <div class="float-shape triangle" style="left:50%;top:80%;--dur:22s;--drift-y:-32px;--rot:-20deg"></div>
+  <div class="float-shape circle" style="left:30%;top:35%;--dur:17s;--drift-y:-38px;--rot:12deg"></div>
+  <div class="float-shape cross" style="left:90%;top:70%;--dur:19s;--drift-y:-42px;--rot:18deg"></div>
+  <div class="float-shape hexagon" style="left:12%;top:85%;--dur:21s;--drift-y:-30px;--rot:-15deg"></div>
+  <div class="float-shape diamond" style="left:60%;top:10%;--dur:15s;--drift-y:-36px;--rot:22deg"></div>
+  <div class="float-shape circle" style="left:45%;top:55%;--dur:23s;--drift-y:-25px;--rot:-12deg"></div>
+</div>
+<div id="noise-grain"></div>
 <canvas id="bg-canvas"></canvas>
 
 <!-- WA FLOAT -->
@@ -923,6 +1056,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 
 <!-- HERO -->
 <section id="hero">
+  <div class="morph-blob"><div class="morph-blob-inner"></div></div>
   <div class="h-eye">Portafolio Profesional 2026</div>
   <div class="book-wrap">
     <div class="bk-rings"><div class="bk-ring"></div><div class="bk-ring"></div><div class="bk-ring"></div><div class="bk-ring"></div><div class="bk-ring"></div><div class="bk-ring"></div><div class="bk-ring"></div></div>
@@ -937,33 +1071,43 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
     </div>
   </div>
   <div class="bk-nav"><button class="bk-btn" id="bkPrev" onclick="bkPrev()">‹ Anterior</button><div class="bk-pg-label" id="bkLabel">Portada · 1 / 7</div><button class="bk-btn" id="bkNext" onclick="bkNext()">Siguiente ›</button></div>
-  <div class="h-title"><span class="gl" data-text="Junior Estiben">Junior Estiben</span><span class="grd gl" data-text="Portilla">Portilla</span></div>
+  <div class="h-title scramble-heading" data-scramble="true"><span class="gl" data-text="Junior Estiben">Junior Estiben</span><span class="grd gl" data-text="Portilla">Portilla</span></div>
   <div class="h-sub">Diseñador Gráfico, Web e Interiorista Colombiano</div>
-  <div class="h-brand">✦ Creador de JEP Designer ✦</div>
+  <div class="h-brand breath-glow-cyan" id="tagline-typing">✦ Creador de JEP Designer ✦</div>
   <p class="h-desc">Transformando ideas en experiencias visuales modernas, elegantes y funcionales. Desde el corazón del Putumayo hacia el mundo digital, combinando creatividad, innovación y diseño estratégico.</p>
-  <div class="h-cta"><a href="#services" class="cta-g mag">Ver Portafolio</a><a href="https://wa.me/573223729232?text=Hola%20quiero%20información" target="_blank" rel="noopener noreferrer" class="cta-o mag">Contactar Ahora</a></div>
+  <div class="h-cta"><a href="#services" class="cta-g mag ripple-wrap">Ver Portafolio</a><a href="https://wa.me/573223729232?text=Hola%20quiero%20información" target="_blank" rel="noopener noreferrer" class="cta-o mag ripple-wrap">Contactar Ahora</a></div>
   <div class="sh"><span>Scroll</span><div class="sh-l"></div></div>
 </section>
 
 <!-- ABOUT -->
-<section id="about"><div class="wrap"><div class="ab-grid"><div class="rv-l"><div class="ab-card tilt"><div class="badge-row"><div class="badge">23 años</div></div><div class="live"><div class="live-dot"></div><div class="live-t">San Miguel La Dorada · Putumayo · Colombia</div></div><div class="sl">Identidad</div><div class="st" style="font-size:34px">Quién<br>Soy <span class="ac">Yo</span></div><div class="sdv"></div><div class="pillars"><div class="pl"><div class="pl-ic">✦</div><div class="pl-lb">Creatividad</div></div><div class="pl"><div class="pl-ic">◈</div><div class="pl-lb">Innovación</div></div><div class="pl"><div class="pl-ic">◉</div><div class="pl-lb">Propósito</div></div></div></div></div><div class="ab-text rv-r" style="transition-delay:.15s"><div class="sl">Mi historia</div><div class="st">Sobre <span class="ac">Junior</span></div><p>Junior Estiben Portilla es un joven colombiano de 23 años apasionado por el diseño gráfico, el diseño web y el diseño de interiores. Nació en el departamento del Putumayo, en el municipio de San Miguel La Dorada, un lugar lleno de cultura, naturaleza e inspiración que marcó profundamente su visión artística y creativa.</p><p>Desde temprana edad mostró interés por el arte visual, la estética digital y la creación de conceptos innovadores. Con los años desarrolló una identidad profesional enfocada en la elegancia, el minimalismo moderno y la creación de experiencias visuales de alto impacto.</p><p>Actualmente es el fundador y creador de <strong>JEP Designer</strong>, una marca creativa enfocada en diseño profesional, branding, páginas web modernas, identidad visual y proyectos de interiores contemporáneos.</p><p>Su filosofía de trabajo se basa en tres pilares fundamentales: <strong>creatividad auténtica</strong>, <strong>innovación visual</strong> y <strong>diseño con propósito</strong>. Junior busca que cada proyecto transmita personalidad, profesionalismo y una conexión emocional genuina.</p><div class="stats-reveal" id="stats-reveal"><div class="stat-row" style="transition-delay:.05s"><div class="stat-item"><div class="stat-num"><span class="num" data-target="23">0</span></div><div class="stat-label">Años de edad</div><div class="stat-desc">Joven con visión global</div></div><div class="stat-item"><div class="stat-num"><span class="num" data-target="3">0</span></div><div class="stat-label">Disciplinas creativas</div><div class="stat-desc">Gráfico · Web · Interiores</div></div></div><div class="stat-row" style="transition-delay:.18s"><div class="stat-item"><div class="stat-num"><span class="num" data-target="6">0</span></div><div class="stat-label">Servicios disponibles</div><div class="stat-desc">Soluciones integrales</div></div><div class="stat-item">
+<section id="about" class="spotlight-section"><div class="wrap"><div class="ab-grid"><div class="rv-l"><div class="ab-card tilt tilt-glare"><div class="glare-overlay"></div><div class="badge-row"><div class="badge breath-glow">23 años</div></div><div class="live"><div class="live-dot"></div><div class="live-t">San Miguel La Dorada · Putumayo · Colombia</div></div><div class="sl">Identidad</div><div class="st scramble-heading" style="font-size:34px" data-scramble="true">Quién<br>Soy <span class="ac">Yo</span></div><div class="sdv"></div><div class="pillars"><div class="pl"><div class="pl-ic">✦</div><div class="pl-lb">Creatividad</div></div><div class="pl"><div class="pl-ic">◈</div><div class="pl-lb">Innovación</div></div><div class="pl"><div class="pl-ic">◉</div><div class="pl-lb">Propósito</div></div></div></div></div><div class="ab-text rv-r" style="transition-delay:.15s"><div class="sl">Mi historia</div><div class="st scramble-heading" data-scramble="true">Sobre <span class="ac">Junior</span></div><p>Junior Estiben Portilla es un joven colombiano de 23 años apasionado por el diseño gráfico, el diseño web y el diseño de interiores. Nació en el departamento del Putumayo, en el municipio de San Miguel La Dorada, un lugar lleno de cultura, naturaleza e inspiración que marcó profundamente su visión artística y creativa.</p><p>Desde temprana edad mostró interés por el arte visual, la estética digital y la creación de conceptos innovadores. Con los años desarrolló una identidad profesional enfocada en la elegancia, el minimalismo moderno y la creación de experiencias visuales de alto impacto.</p><p>Actualmente es el fundador y creador de <strong>JEP Designer</strong>, una marca creativa enfocada en diseño profesional, branding, páginas web modernas, identidad visual y proyectos de interiores contemporáneos.</p><p>Su filosofía de trabajo se basa en tres pilares fundamentales: <strong>creatividad auténtica</strong>, <strong>innovación visual</strong> y <strong>diseño con propósito</strong>. Junior busca que cada proyecto transmita personalidad, profesionalismo y una conexión emocional genuina.</p><div class="stats-reveal" id="stats-reveal"><div class="stat-row" style="transition-delay:.05s"><div class="stat-item"><div class="stat-num"><span class="num" data-target="23">0</span></div><div class="stat-label">Años de edad</div><div class="stat-desc">Joven con visión global</div></div><div class="stat-item"><div class="stat-num"><span class="num" data-target="3">0</span></div><div class="stat-label">Disciplinas creativas</div><div class="stat-desc">Gráfico · Web · Interiores</div></div></div><div class="stat-row" style="transition-delay:.18s"><div class="stat-item"><div class="stat-num"><span class="num" data-target="6">0</span></div><div class="stat-label">Servicios disponibles</div><div class="stat-desc">Soluciones integrales</div></div><div class="stat-item">
   <div class="stat-circle-wrap">
     <div class="stat-circle" id="commitCircle">
       <div class="stat-circle-ring-outer"></div>
-      <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+      <div class="stat-circle-ring-mid"></div>
+      <div class="stat-circle-dot" id="commitDot"></div>
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="circleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#c9a84c"/>
+            <stop offset="0%" stop-color="#e8cc7a"/>
+            <stop offset="35%" stop-color="#c9a84c"/>
+            <stop offset="65%" stop-color="#ff6a1a"/>
+            <stop offset="100%" stop-color="#f01e8f"/>
+          </linearGradient>
+          <linearGradient id="circleGradGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#e8cc7a"/>
             <stop offset="50%" stop-color="#ff6a1a"/>
             <stop offset="100%" stop-color="#f01e8f"/>
           </linearGradient>
         </defs>
-        <circle class="track" cx="40" cy="40" r="35"/>
-        <circle class="fill" id="commitFill" cx="40" cy="40" r="35"/>
+        <circle class="track-glow" cx="50" cy="50" r="42"/>
+        <circle class="track" cx="50" cy="50" r="42"/>
+        <circle class="fill-glow" id="commitFillGlow" cx="50" cy="50" r="42"/>
+        <circle class="fill" id="commitFill" cx="50" cy="50" r="42"/>
       </svg>
       <div class="center-text">
         <span class="center-pct" id="commitPct">0%</span>
-        <span class="center-sym">★</span>
+        <span class="center-sym">COMMIT</span>
       </div>
     </div>
     <div>
@@ -974,22 +1118,30 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 </div></div></div></div></div></div></section>
 
 <!-- BRAND -->
-<section id="brand"><div class="brand-bg"></div><div class="wrap"><div class="brand-c rv"><div class="sl" style="justify-content:center">La Marca</div><div class="brand-g"><span class="f">JEP</span><br>Designer</div><div class="sdv" style="margin:0 auto 28px"></div><p class="brand-p">JEP Designer nace como una marca creativa enfocada en ofrecer soluciones visuales modernas, exclusivas y profesionales para personas, marcas y empresas que desean destacar en el mundo digital. La visión es crear proyectos con identidad propia, mezclando elegancia visual, innovación tecnológica y creatividad artística.</p><div class="brand-vals"><div class="vt">Innovación</div><div class="vt">Elegancia</div><div class="vt">Profesionalismo</div><div class="vt">Creatividad</div><div class="vt">Originalidad</div><div class="vt">Calidad Visual</div><div class="vt">Diseño Emocional</div></div></div></div></section>
+<div class="wave-divider"><svg viewBox="0 0 1200 60" preserveAspectRatio="none"><defs><linearGradient id="waveGrad1" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="rgba(201,168,76,0.08)"/><stop offset="50%" stop-color="rgba(240,30,143,0.06)"/><stop offset="100%" stop-color="rgba(0,255,224,0.05)"/></linearGradient></defs><path d="M0,30 C200,55 400,5 600,30 C800,55 1000,5 1200,30 L1200,60 L0,60 Z" fill="url(#waveGrad1)"><animate attributeName="d" dur="8s" repeatCount="indefinite" values="M0,30 C200,55 400,5 600,30 C800,55 1000,5 1200,30 L1200,60 L0,60 Z;M0,30 C200,5 400,55 600,30 C800,5 1000,55 1200,30 L1200,60 L0,60 Z;M0,30 C200,55 400,5 600,30 C800,55 1000,5 1200,30 L1200,60 L0,60 Z"/></path></svg></div>
+<section id="brand" class="spotlight-section"><div class="brand-bg"></div><div class="wrap"><div class="brand-c rv"><div class="sl" style="justify-content:center">La Marca</div><div class="brand-g breath-glow-gold"><span class="f">JEP</span><br>Designer</div><div class="sdv" style="margin:0 auto 28px"></div><p class="brand-p">JEP Designer nace como una marca creativa enfocada en ofrecer soluciones visuales modernas, exclusivas y profesionales para personas, marcas y empresas que desean destacar en el mundo digital. La visión es crear proyectos con identidad propia, mezclando elegancia visual, innovación tecnológica y creatividad artística.</p><div class="brand-vals"><div class="vt">Innovación</div><div class="vt">Elegancia</div><div class="vt">Profesionalismo</div><div class="vt">Creatividad</div><div class="vt">Originalidad</div><div class="vt">Calidad Visual</div><div class="vt">Diseño Emocional</div></div></div></div></section>
 
 <!-- SERVICES -->
-<section id="services"><div class="wrap"><div class="rv"><div class="sl" style="color:var(--cyan)">Lo que ofrezco</div><div class="st">Servicios<br><span class="ac">Profesionales</span></div></div><div class="srv-grid"><div class="sc rv tilt" style="transition-delay:.07s"><span class="s-ic">🌐</span><span class="s-nm-bg">01</span><div class="s-nm">Diseño Web Premium</div><p class="s-tx">Creación de páginas web modernas, rápidas, adaptables y optimizadas para todos los dispositivos.</p><div class="s-ln"></div></div><div class="sc rv tilt" style="transition-delay:.14s"><span class="s-ic">✏️</span><span class="s-nm-bg">02</span><div class="s-nm">Diseño Gráfico</div><p class="s-tx">Logos, identidad visual, banners, contenido publicitario y piezas digitales de alto impacto.</p><div class="s-ln"></div></div><div class="sc rv tilt" style="transition-delay:.21s"><span class="s-ic">🏠</span><span class="s-nm-bg">03</span><div class="s-nm">Diseño de Interiores</div><p class="s-tx">Espacios modernos, minimalistas y elegantes, pensados para transmitir armonía y personalidad.</p><div class="s-ln"></div></div><div class="sc rv tilt" style="transition-delay:.28s"><span class="s-ic">◈</span><span class="s-nm-bg">04</span><div class="s-nm">Branding Profesional</div><p class="s-tx">Construcción de marcas sólidas con identidad visual estratégica y presencia digital moderna.</p><div class="s-ln"></div></div><div class="sc rv tilt" style="transition-delay:.35s"><span class="s-ic">◉</span><span class="s-nm-bg">05</span><div class="s-nm">UI/UX Design</div><p class="s-tx">Interfaces intuitivas, visualmente atractivas y enfocadas en mejorar la experiencia del usuario.</p><div class="s-ln"></div></div><div class="sc rv tilt" style="transition-delay:.42s"><span class="s-ic">🎨</span><span class="s-nm-bg">06</span><div class="s-nm">Contenido Visual</div><p class="s-tx">Edición de imágenes, conceptos artísticos, publicidad digital y contenido premium para redes.</p><div class="s-ln"></div></div></div></div></section>
+<div class="wave-divider"><svg viewBox="0 0 1200 60" preserveAspectRatio="none"><defs><linearGradient id="waveGrad2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="rgba(0,255,224,0.06)"/><stop offset="50%" stop-color="rgba(201,168,76,0.08)"/><stop offset="100%" stop-color="rgba(240,30,143,0.05)"/></linearGradient></defs><path d="M0,25 C300,50 600,0 900,25 C1000,35 1100,15 1200,25 L1200,60 L0,60 Z" fill="url(#waveGrad2)"><animate attributeName="d" dur="10s" repeatCount="indefinite" values="M0,25 C300,50 600,0 900,25 C1000,35 1100,15 1200,25 L1200,60 L0,60 Z;M0,35 C300,10 600,50 900,35 C1000,15 1100,45 1200,35 L1200,60 L0,60 Z;M0,25 C300,50 600,0 900,25 C1000,35 1100,15 1200,25 L1200,60 L0,60 Z"/></path></svg></div>
+<section id="services" class="spotlight-section"><div class="wrap"><div class="rv"><div class="sl" style="color:var(--cyan)">Lo que ofrezco</div><div class="st scramble-heading" data-scramble="true">Servicios<br><span class="ac">Profesionales</span></div></div><div class="srv-grid stagger-grid"><div class="sc rv tilt tilt-glare rotating-border shimmer-sweep stagger-item" style="transition-delay:.07s"><div class="glare-overlay"></div><span class="s-ic">🌐</span><span class="s-nm-bg">01</span><div class="s-nm">Diseño Web Premium</div><p class="s-tx">Creación de páginas web modernas, rápidas, adaptables y optimizadas para todos los dispositivos.</p><div class="s-ln"></div></div><div class="sc rv tilt tilt-glare rotating-border shimmer-sweep stagger-item" style="transition-delay:.14s"><div class="glare-overlay"></div><span class="s-ic">✏️</span><span class="s-nm-bg">02</span><div class="s-nm">Diseño Gráfico</div><p class="s-tx">Logos, identidad visual, banners, contenido publicitario y piezas digitales de alto impacto.</p><div class="s-ln"></div></div><div class="sc rv tilt tilt-glare rotating-border shimmer-sweep stagger-item" style="transition-delay:.21s"><div class="glare-overlay"></div><span class="s-ic">🏠</span><span class="s-nm-bg">03</span><div class="s-nm">Diseño de Interiores</div><p class="s-tx">Espacios modernos, minimalistas y elegantes, pensados para transmitir armonía y personalidad.</p><div class="s-ln"></div></div><div class="sc rv tilt tilt-glare rotating-border shimmer-sweep stagger-item" style="transition-delay:.28s"><div class="glare-overlay"></div><span class="s-ic">◈</span><span class="s-nm-bg">04</span><div class="s-nm">Branding Profesional</div><p class="s-tx">Construcción de marcas sólidas con identidad visual estratégica y presencia digital moderna.</p><div class="s-ln"></div></div><div class="sc rv tilt tilt-glare rotating-border shimmer-sweep stagger-item" style="transition-delay:.35s"><div class="glare-overlay"></div><span class="s-ic">◉</span><span class="s-nm-bg">05</span><div class="s-nm">UI/UX Design</div><p class="s-tx">Interfaces intuitivas, visualmente atractivas y enfocadas en mejorar la experiencia del usuario.</p><div class="s-ln"></div></div><div class="sc rv tilt tilt-glare rotating-border shimmer-sweep stagger-item" style="transition-delay:.42s"><div class="glare-overlay"></div><span class="s-ic">🎨</span><span class="s-nm-bg">06</span><div class="s-nm">Contenido Visual</div><p class="s-tx">Edición de imágenes, conceptos artísticos, publicidad digital y contenido premium para redes.</p><div class="s-ln"></div></div></div></div></section>
 
 <!-- VISION -->
-<section id="vision"><div class="vg"></div><div class="wrap"><div class="vi-grid"><div class="rv-l"><div class="sl" style="color:var(--magenta)">El futuro del diseño</div><div class="st">Visión<br><span class="ac">2026</span></div><p style="font-size:15px;color:var(--white-dim);line-height:1.9;margin-bottom:8px">En 2026 una página web debe transmitir más que información: debe generar experiencia, emoción y conexión real con las personas.</p><div class="feats"><div class="feat"><div class="f-dot"></div><div class="f-lb">Futurista</div></div><div class="feat"><div class="f-dot"></div><div class="f-lb">Minimalista</div></div><div class="feat"><div class="f-dot"></div><div class="f-lb">Animaciones</div></div><div class="feat"><div class="f-dot"></div><div class="f-lb">Inmersivo</div></div><div class="feat"><div class="f-dot"></div><div class="f-lb">Responsive</div></div><div class="feat"><div class="f-dot"></div><div class="f-lb">Optimizado</div></div><div class="feat"><div class="f-dot"></div><div class="f-lb">Modo Oscuro</div></div><div class="feat"><div class="f-dot"></div><div class="f-lb">Estética Premium</div></div><div class="feat"><div class="f-dot"></div><div class="f-lb">3D Ligero</div></div><div class="feat"><div class="f-dot"></div><div class="f-lb">Interactivo</div></div></div></div><div class="vr rv-r" style="transition-delay:.2s"><div class="v26">26</div><div class="vi-card tilt"><span class="vi-ic">◈</span><div class="vi-tt">Diseño del Futuro</div><p class="vi-tx">Cada proyecto integra arte digital, tecnología moderna, estética profesional, tendencias globales e innovación visual. Una visión enfocada en crear experiencias únicas y memorables que conectan creatividad, elegancia e innovación.</p></div></div></div></div></section>
+<div class="wave-divider"><svg viewBox="0 0 1200 60" preserveAspectRatio="none"><defs><linearGradient id="waveGrad3" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="rgba(240,30,143,0.06)"/><stop offset="50%" stop-color="rgba(0,255,224,0.05)"/><stop offset="100%" stop-color="rgba(201,168,76,0.07)"/></linearGradient></defs><path d="M0,20 C150,45 350,5 550,25 C750,45 950,5 1200,20 L1200,60 L0,60 Z" fill="url(#waveGrad3)"><animate attributeName="d" dur="12s" repeatCount="indefinite" values="M0,20 C150,45 350,5 550,25 C750,45 950,5 1200,20 L1200,60 L0,60 Z;M0,40 C150,15 350,50 550,35 C750,15 950,50 1200,40 L1200,60 L0,60 Z;M0,20 C150,45 350,5 550,25 C750,45 950,5 1200,20 L1200,60 L0,60 Z"/></path></svg></div>
+<!-- SVG Decorative Path Drawing -->
+<svg style="position:relative;z-index:2;display:block;width:100%;height:40px;overflow:visible" viewBox="0 0 1200 40" preserveAspectRatio="none">
+  <path class="svg-draw-path" style="--dash-len:2000" d="M0,20 Q150,5 300,20 T600,20 T900,20 T1200,20" fill="none" stroke="url(#drawGrad1)" stroke-width="1"/>
+  <defs><linearGradient id="drawGrad1" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#c9a84c"/><stop offset="50%" stop-color="#f01e8f"/><stop offset="100%" stop-color="#00ffe0"/></linearGradient></defs>
+</svg>
+<section id="vision"><div class="vg"></div><div class="wrap"><div class="vi-grid"><div class="rv-l"><div class="sl" style="color:var(--magenta)">El futuro del diseño</div><div class="st scramble-heading" data-scramble="true">Visión<br><span class="ac">2026</span></div><p style="font-size:15px;color:var(--white-dim);line-height:1.9;margin-bottom:8px">En 2026 una página web debe transmitir más que información: debe generar experiencia, emoción y conexión real con las personas.</p><div class="feats"><div class="feat"><div class="f-dot"></div><div class="f-lb">Futurista</div></div><div class="feat"><div class="f-dot"></div><div class="f-lb">Minimalista</div></div><div class="feat"><div class="f-dot"></div><div class="f-lb">Animaciones</div></div><div class="feat"><div class="f-dot"></div><div class="f-lb">Inmersivo</div></div><div class="feat"><div class="f-dot"></div><div class="f-lb">Responsive</div></div><div class="feat"><div class="f-dot"></div><div class="f-lb">Optimizado</div></div><div class="feat"><div class="f-dot"></div><div class="f-lb">Modo Oscuro</div></div><div class="feat"><div class="f-dot"></div><div class="f-lb">Estética Premium</div></div><div class="feat"><div class="f-dot"></div><div class="f-lb">3D Ligero</div></div><div class="feat"><div class="f-dot"></div><div class="f-lb">Interactivo</div></div></div></div><div class="vr rv-r" style="transition-delay:.2s"><div class="v26">26</div><div class="vi-card tilt tilt-glare"><div class="glare-overlay"></div><span class="vi-ic">◈</span><div class="vi-tt">Diseño del Futuro</div><p class="vi-tx">Cada proyecto integra arte digital, tecnología moderna, estética profesional, tendencias globales e innovación visual. Una visión enfocada en crear experiencias únicas y memorables que conectan creatividad, elegancia e innovación.</p></div></div></div></div></section>
 
 <!-- QUOTE -->
 <section id="quote"><div class="wrap"><div class="rv" style="text-align:center"><span class="q-mk">"</span><div class="q-tx">El diseño no solo se observa, se siente.<br>Cada detalle comunica una historia.</div><div class="q-au">— Junior Estiben Portilla</div></div></div></section>
 
 <!-- COMENTARIOS -->
-<section id="comentarios"><div class="wrap"><div class="cm-banner rv"><div class="cm-banner-left"><div class="cm-banner-icon">💬</div><div class="cm-banner-text"><h3>¿Qué opinan mis clientes?</h3><p>Accede con tu contraseña y deja tu experiencia</p></div></div><a href="#comentarios" class="cm-banner-btn">Ir a Comentarios <span class="arrow">↓</span></a></div><div class="rv" style="margin-bottom:40px"><div class="sl">Lo que dicen</div><div class="st">Comentarios<br><span class="ac">& Reseñas</span></div><div class="sdv"></div></div><div class="cm-main-grid"><div class="cm-login-panel rv-l" id="loginPanel"><div class="cm-login-header"><div class="cm-login-crown"><i class="fa-solid fa-crown"></i></div><h3>Acceso Premium</h3><p>Ingresa para dejar tu comentario</p></div><div class="cm-login-body"><div class="cm-input-box"><i class="fa-solid fa-user"></i><input type="text" id="cmUsuario" placeholder="Tu nombre de usuario" autocomplete="off"></div><div class="cm-input-box"><i class="fa-solid fa-lock"></i><input type="password" id="cmPassword" placeholder="Contraseña de acceso" autocomplete="off"></div><button class="cm-login-btn" id="cmLoginBtn" onclick="cmLogin()"><i class="fa-solid fa-right-to-bracket"></i> Ingresar</button><div class="cm-login-links"><a href="https://wa.me/573223729232?text=Hola%20quiero%20información" target="_blank" rel="noopener noreferrer">¿Eres cliente?</a><a href="https://wa.me/573223729232?text=Hola%20quiero%20información" target="_blank" rel="noopener noreferrer">Obtener acceso</a></div><div class="cm-login-note"><p>⚡ Debes adquirir un <span>servicio con nosotros</span> para poder ingresar al sistema y dejar tu reseña.</p></div></div></div><div class="cm-write-panel rv-l" id="writePanel"><div class="cm-write-header"><div class="cm-write-badge">✓ Verificado</div><h3>Escribe tu reseña</h3><div class="cm-user-logged"><div class="cm-user-av" id="cmUserAv">U</div><div class="cm-user-name" id="cmUserName">Usuario</div><button class="cm-logout-btn" onclick="cmLogout()">Salir</button></div></div><div class="cm-write-body"><div class="cm-stars-pick"><label>Calificación:</label><button class="star-btn" data-star="1" onclick="setStar(1)">★</button><button class="star-btn" data-star="2" onclick="setStar(2)">★</button><button class="star-btn" data-star="3" onclick="setStar(3)">★</button><button class="star-btn" data-star="4" onclick="setStar(4)">★</button><button class="star-btn" data-star="5" onclick="setStar(5)">★</button></div><textarea class="cm-textarea" id="cmText" placeholder="Comparte tu experiencia trabajando con JEP Designer... ¿Qué te pareció el servicio? ¿Volvería a contratar?"></textarea><button class="cm-submit" onclick="cmSubmit()"><i class="fa-solid fa-paper-plane"></i> Publicar Reseña</button></div></div><div class="cm-display-panel rv-r" style="transition-delay:.15s"><div class="cm-display-header"><h3>Reseñas <span>de clientes</span></h3><div class="cm-count" id="cmCount">0</div></div><div id="cmList" class="cm-empty"><span class="cm-empty-icon">⟳</span><div class="cm-empty-txt">Cargando reseñas...</div></div></div></div></div></section>
+<section id="comentarios"><div class="wrap"><div class="cm-banner rv"><div class="cm-banner-left"><div class="cm-banner-icon">💬</div><div class="cm-banner-text"><h3>¿Qué opinan mis clientes?</h3><p>Accede con tu contraseña y deja tu experiencia</p></div></div><a href="#comentarios" class="cm-banner-btn">Ir a Comentarios <span class="arrow">↓</span></a></div><div class="rv" style="margin-bottom:40px"><div class="sl">Lo que dicen</div><div class="st scramble-heading" data-scramble="true">Comentarios<br><span class="ac">& Reseñas</span></div><div class="sdv"></div></div><div class="cm-main-grid"><div class="cm-login-panel rv-l" id="loginPanel"><div class="cm-login-header"><div class="cm-login-crown"><i class="fa-solid fa-crown"></i></div><h3>Acceso Premium</h3><p>Ingresa para dejar tu comentario</p></div><div class="cm-login-body"><div class="cm-input-box"><i class="fa-solid fa-user"></i><input type="text" id="cmUsuario" placeholder="Tu nombre de usuario" autocomplete="off"></div><div class="cm-input-box"><i class="fa-solid fa-lock"></i><input type="password" id="cmPassword" placeholder="Contraseña de acceso" autocomplete="off"></div><button class="cm-login-btn" id="cmLoginBtn" onclick="cmLogin()"><i class="fa-solid fa-right-to-bracket"></i> Ingresar</button><div class="cm-login-links"><a href="https://wa.me/573223729232?text=Hola%20quiero%20información" target="_blank" rel="noopener noreferrer">¿Eres cliente?</a><a href="https://wa.me/573223729232?text=Hola%20quiero%20información" target="_blank" rel="noopener noreferrer">Obtener acceso</a></div><div class="cm-login-note"><p>⚡ Debes adquirir un <span>servicio con nosotros</span> para poder ingresar al sistema y dejar tu reseña.</p></div></div></div><div class="cm-write-panel rv-l" id="writePanel"><div class="cm-write-header"><div class="cm-write-badge">✓ Verificado</div><h3>Escribe tu reseña</h3><div class="cm-user-logged"><div class="cm-user-av" id="cmUserAv">U</div><div class="cm-user-name" id="cmUserName">Usuario</div><button class="cm-logout-btn" onclick="cmLogout()">Salir</button></div></div><div class="cm-write-body"><div class="cm-stars-pick"><label>Calificación:</label><button class="star-btn" data-star="1" onclick="setStar(1)">★</button><button class="star-btn" data-star="2" onclick="setStar(2)">★</button><button class="star-btn" data-star="3" onclick="setStar(3)">★</button><button class="star-btn" data-star="4" onclick="setStar(4)">★</button><button class="star-btn" data-star="5" onclick="setStar(5)">★</button></div><textarea class="cm-textarea" id="cmText" placeholder="Comparte tu experiencia trabajando con JEP Designer... ¿Qué te pareció el servicio? ¿Volvería a contratar?"></textarea><button class="cm-submit" onclick="cmSubmit()"><i class="fa-solid fa-paper-plane"></i> Publicar Reseña</button></div></div><div class="cm-display-panel rv-r" style="transition-delay:.15s"><div class="cm-display-header"><h3>Reseñas <span>de clientes</span></h3><div class="cm-count" id="cmCount">0</div></div><div id="cmList" class="cm-empty"><span class="cm-empty-icon">⟳</span><div class="cm-empty-txt">Cargando reseñas...</div></div></div></div></div></section>
 
 <!-- CONTACT -->
-<section id="contact"><div class="wrap"><div class="ct-grid"><div class="rv-l"><div class="sl">Hablemos</div><div class="st">Trabajemos<br><span class="ac">Juntos</span></div><div class="ci"><div class="ci-it"><div class="ci-lb">Nombre</div><div class="ci-vl">Junior Estiben Portilla</div></div><div class="ci-it"><div class="ci-lb">Marca</div><div class="ci-vl">JEP Designer</div></div><div class="ci-it"><div class="ci-lb">País</div><div class="ci-vl">Colombia</div></div><div class="ci-it"><div class="ci-lb">Ubicación</div><div class="ci-vl">San Miguel La Dorada, Putumayo</div></div></div><div class="soc3d" id="soc3d"><a href="https://www.instagram.com/estibenportilla" target="_blank" rel="noopener noreferrer" class="s3 ig" data-sm="220,39,67"><div class="s3-st"><canvas class="s3-sm" width="72" height="90"></canvas><div class="s3-ic"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="white" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="white" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="white"/></svg></div></div><span class="s3-lb">Instagram</span></a><a href="https://vm.tiktok.com/ZS98VnbD2kmaG-WQ069/" target="_blank" rel="noopener noreferrer" class="s3 tk" data-sm="105,201,208"><div class="s3-st"><canvas class="s3-sm" width="72" height="90"></canvas><div class="s3-ic"><svg viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.27 8.27 0 004.84 1.55V6.79a4.85 4.85 0 01-1.07-.1z"/></svg></div></div><span class="s3-lb">TikTok</span></a><a href="https://youtube.com/@jepvizion" target="_blank" rel="noopener noreferrer" class="s3 yt" data-sm="255,60,60"><div class="s3-st"><canvas class="s3-sm" width="72" height="90"></canvas><div class="s3-ic"><svg viewBox="0 0 24 24" fill="white"><path d="M23.5 6.2a3.02 3.02 0 00-2.12-2.13C19.53 3.62 12 3.62 12 3.62s-7.53 0-9.38.45A3.02 3.02 0 00.5 6.2C.06 8.05.06 12 .06 12s0 3.95.44 5.8a3.02 3.02 0 002.12 2.13C4.47 20.38 12 20.38 12 20.38s7.53 0 9.38-.45a3.02 3.02 0 002.12-2.13c.44-1.85.44-5.8.44-5.8s0-3.95-.44-5.8z"/><polygon points="9.75,15.5 15.75,12 9.75,8.5" fill="#ff0000"/></svg></div></div><span class="s3-lb">YouTube</span></a><a href="https://www.facebook.com/share/1E5MTZsxtm/" target="_blank" rel="noopener noreferrer" class="s3 fb" data-sm="25,118,210"><div class="s3-st"><canvas class="s3-sm" width="72" height="90"></canvas><div class="s3-ic"><svg viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></div></div><span class="s3-lb">Facebook</span></a><a href="https://www.facebook.com/share/1EB4PKjfDp/" target="_blank" rel="noopener noreferrer" class="s3 fb" data-sm="25,118,210"><div class="s3-st"><canvas class="s3-sm" width="72" height="90"></canvas><div class="s3-ic"><svg viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></div></div><span class="s3-lb">Facebook 2</span></a><a href="https://wa.me/573223729232?text=Hola%20quiero%20información" target="_blank" rel="noopener noreferrer" class="s3 wa" data-sm="37,211,102"><div class="s3-st"><canvas class="s3-sm" width="72" height="90"></canvas><div class="s3-ic"><svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div></div><span class="s3-lb">WhatsApp</span></a></div></div><div class="ct-r rv-r" style="transition-delay:.2s;padding-top:80px"><div class="sl">¿Tienes un proyecto?</div><p>¿Tienes una idea, proyecto o marca que deseas llevar al siguiente nivel? Será un placer ayudarte a crear algo único, moderno y profesional.</p><p>Cada colaboración es una oportunidad de crear algo extraordinario. Mi enfoque combina creatividad auténtica con innovación visual y diseño con propósito real.</p><a href="https://wa.me/573223729232?text=Hola%20quiero%20información" target="_blank" rel="noopener noreferrer" class="c-cta mag">Iniciar Proyecto ✦</a></div></div></div></section>
+<section id="contact"><div class="wrap"><div class="ct-grid"><div class="rv-l"><div class="sl">Hablemos</div><div class="st scramble-heading breath-glow-gold" data-scramble="true">Trabajemos<br><span class="ac">Juntos</span></div><div class="ci"><div class="ci-it"><div class="ci-lb">Nombre</div><div class="ci-vl">Junior Estiben Portilla</div></div><div class="ci-it"><div class="ci-lb">Marca</div><div class="ci-vl">JEP Designer</div></div><div class="ci-it"><div class="ci-lb">País</div><div class="ci-vl">Colombia</div></div><div class="ci-it"><div class="ci-lb">Ubicación</div><div class="ci-vl">San Miguel La Dorada, Putumayo</div></div></div><div class="soc3d" id="soc3d"><a href="https://www.instagram.com/estibenportilla" target="_blank" rel="noopener noreferrer" class="s3 ig" data-sm="220,39,67"><div class="s3-st"><canvas class="s3-sm" width="72" height="90"></canvas><div class="s3-ic"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="white" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="white" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="white"/></svg></div></div><span class="s3-lb">Instagram</span></a><a href="https://vm.tiktok.com/ZS98VnbD2kmaG-WQ069/" target="_blank" rel="noopener noreferrer" class="s3 tk" data-sm="105,201,208"><div class="s3-st"><canvas class="s3-sm" width="72" height="90"></canvas><div class="s3-ic"><svg viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.27 8.27 0 004.84 1.55V6.79a4.85 4.85 0 01-1.07-.1z"/></svg></div></div><span class="s3-lb">TikTok</span></a><a href="https://youtube.com/@jepvizion" target="_blank" rel="noopener noreferrer" class="s3 yt" data-sm="255,60,60"><div class="s3-st"><canvas class="s3-sm" width="72" height="90"></canvas><div class="s3-ic"><svg viewBox="0 0 24 24" fill="white"><path d="M23.5 6.2a3.02 3.02 0 00-2.12-2.13C19.53 3.62 12 3.62 12 3.62s-7.53 0-9.38.45A3.02 3.02 0 00.5 6.2C.06 8.05.06 12 .06 12s0 3.95.44 5.8a3.02 3.02 0 002.12 2.13C4.47 20.38 12 20.38 12 20.38s7.53 0 9.38-.45a3.02 3.02 0 002.12-2.13c.44-1.85.44-5.8.44-5.8s0-3.95-.44-5.8z"/><polygon points="9.75,15.5 15.75,12 9.75,8.5" fill="#ff0000"/></svg></div></div><span class="s3-lb">YouTube</span></a><a href="https://www.facebook.com/share/1E5MTZsxtm/" target="_blank" rel="noopener noreferrer" class="s3 fb" data-sm="25,118,210"><div class="s3-st"><canvas class="s3-sm" width="72" height="90"></canvas><div class="s3-ic"><svg viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></div></div><span class="s3-lb">Facebook</span></a><a href="https://www.facebook.com/share/1EB4PKjfDp/" target="_blank" rel="noopener noreferrer" class="s3 fb" data-sm="25,118,210"><div class="s3-st"><canvas class="s3-sm" width="72" height="90"></canvas><div class="s3-ic"><svg viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></div></div><span class="s3-lb">Facebook 2</span></a><a href="https://wa.me/573223729232?text=Hola%20quiero%20información" target="_blank" rel="noopener noreferrer" class="s3 wa" data-sm="37,211,102"><div class="s3-st"><canvas class="s3-sm" width="72" height="90"></canvas><div class="s3-ic"><svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div></div><span class="s3-lb">WhatsApp</span></a></div></div><div class="ct-r rv-r" style="transition-delay:.2s;padding-top:80px"><div class="sl">¿Tienes un proyecto?</div><p>¿Tienes una idea, proyecto o marca que deseas llevar al siguiente nivel? Será un placer ayudarte a crear algo único, moderno y profesional.</p><p>Cada colaboración es una oportunidad de crear algo extraordinario. Mi enfoque combina creatividad auténtica con innovación visual y diseño con propósito real.</p><a href="https://wa.me/573223729232?text=Hola%20quiero%20información" target="_blank" rel="noopener noreferrer" class="c-cta mag">Iniciar Proyecto ✦</a></div></div></div></section>
 
 <footer><div class="fl">JEP</div><div class="ft">© 2026 JEP Designer — Todos los derechos reservados.<br>Diseñado por Junior Estiben Portilla · Colombia</div><div class="fl" style="opacity:0;pointer-events:none">JEP</div></footer>
 </div>
@@ -1130,28 +1282,86 @@ function initPortfolioScripts() {
   // Counters
   function animateCounter(el,target,duration=1200){ const start=performance.now(); function step(now){ const p=Math.min((now-start)/duration,1); const ease=1-Math.pow(1-p,4); el.textContent=Math.round(ease*target); if(p<1) requestAnimationFrame(step); else el.textContent=target; } requestAnimationFrame(step); }
   
-  // Función para animar el círculo de compromiso (versión mejorada)
+  // Función para animar el círculo de compromiso (versión premium definitiva)
   function animateCommitCircle(){
     const fill=document.getElementById('commitFill');
+    const fillGlow=document.getElementById('commitFillGlow');
     const pct=document.getElementById('commitPct');
+    const dot=document.getElementById('commitDot');
+    const circle=document.getElementById('commitCircle');
     if(!fill||!pct) return;
-    const isMobile=window.innerWidth<=600;
-    const r=isMobile?28:35;
+    // Obtener el radio real del SVG (siempre r=42 del viewBox 100x100)
+    const r=42;
     const circumference=2*Math.PI*r;
+    // Inicializar ambos círculos (fill + glow)
     fill.style.strokeDasharray=circumference;
     fill.style.strokeDashoffset=circumference;
+    if(fillGlow){
+      fillGlow.style.strokeDasharray=circumference;
+      fillGlow.style.strokeDashoffset=circumference;
+    }
+    // Activar estado activo (glow pulsante)
+    if(circle) circle.classList.add('active');
+    // Mostrar el punto indicador
+    if(dot) dot.classList.add('visible');
     let n=0;
-    const dur=2200, start=performance.now();
+    const dur=2400, start=performance.now();
     function step(now){
       const p=Math.min((now-start)/dur,1);
       const ease=1-Math.pow(1-p,4);
       n=Math.round(ease*100);
       pct.textContent=n+'%';
-      fill.style.strokeDashoffset=circumference*(1-ease);
+      const offset=circumference*(1-ease);
+      fill.style.strokeDashoffset=offset;
+      if(fillGlow) fillGlow.style.strokeDashoffset=offset;
+      // Mover el dot alrededor del círculo
+      if(dot){
+        const angle=ease*360-90; // -90 para empezar arriba
+        const rad=angle*Math.PI/180;
+        const cx=50, cy=50, dotR=46;
+        const dx=cx+dotR*Math.cos(rad);
+        const dy=cy+dotR*Math.sin(rad);
+        dot.style.left=dx+'%';
+        dot.style.top=dy+'%';
+        dot.style.transform='translate(-50%,-50%)';
+      }
       if(p<1) requestAnimationFrame(step);
-      else{ pct.textContent='100%'; fill.style.strokeDashoffset=0; }
+      else{
+        pct.textContent='100%';
+        fill.style.strokeDashoffset=0;
+        if(fillGlow) fillGlow.style.strokeDashoffset=0;
+        // Efecto de completado
+        if(circle){
+          circle.classList.remove('active');
+          circle.classList.add('complete');
+        }
+        // Explosión de partículas al completar
+        createCircleBurst();
+      }
     }
     requestAnimationFrame(step);
+  }
+  
+  // Partículas de explosión al completar el círculo
+  function createCircleBurst(){
+    const circle=document.getElementById('commitCircle');
+    if(!circle) return;
+    const colors=['#c9a84c','#ff6a1a','#f01e8f','#00ffe0','#e8cc7a'];
+    for(let i=0;i<16;i++){
+      const spark=document.createElement('div');
+      const angle=(i/16)*360;
+      const dist=40+Math.random()*30;
+      const size=3+Math.random()*4;
+      const color=colors[Math.floor(Math.random()*colors.length)];
+      spark.style.cssText=`position:absolute;left:50%;top:50%;width:${size}px;height:${size}px;border-radius:50%;background:${color};box-shadow:0 0 6px ${color},0 0 12px ${color};pointer-events:none;z-index:10;transform:translate(-50%,-50%);transition:all .8s cubic-bezier(.2,1,.3,1);opacity:1;`;
+      circle.appendChild(spark);
+      requestAnimationFrame(()=>{
+        const rad=angle*Math.PI/180;
+        spark.style.transform=`translate(calc(-50% + ${Math.cos(rad)*dist}px), calc(-50% + ${Math.sin(rad)*dist}px))`;
+        spark.style.opacity='0';
+      });
+      setTimeout(()=>spark.remove(),900);
+    }
   }
   
   const statsObs=new IntersectionObserver(entries=>{ entries.forEach(entry=>{ if(!entry.isIntersecting) return; const rows=entry.target.querySelectorAll('.stat-row'); rows.forEach((row,i)=>{ setTimeout(()=>{ row.classList.add('on'); row.querySelectorAll('.num').forEach(num=>animateCounter(num,parseInt(num.dataset.target),1400)); if(i===1) animateCommitCircle(); }, i*180); }); statsObs.unobserve(entry.target); }); },{threshold:.25});
@@ -1242,6 +1452,250 @@ function initPortfolioScripts() {
   document.getElementById('cmPassword')?.addEventListener('keydown',function(e){if(e.key==='Enter') window.cmLogin();});
   document.getElementById('cmUsuario')?.addEventListener('keydown',function(e){if(e.key==='Enter') document.getElementById('cmPassword')?.focus();});
   cmLoad();
+
+  /* ══════════════════════════════════════════════════════════════
+     PREMIUM ENHANCEMENT JS — 20 NEW EFFECTS
+     ══════════════════════════════════════════════════════════════ */
+
+  // ── 2. CURSOR SPARKLE TRAIL ──
+  (function(){
+    let sparkleThrottle = 0;
+    document.addEventListener('mousemove', function(e){
+      const now = Date.now();
+      if(now - sparkleThrottle < 40) return;
+      sparkleThrottle = now;
+      const sp = document.createElement('div');
+      sp.className = 'sparkle';
+      const colors = ['#c9a84c','#f01e8f','#00ffe0','#ff6a1a'];
+      const c = colors[Math.floor(Math.random()*colors.length)];
+      const sz = Math.random()*5+2;
+      sp.style.cssText = `left:${e.clientX}px;top:${e.clientY}px;width:${sz}px;height:${sz}px;background:${c};box-shadow:0 0 ${sz+2}px ${c};`;
+      document.body.appendChild(sp);
+      setTimeout(()=>sp.remove(),600);
+    });
+  })();
+
+  // ── 3. TEXT SCRAMBLE/DECODE ANIMATION ──
+  (function(){
+    const chars = '!@#$%^&*()_+-=[]{}|;:,.<>?/~`ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    document.querySelectorAll('[data-scramble]').forEach(el=>{
+      const original = el.innerHTML;
+      let scrambled = false;
+      const obs = new IntersectionObserver(entries=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting && !scrambled){
+            scrambled = true;
+            const textNodes = [];
+            const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
+            let node;
+            while(node = walker.nextNode()) textNodes.push(node);
+            const originals = textNodes.map(n=>n.textContent);
+            let frame = 0;
+            const maxFrames = 20;
+            const interval = setInterval(()=>{
+              frame++;
+              textNodes.forEach((n,i)=>{
+                let txt = originals[i];
+                let result = '';
+                for(let j=0;j<txt.length;j++){
+                  if(txt[j]===' '||txt[j]==='<') result+=txt[j];
+                  else if(j < (frame/maxFrames)*txt.length) result+=txt[j];
+                  else result+=chars[Math.floor(Math.random()*chars.length)];
+                }
+                n.textContent = result;
+              });
+              if(frame >= maxFrames){
+                clearInterval(interval);
+                textNodes.forEach((n,i)=>n.textContent=originals[i]);
+              }
+            },40);
+            obs.unobserve(el);
+          }
+        });
+      },{threshold:.3});
+      obs.observe(el);
+    });
+  })();
+
+  // ── 5. SPOTLIGHT/FLASHLIGHT EFFECT ──
+  (function(){
+    document.querySelectorAll('.spotlight-section').forEach(section=>{
+      section.addEventListener('mousemove',function(e){
+        const r = section.getBoundingClientRect();
+        const x = ((e.clientX - r.left)/r.width*100).toFixed(1)+'%';
+        const y = ((e.clientY - r.top)/r.height*100).toFixed(1)+'%';
+        section.style.setProperty('--spot-x',x);
+        section.style.setProperty('--spot-y',y);
+      });
+    });
+  })();
+
+  // ── 10. ENHANCED 3D TILT WITH GLARE ──
+  (function(){
+    document.querySelectorAll('.tilt-glare').forEach(card=>{
+      card.addEventListener('mousemove',function(e){
+        const r = card.getBoundingClientRect();
+        const dx = (e.clientX-r.left)/r.width;
+        const dy = (e.clientY-r.top)/r.height;
+        card.style.setProperty('--glare-x',(dx*100)+'%');
+        card.style.setProperty('--glare-y',(dy*100)+'%');
+      });
+    });
+  })();
+
+  // ── 12. STAGGERED GRID ENTRANCE ANIMATIONS ──
+  (function(){
+    document.querySelectorAll('.stagger-grid').forEach(grid=>{
+      const items = grid.querySelectorAll('.stagger-item');
+      const staggerObs = new IntersectionObserver(entries=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting){
+            items.forEach((item,i)=>{
+              setTimeout(()=>item.classList.add('stagger-visible'), i*120);
+            });
+            staggerObs.unobserve(entry.target);
+          }
+        });
+      },{threshold:.15});
+      staggerObs.observe(grid);
+    });
+  })();
+
+  // ── 13. RIPPLE EFFECT ON BUTTONS ──
+  (function(){
+    document.querySelectorAll('.ripple-wrap, .cta-g, .cta-o, .fs-cta, .cm-login-btn, .cm-submit, .c-cta, .bk-btn').forEach(btn=>{
+      btn.style.position = 'relative';
+      btn.style.overflow = 'hidden';
+      btn.addEventListener('click',function(e){
+        const r = btn.getBoundingClientRect();
+        const ripple = document.createElement('span');
+        ripple.className = 'ripple-span';
+        const sz = Math.max(r.width,r.height)*2;
+        ripple.style.cssText = `width:${sz}px;height:${sz}px;left:${e.clientX-r.left-sz/2}px;top:${e.clientY-r.top-sz/2}px;`;
+        btn.appendChild(ripple);
+        setTimeout(()=>ripple.remove(),600);
+      });
+    });
+  })();
+
+  // ── 14. SVG PATH DRAWING ON SCROLL ──
+  (function(){
+    document.querySelectorAll('.svg-draw-path').forEach(path=>{
+      const len = path.getTotalLength ? path.getTotalLength() : 2000;
+      path.style.setProperty('--dash-len', len);
+      path.style.strokeDasharray = len;
+      path.style.strokeDashoffset = len;
+      const drawObs = new IntersectionObserver(entries=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting){
+            path.classList.add('drawn');
+            drawObs.unobserve(entry.target);
+          }
+        });
+      },{threshold:.3});
+      drawObs.observe(path);
+    });
+  })();
+
+  // ── 15. SMOOTH PAGE SCROLLING ENHANCEMENT ──
+  (function(){
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',function(e){
+        const target = document.querySelector(a.getAttribute('href'));
+        if(target){
+          e.preventDefault();
+          target.scrollIntoView({behavior:'smooth',block:'start'});
+        }
+      });
+    });
+  })();
+
+  // ── 16. PARALLAX DEPTH FOR IMAGES ──
+  (function(){
+    const parallaxEls = document.querySelectorAll('.img-full, .book-wrap, .morph-blob');
+    let ticking = false;
+    window.addEventListener('scroll',function(){
+      if(!ticking){
+        requestAnimationFrame(()=>{
+          const sy = window.scrollY;
+          parallaxEls.forEach(el=>{
+            const r = el.getBoundingClientRect();
+            const speed = el.classList.contains('morph-blob') ? 0.15 : 0.08;
+            const offset = (r.top + sy) * speed - sy * speed;
+            el.style.transform = el.classList.contains('morph-blob') 
+              ? `translate(-50%, calc(-50% + ${offset}px))`
+              : `translateY(${offset}px)`;
+          });
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+  })();
+
+  // ── 17. MAGNETIC BUTTON ENHANCEMENT ──
+  (function(){
+    document.querySelectorAll('.mag').forEach(el=>{
+      const inner = el.querySelector('span') || el;
+      el.addEventListener('mousemove',function(e){
+        const r = el.getBoundingClientRect();
+        const dx = (e.clientX-r.left-r.width/2)/r.width;
+        const dy = (e.clientY-r.top-r.height/2)/r.height;
+        el.style.transform = `translate(${dx*12}px,${dy*12}px) scale(1.05)`;
+        el.style.boxShadow = `0 0 30px rgba(201,168,76,${0.15+Math.abs(dx)*0.2})`;
+        if(inner !== el) inner.style.transform = `translate(${dx*3}px,${dy*3}px)`;
+      });
+      el.addEventListener('mouseleave',function(){
+        el.style.transform = '';
+        el.style.boxShadow = '';
+        if(inner !== el) inner.style.transform = '';
+      });
+    });
+  })();
+
+  // ── 19. TYPING EFFECT FOR TAGLINE ──
+  (function(){
+    const tagEl = document.getElementById('tagline-typing');
+    if(tagEl){
+      const fullText = tagEl.textContent.trim();
+      tagEl.textContent = '';
+      tagEl.style.opacity = '1';
+      let typed = false;
+      const typeObs = new IntersectionObserver(entries=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting && !typed){
+            typed = true;
+            let i = 0;
+            const cursor = document.createElement('span');
+            cursor.className = 'typing-cursor';
+            tagEl.appendChild(cursor);
+            const typeInterval = setInterval(()=>{
+              if(i < fullText.length){
+                tagEl.insertBefore(document.createTextNode(fullText[i]), cursor);
+                i++;
+              } else {
+                clearInterval(typeInterval);
+                setTimeout(()=>cursor.remove(), 2000);
+              }
+            },60);
+            typeObs.unobserve(tagEl);
+          }
+        });
+      },{threshold:.5});
+      typeObs.observe(tagEl);
+    }
+  })();
+
+  // ── 20. LOADING BAR GLOW ENHANCEMENT ── (CSS handles this, JS adds traveling light)
+  (function(){
+    const fill = document.getElementById('progressFill');
+    if(fill){
+      const glowTravel = document.createElement('div');
+      glowTravel.style.cssText = 'position:absolute;top:-6px;left:0;width:30px;height:calc(100% + 12px);background:radial-gradient(ellipse,rgba(0,255,224,.6),transparent);filter:blur(4px);animation:travelGlow 1s ease-in-out infinite alternate;pointer-events:none;';
+      fill.appendChild(glowTravel);
+    }
+  })();
+
 }
 </script>
 </body>
